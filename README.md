@@ -1,2 +1,2 @@
 # astaroth
-demon hunter game
+bounty hunter game
