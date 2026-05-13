@@ -1,21 +1,21 @@
 extends CharacterBody3D
 
-@onready var camera = $Head/Camera3D
+@onready var camera: Camera3D = $Head/Camera3D
 
 # movement vals
 @export var cur_speed: float = 5.0
-var walking_speed = 5.0
-var sprint_speed = 7.5
-var crouch_speed = 7.5
-var jump_velocity = 4.5
+var walking_speed: float = 5.0
+var sprint_speed: float = 7.5
+var crouch_speed: float = 7.5
+var jump_velocity: float = 4.5
 
 # POV vals
-var mouse_sens = 0.5
-var camera_anglev=0.0
+var mouse_sens: float = 0.5
+var camera_anglev: float =0.0
 
 # control vals
-var can_shoot = true
-var dead = false
+var can_shoot: bool = true
+var dead: bool = false
 
 # this function runs once when the node enters the scene tree
 func _ready():
