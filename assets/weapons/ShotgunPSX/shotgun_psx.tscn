@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ctdf2k0kkgxhm"]
+
+[ext_resource type="PackedScene" uid="uid://v5tpbfos4dls" path="res://assets/weapons/ShotgunPSX/FBX/ShotgunPSX.fbx" id="1_daybw"]
+
+[node name="ShotgunPSX" unique_id=232523271 instance=ExtResource("1_daybw")]
