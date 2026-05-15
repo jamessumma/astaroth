@@ -37,14 +37,15 @@ func _ready():
 func _input(event):
 	if dead:
 		return
-		
-	if Input.is_action_just_pressed("sprint"):
-		is_sprinting = not is_sprinting
 
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * mouse_sens
 		$Head.rotation.x -= event.relative.y * mouse_sens * 0.01
 		$Head.rotation.x = clamp($Head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+
+	# replace this with a switch after adding other controls
+	if Input.is_action_just_pressed("sprint"):
+		is_sprinting = not is_sprinting
 		
 
 # on every rendered frame (expensive)
@@ -68,18 +69,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if is_sprinting:
-		cur_stamina -= stamina_drain_speed
-		if cur_stamina <= 0:
-			is_sprinting = false
-			cur_speed = walking_speed
-		else:
-			cur_speed = sprint_speed
-	else:
-		cur_speed = walking_speed
-		if cur_stamina < max_stamina:
-			cur_stamina += 1
-		
+	handle_sprint()
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -95,9 +85,22 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, cur_speed)
 		velocity.z = move_toward(velocity.z, 0, cur_speed)
+		is_sprinting = false
 
 	move_and_slide()
 
+func handle_sprint():
+	if is_sprinting:
+		cur_stamina -= stamina_drain_speed
+		if cur_stamina <= 0:
+			is_sprinting = false
+			cur_speed = walking_speed
+		else:
+			cur_speed = sprint_speed
+	else:
+		cur_speed = walking_speed
+		if cur_stamina < max_stamina:
+			cur_stamina += 1
 
 
 func restart():
