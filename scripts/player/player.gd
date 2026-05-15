@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var stamina_bar: TextureProgressBar = $CanvasLayer/StaminaBar
 @onready var health_bar: TextureProgressBar = $CanvasLayer/HealthBar
@@ -22,7 +23,7 @@ var is_sprinting: bool = false
 var is_crouching: bool = false
 
 # POV vals
-var mouse_sens: float = 0.2
+var mouse_sens: float = 0.1
 var camera_anglev: float = 0.0
 
 # control vals
@@ -39,10 +40,10 @@ func _input(event):
 		return
 
 	if event is InputEventMouseMotion:
-		rotation_degrees.y -= event.relative.x * mouse_sens
-		$Head.rotation.x -= event.relative.y * mouse_sens * 0.01
-		$Head.rotation.x = clamp($Head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
-
+		rotate_y(deg_to_rad(-1 * event.relative.x * mouse_sens))
+		head.rotate_x(deg_to_rad(-1 * event.relative.y * mouse_sens))
+		head.rotation.x = clamp($Head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+		
 	# replace this with a switch after adding other controls
 	if Input.is_action_just_pressed("sprint"):
 		is_sprinting = not is_sprinting
