@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ctdf2k0kkgxhm" path="res://assets/weapons/ShotgunPSX/shotgun_psx.tscn" id="2_kai5h"]
 [ext_resource type="Texture2D" uid="uid://b4lqpxpp48631" path="res://assets/ui_resources/stamina.svg" id="2_so2s4"]
 [ext_resource type="Texture2D" uid="uid://v3htldfknmb" path="res://assets/ui_resources/health.svg" id="3_kai5h"]
+[ext_resource type="PackedScene" uid="uid://d100yfv1pe8xa" path="res://assets/weapons/db_shotgun/double_barrel_shotgun.glb" id="4_1fo2x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ew1dm"]
 
@@ -23,6 +24,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5515363, 0)
 
 [node name="ShotgunPSX" parent="Head/Camera3D/WeaponHolder" unique_id=232523271 instance=ExtResource("2_kai5h")]
 transform = Transform3D(0.0036753537, -0.004070157, 0.29994985, -0.0023828615, 0.29996267, 0.004099529, -0.29996806, -0.0024326798, 0.0036425646, 0.28124714, -0.22824526, -0.33163857)
+visible = false
+
+[node name="double_barrel_shotgun" parent="Head/Camera3D/WeaponHolder" unique_id=840155535 instance=ExtResource("4_1fo2x")]
+transform = Transform3D(-1.9668467, 0.21748641, -0.29019627, 0.21432394, 1.9881319, 0.037386235, 0.29253972, 0.0056684907, -1.9784814, 0.20535088, -0.18798018, -0.25946832)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=816587902]
 
