@@ -21,6 +21,8 @@ var crouch_speed: float = 3.0
 var jump_velocity: float = 4.5
 var is_sprinting: bool = false
 var is_crouching: bool = false
+var lerp_speed: float = 5.0
+var direction = Vector3.ZERO
 
 # POV vals
 var mouse_sens: float = 0.1
@@ -79,14 +81,21 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_fwd", "move_bwd")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	direction = lerp( direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta * lerp_speed)
+
+	# if we arent touching anything in 
+	if input_dir.length() == 0:
+		is_sprinting = false
+
 	if direction:
 		velocity.x = direction.x * cur_speed
 		velocity.z = direction.z * cur_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, cur_speed)
 		velocity.z = move_toward(velocity.z, 0, cur_speed)
-		is_sprinting = false
+	
+		
+	
 
 	move_and_slide()
 
