@@ -10,19 +10,12 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ew1dm"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jft68"]
-height = 1.2
-
 [node name="Player" type="CharacterBody3D" unique_id=797199737]
 script = ExtResource("1_hmply")
 
-[node name="StandingHitbox" type="CollisionShape3D" parent="." unique_id=1161747283]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1161747283]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_ew1dm")
-
-[node name="CrouchingHitbox" type="CollisionShape3D" parent="." unique_id=2146231715]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60252, 0)
-shape = SubResource("CapsuleShape3D_jft68")
 
 [node name="Head" type="Node3D" parent="." unique_id=277563169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5515363, 0)
@@ -61,6 +54,3 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_jft68")
 texture_over = ExtResource("5_jft68")
 texture_progress = ExtResource("3_kai5h")
-
-[node name="HeadCollisionRay" type="RayCast3D" parent="." unique_id=420859459]
-target_position = Vector3(0, 1.8, 0)

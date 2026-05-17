@@ -1,6 +1,9 @@
 extends CharacterBody3D
 
+@onready var full_body_collision: CollisionShape3D = $StandingHitbox
+@onready var half_body_collision: CollisionShape3D = $CrouchingHitbox
 @onready var head: Node3D = $Head
+@onready var head_collision_ray: RayCast3D = $HeadCollisionRay
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var stamina_bar: TextureProgressBar = $CanvasLayer/StaminaBar
 @onready var health_bar: TextureProgressBar = $CanvasLayer/HealthBar
@@ -15,14 +18,16 @@ var stamina_drain_speed: float = 0.2
 
 # movement vals
 @export var cur_speed: float = 5.0
-var walking_speed: float = 7.0
 var sprint_speed: float = 15.0
-var crouch_speed: float = 3.0
-var jump_velocity: float = 5.5
-var lerp_speed: float = 5.0
+var walking_speed: float = sprint_speed * 0.5
+var crouch_speed: float = sprint_speed * 0.3
+var crouch_depth: float = -0.7
+var jump_velocity: float = 6.5
+var lerp_speed: float = 6.0
 var direction = Vector3.ZERO
+var slide_threshold: float = sprint_speed * 0.55
 
-enum player_movement {WALKING, SPRINTING, CROUCHING, SLIDING}
+enum player_movement {WALKING, SPRINTING, CROUCHING, SLIDING, AWAIT_STAND}
 var player_movement_state: player_movement = player_movement.WALKING
 
 # POV vals
@@ -53,15 +58,20 @@ func _input(event):
 	if Input.is_action_just_released("sprint"):
 		player_movement_state = player_movement.WALKING
 	if Input.is_action_pressed("crouch"):
+		# do something here
+		if get_magnitude(velocity.x, velocity.y, velocity.z) >= slide_threshold:
+			player_movement_state = player_movement.SLIDING
+			print("sliding now")
 		player_movement_state = player_movement.CROUCHING
 	if Input.is_action_just_released("crouch"):
-		player_movement_state = player_movement.WALKING
+		player_movement_state = player_movement.AWAIT_STAND
 		
 
 # on every rendered frame (expensive)
 func _process(delta):
 	handle_stamina()
 	update_ui()
+	
 	if dead:
 		return
 	elif Input.is_action_just_pressed("quit"):
@@ -74,15 +84,14 @@ func _process(delta):
 # runs before every physics step (fixed at 60 times / sec)
 func _physics_process(delta: float) -> void:
 	
-	
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * 1.5
 
-	handle_movement_state()
+	handle_movement_state(delta)
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 
 	# Get the input direction and handle the movement/deceleration.
@@ -90,7 +99,7 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_fwd", "move_bwd")
 	direction = lerp( direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta * lerp_speed)
 
-
+# this is fine if we are in WALKING, CROUCHING, or SPRINTING
 	if direction:
 		velocity.x = direction.x * cur_speed
 		velocity.z = direction.z * cur_speed
@@ -101,18 +110,32 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func handle_movement_state():
+func handle_movement_state(delta):
 	match player_movement_state:
-		player_movement.CROUCHING:
+		player_movement.CROUCHING, player_movement.AWAIT_STAND:
+			if player_movement_state == player_movement.AWAIT_STAND && !head_collision_ray.is_colliding():
+				player_movement_state = player_movement.WALKING
 			cur_speed = crouch_speed
+			head.position.y = lerp(head.position.y, 1.8 + crouch_depth, delta * lerp_speed)
+			full_body_collision.disabled = true
+			half_body_collision.disabled = false
 			
 		player_movement.SPRINTING:
+			head.position.y = lerp(head.position.y, 1.8, delta * lerp_speed)
 			cur_speed = sprint_speed
+			full_body_collision.disabled = false
+			half_body_collision.disabled = true
 			
 		player_movement.SLIDING:
-			pass
+			head.position.y = lerp(head.position.y, 1.8 + crouch_depth, delta * lerp_speed)
+			full_body_collision.disabled = true
+			half_body_collision.disabled = false
+			
 		player_movement.WALKING:
 			cur_speed = walking_speed
+			head.position.y = lerp(head.position.y, 1.8, delta * lerp_speed)
+			full_body_collision.disabled = false
+			half_body_collision.disabled = true
 		_:
 			# default to walking
 			player_movement_state = player_movement.WALKING
@@ -149,4 +172,6 @@ func handle_stamina():
 	elif cur_stamina < max_stamina:
 			cur_stamina += 1
 		
-		
+
+func get_magnitude(x: float, y: float, z: float) -> float:
+	return sqrt((x*x) + (y*y) + (z*z))
