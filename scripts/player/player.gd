@@ -15,14 +15,15 @@ var stamina_drain_speed: float = 0.2
 
 # movement vals
 @export var cur_speed: float = 5.0
-var walking_speed: float = 4.0
-var sprint_speed: float = 10.0
+var walking_speed: float = 7.0
+var sprint_speed: float = 15.0
 var crouch_speed: float = 3.0
-var jump_velocity: float = 4.5
-var is_sprinting: bool = false
-var is_crouching: bool = false
+var jump_velocity: float = 5.5
 var lerp_speed: float = 5.0
 var direction = Vector3.ZERO
+
+enum player_movement {WALKING, SPRINTING, CROUCHING, SLIDING}
+var player_movement_state: player_movement = player_movement.WALKING
 
 # POV vals
 var mouse_sens: float = 0.1
@@ -47,13 +48,19 @@ func _input(event):
 		head.rotation.x = clamp($Head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 		
 	# replace this with a switch after adding other controls
-	if Input.is_action_just_pressed("sprint"):
-		is_sprinting = not is_sprinting
+	if Input.is_action_pressed("sprint"):
+		player_movement_state = player_movement.SPRINTING
+	if Input.is_action_just_released("sprint"):
+		player_movement_state = player_movement.WALKING
+	if Input.is_action_pressed("crouch"):
+		player_movement_state = player_movement.CROUCHING
+	if Input.is_action_just_released("crouch"):
+		player_movement_state = player_movement.WALKING
 		
 
 # on every rendered frame (expensive)
 func _process(delta):
-	print(cur_speed)
+	handle_stamina()
 	update_ui()
 	if dead:
 		return
@@ -72,7 +79,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	handle_sprint()
+	handle_movement_state()
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -83,9 +90,6 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_fwd", "move_bwd")
 	direction = lerp( direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta * lerp_speed)
 
-	# if we arent touching anything in 
-	if input_dir.length() == 0:
-		is_sprinting = false
 
 	if direction:
 		velocity.x = direction.x * cur_speed
@@ -94,23 +98,24 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, cur_speed)
 		velocity.z = move_toward(velocity.z, 0, cur_speed)
 	
-		
-	
-
 	move_and_slide()
 
-func handle_sprint():
-	if is_sprinting:
-		cur_stamina -= stamina_drain_speed
-		if cur_stamina <= 0:
-			is_sprinting = false
-			cur_speed = walking_speed
-		else:
+
+func handle_movement_state():
+	match player_movement_state:
+		player_movement.CROUCHING:
+			cur_speed = crouch_speed
+			
+		player_movement.SPRINTING:
 			cur_speed = sprint_speed
-	else:
-		cur_speed = walking_speed
-		if cur_stamina < max_stamina:
-			cur_stamina += 1
+			
+		player_movement.SLIDING:
+			pass
+		player_movement.WALKING:
+			cur_speed = walking_speed
+		_:
+			# default to walking
+			player_movement_state = player_movement.WALKING
 
 
 func restart():
@@ -135,3 +140,13 @@ func update_ui():
 		stamina_bar.value = cur_stamina
 	if health_bar:
 		health_bar.value = cur_heatlh
+		
+func handle_stamina():
+	if player_movement_state == player_movement.SPRINTING:
+		cur_stamina -= stamina_drain_speed
+		if cur_stamina <= 0:
+			player_movement_state = player_movement.WALKING
+	elif cur_stamina < max_stamina:
+			cur_stamina += 1
+		
+		
