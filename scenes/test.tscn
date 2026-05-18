@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://xu2ep7b0j5ws"]
 
 [ext_resource type="Texture2D" uid="uid://cvivgyfglkt17" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_errlg"]
+[ext_resource type="Texture2D" uid="uid://dckv0ll15fq7p" path="res://assets/floor/grid_floor.png" id="1_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="2_bl13t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_errlg"]
 albedo_color = Color(0.15117319, 0.22454134, 0.4149491, 1)
+albedo_texture = ExtResource("1_iyx0m")
 uv1_triplanar = true
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bl13t"]
