@@ -8,7 +8,11 @@ extends CharacterBody3D
 @onready var camera: Camera3D = $Neck/Head/Camera3D
 @onready var stamina_bar: TextureProgressBar = $CanvasLayer/StaminaBar
 @onready var health_bar: TextureProgressBar = $CanvasLayer/HealthBar
+@onready var db_shotgun_shoot_anim: AnimationPlayer = $Neck/Head/Camera3D/double_barrel_shotgun/AnimationPlayer2
+@onready var gun_barrel: RayCast3D = $Neck/Head/Camera3D/double_barrel_shotgun/RayCast3D
 
+var bullet = load("res://assets/weapons/bullet.tscn")
+var instance
 
 # player vals
 @export var max_health: float = 100.0
@@ -104,6 +108,15 @@ func _physics_process(delta: float) -> void:
 
 	handle_movement_state(delta)
 	
+	if Input.is_action_just_pressed("shoot"):
+		if !db_shotgun_shoot_anim.is_playing():
+			db_shotgun_shoot_anim.play("shoot")
+			instance = bullet.instantiate()
+			instance.position = gun_barrel.global_position
+			instance.transform.basis = gun_barrel.global_transform.basis
+			get_parent().add_child(instance)
+			
+			
 	if !free_look:
 		neck.rotation.y = lerp(neck.rotation.y, 0.0, delta * lerp_speed)
 	# rotate camera with free look (probably put this somewhere else later)

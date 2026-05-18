@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://ujbpn20cihgg"]
+
+[ext_resource type="PackedScene" uid="uid://d100yfv1pe8xa" path="res://assets/weapons/db_shotgun/double_barrel_shotgun.glb" id="1_vfm31"]
+[ext_resource type="AudioStream" uid="uid://ciybdcda0781g" path="res://assets/sounds/Shotgun.wav" id="2_p130m"]
+
+[sub_resource type="Animation" id="Animation_vfm31"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D/Shotgun_Rigged:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.05)]
+}
+
+[sub_resource type="Animation" id="Animation_p130m"]
+resource_name = "shoot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D/Shotgun_Rigged:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333, 0.333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.05), Vector3(0, 0, -0.1), Vector3(0, 0, -0.05)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 1.7188,
+"start_offset": 0.53,
+"stream": ExtResource("2_p130m")
+}],
+"times": PackedFloat32Array(0.06666666)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rf0eq"]
+_data = {
+&"RESET": SubResource("Animation_vfm31"),
+&"shoot": SubResource("Animation_p130m")
+}
+
+[node name="double_barrel_shotgun" unique_id=840155535 instance=ExtResource("1_vfm31")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1279581048) index="0" unique_id=1528277150]
+bones/0/rotation = Quaternion(-2.2476463e-08, 0.7071068, 0.7071068, -2.2476463e-08)
+bones/1/rotation = Quaternion(0.0067209713, -0.7070746, -0.006720966, 0.70707506)
+
+[node name="Shotgun_Rigged" parent="Armature/Skeleton3D" index="0" unique_id=1748038387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
+cast_shadow = 0
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="2" unique_id=679111201]
+libraries/ = SubResource("AnimationLibrary_rf0eq")
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="3" unique_id=200025025]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3155677)
+target_position = Vector3(0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4" unique_id=136736795]

@@ -24,9 +24,21 @@ glow_enabled = true
 [node name="stage" type="Node3D" parent="." unique_id=288632315]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="stage" unique_id=1479982949]
-transform = Transform3D(0.9785485, 0.20472434, -0.02303975, -0.20403111, 0.97852737, 0.029255407, 0.028534299, -0.023927027, 0.99930656, 0, -0.5, 15.955011)
+transform = Transform3D(0.9785485, 0.20472434, -0.02303975, -0.20403111, 0.97852737, 0.029255407, 0.028534299, -0.023927027, 0.99930656, 18.857044, -5.3395805, 15.955011)
 use_collision = true
 size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_errlg")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="stage" unique_id=1370867269]
+transform = Transform3D(0.9785485, 0.20472434, -0.02303975, -0.20403111, 0.97852737, 0.029255407, 0.028534299, -0.023927027, 0.99930656, 36.662415, -9.273335, 14.562221)
+use_collision = true
+size = Vector3(20, 1, 21.323242)
+material = SubResource("StandardMaterial3D_errlg")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="stage" unique_id=685899579]
+transform = Transform3D(0.9785485, 0.20472434, -0.02303975, -0.20403111, 0.97852737, 0.029255407, 0.028534299, -0.023927027, 0.99930656, -0.04153465, -0.6985245, 15.959866)
+use_collision = true
+size = Vector3(20, 0.5942383, 20)
 material = SubResource("StandardMaterial3D_errlg")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="stage" unique_id=1974770262]
