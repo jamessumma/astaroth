@@ -19,6 +19,7 @@ var stamina_drain_speed: float = 0.2
 
 # movement vals
 var free_look: bool = false
+var free_look_tilt: float = 10.0
 @export var cur_speed: float = 5.0
 var sprint_speed: float = 15.0
 var walking_speed: float = sprint_speed * 0.5
@@ -105,7 +106,8 @@ func _physics_process(delta: float) -> void:
 	
 	if !free_look:
 		neck.rotation.y = lerp(neck.rotation.y, 0.0, delta * lerp_speed)
-	
+	# rotate camera with free look (probably put this somewhere else later)
+	camera.rotation.z = deg_to_rad(neck.rotation.y * free_look_tilt)
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
