@@ -2,9 +2,10 @@ extends CharacterBody3D
 
 @onready var full_body_collision: CollisionShape3D = $StandingHitbox
 @onready var half_body_collision: CollisionShape3D = $CrouchingHitbox
-@onready var head: Node3D = $Head
+@onready var head: Node3D = $Neck/Head
+@onready var neck: Node3D = $Neck
 @onready var head_collision_ray: RayCast3D = $HeadCollisionRay
-@onready var camera: Camera3D = $Head/Camera3D
+@onready var camera: Camera3D = $Neck/Head/Camera3D
 @onready var stamina_bar: TextureProgressBar = $CanvasLayer/StaminaBar
 @onready var health_bar: TextureProgressBar = $CanvasLayer/HealthBar
 
@@ -17,6 +18,7 @@ extends CharacterBody3D
 var stamina_drain_speed: float = 0.2
 
 # movement vals
+var free_look: bool = false
 @export var cur_speed: float = 5.0
 var sprint_speed: float = 15.0
 var walking_speed: float = sprint_speed * 0.5
@@ -48,9 +50,13 @@ func _input(event):
 		return
 
 	if event is InputEventMouseMotion:
-		rotate_y(deg_to_rad(-1 * event.relative.x * mouse_sens))
-		head.rotate_x(deg_to_rad(-1 * event.relative.y * mouse_sens))
-		head.rotation.x = clamp($Head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+		if free_look:
+			neck.rotate_y(deg_to_rad(-1 * event.relative.x * mouse_sens))
+			neck.rotation.y = clamp(neck.rotation.y, deg_to_rad(-110), deg_to_rad(110))
+		else:
+			rotate_y(deg_to_rad(-1 * event.relative.x * mouse_sens))
+			head.rotate_x(deg_to_rad(-1 * event.relative.y * mouse_sens))
+			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 		
 	# replace this with a switch after adding other controls
 	if Input.is_action_pressed("sprint"):
@@ -65,6 +71,13 @@ func _input(event):
 		player_movement_state = player_movement.CROUCHING
 	if Input.is_action_just_released("crouch"):
 		player_movement_state = player_movement.AWAIT_STAND
+		
+	if Input.is_action_pressed("free_look"):
+		free_look = true
+	elif Input.is_action_just_released("free_look"):
+		free_look = false
+		
+	
 		
 
 # on every rendered frame (expensive)
@@ -90,6 +103,9 @@ func _physics_process(delta: float) -> void:
 
 	handle_movement_state(delta)
 	
+	if !free_look:
+		neck.rotation.y = lerp(neck.rotation.y, 0.0, delta * lerp_speed)
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
@@ -109,31 +125,32 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-
+# later separate one time things with things that need to happen at each physics step
+# so that we have 2 functions
 func handle_movement_state(delta):
 	match player_movement_state:
 		player_movement.CROUCHING, player_movement.AWAIT_STAND:
 			if player_movement_state == player_movement.AWAIT_STAND && !head_collision_ray.is_colliding():
 				player_movement_state = player_movement.WALKING
 			cur_speed = crouch_speed
-			head.position.y = lerp(head.position.y, 1.8 + crouch_depth, delta * lerp_speed)
+			head.position.y = lerp(head.position.y, crouch_depth, delta * lerp_speed)
 			full_body_collision.disabled = true
 			half_body_collision.disabled = false
 			
 		player_movement.SPRINTING:
-			head.position.y = lerp(head.position.y, 1.8, delta * lerp_speed)
+			head.position.y = lerp(head.position.y, 0.0, delta * lerp_speed)
 			cur_speed = sprint_speed
 			full_body_collision.disabled = false
 			half_body_collision.disabled = true
 			
 		player_movement.SLIDING:
-			head.position.y = lerp(head.position.y, 1.8 + crouch_depth, delta * lerp_speed)
+			head.position.y = lerp(head.position.y, crouch_depth, delta * lerp_speed)
 			full_body_collision.disabled = true
 			half_body_collision.disabled = false
 			
 		player_movement.WALKING:
 			cur_speed = walking_speed
-			head.position.y = lerp(head.position.y, 1.8, delta * lerp_speed)
+			head.position.y = lerp(head.position.y, 0.0, delta * lerp_speed)
 			full_body_collision.disabled = false
 			half_body_collision.disabled = true
 		_:
