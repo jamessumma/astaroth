@@ -6,7 +6,6 @@ extends CharacterBody3D
 @onready var neck: Node3D = $Neck
 @onready var head_collision_ray: RayCast3D = $HeadCollisionRay
 @onready var camera: Camera3D = $Neck/Head/Camera3D
-@onready var stamina_bar: TextureProgressBar = $CanvasLayer/StaminaBar
 @onready var health_bar: TextureProgressBar = $CanvasLayer/HealthBar
 @onready var db_shotgun_shoot_anim: AnimationPlayer = $Neck/Head/Camera3D/double_barrel_shotgun/AnimationPlayer2
 @onready var gun_barrel: RayCast3D = $Neck/Head/Camera3D/double_barrel_shotgun/RayCast3D
@@ -17,24 +16,23 @@ var instance
 # player vals
 @export var max_health: float = 100.0
 @export var cur_heatlh: float = 100.0
-@export var max_stamina: float = 100.0
-@export var cur_stamina: float = 100.0
-var stamina_drain_speed: float = 0.2
 
 # movement vals
 var free_look: bool = false
 var free_look_tilt: float = 10.0
-@export var cur_speed: float = 5.0
-var sprint_speed: float = 15.0
-var walking_speed: float = sprint_speed * 0.5
-var crouch_speed: float = sprint_speed * 0.3
+@export var cur_speed: float = 20.0
+var base_move_speed: float = 20.0
+var crouch_speed: float = base_move_speed * 0.5
 var crouch_depth: float = -0.7
-var jump_velocity: float = 6.5
 var lerp_speed: float = 6.0
 var direction = Vector3.ZERO
-var slide_threshold: float = sprint_speed * 0.55
+var slide_threshold: float = base_move_speed * 0.55
 
-enum player_movement {WALKING, SPRINTING, CROUCHING, SLIDING, AWAIT_STAND}
+var jump_velocity: float = 12.0
+var jump_ascend: float = 35.0
+var jump_descend: float = 40.0
+
+enum player_movement {WALKING, CROUCHING, SLIDING, AWAIT_STAND}
 var player_movement_state: player_movement = player_movement.WALKING
 
 # POV vals
@@ -64,10 +62,6 @@ func _input(event):
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 		
 	# replace this with a switch after adding other controls
-	if Input.is_action_pressed("sprint"):
-		player_movement_state = player_movement.SPRINTING
-	if Input.is_action_just_released("sprint"):
-		player_movement_state = player_movement.WALKING
 	if Input.is_action_pressed("crouch"):
 		# do something here
 		if get_magnitude(velocity.x, velocity.y, velocity.z) >= slide_threshold:
@@ -87,9 +81,7 @@ func _input(event):
 
 # on every rendered frame (expensive)
 func _process(delta):
-	handle_stamina()
 	update_ui()
-	
 	if dead:
 		return
 	elif Input.is_action_just_pressed("quit"):
@@ -104,7 +96,10 @@ func _physics_process(delta: float) -> void:
 	
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta * 1.5
+		if velocity.y > 0:
+			velocity.y -= jump_ascend * delta
+		else:
+			velocity.y -= jump_descend * delta
 
 	handle_movement_state(delta)
 	
@@ -152,19 +147,13 @@ func handle_movement_state(delta):
 			full_body_collision.disabled = true
 			half_body_collision.disabled = false
 			
-		player_movement.SPRINTING:
-			head.position.y = lerp(head.position.y, 0.0, delta * lerp_speed)
-			cur_speed = sprint_speed
-			full_body_collision.disabled = false
-			half_body_collision.disabled = true
-			
 		player_movement.SLIDING:
 			head.position.y = lerp(head.position.y, crouch_depth, delta * lerp_speed)
 			full_body_collision.disabled = true
 			half_body_collision.disabled = false
 			
 		player_movement.WALKING:
-			cur_speed = walking_speed
+			cur_speed = base_move_speed
 			head.position.y = lerp(head.position.y, 0.0, delta * lerp_speed)
 			full_body_collision.disabled = false
 			half_body_collision.disabled = true
@@ -191,19 +180,8 @@ func heal():
 	pass
 
 func update_ui():
-	if stamina_bar:
-		stamina_bar.value = cur_stamina
 	if health_bar:
 		health_bar.value = cur_heatlh
-		
-func handle_stamina():
-	if player_movement_state == player_movement.SPRINTING:
-		cur_stamina -= stamina_drain_speed
-		if cur_stamina <= 0:
-			player_movement_state = player_movement.WALKING
-	elif cur_stamina < max_stamina:
-			cur_stamina += 1
-		
 
 func get_magnitude(x: float, y: float, z: float) -> float:
 	return sqrt((x*x) + (y*y) + (z*z))

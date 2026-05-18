@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://7g2qelxkodbp"]
 
 [ext_resource type="Script" uid="uid://y545jpfulna1" path="res://scripts/player/player.gd" id="1_hmply"]
-[ext_resource type="Texture2D" uid="uid://b4lqpxpp48631" path="res://assets/ui_resources/stamina.svg" id="2_so2s4"]
 [ext_resource type="Texture2D" uid="uid://v3htldfknmb" path="res://assets/ui_resources/health.svg" id="3_kai5h"]
 [ext_resource type="Texture2D" uid="uid://ceev1p0ebitdi" path="res://assets/ui_resources/bar_backsplash.svg" id="4_jft68"]
 [ext_resource type="Texture2D" uid="uid://dolj6ktdxckfv" path="res://assets/ui_resources/bar_outline.svg" id="5_jft68"]
@@ -24,16 +23,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60252, 0)
 shape = SubResource("CapsuleShape3D_jft68")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=816587902]
-
-[node name="StaminaBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=899065451]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 413.0
-offset_bottom = 20.0
-nine_patch_stretch = true
-texture_under = ExtResource("4_jft68")
-texture_over = ExtResource("5_jft68")
-texture_progress = ExtResource("2_so2s4")
 
 [node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=2031845484]
 anchors_preset = 1
