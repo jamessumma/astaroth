@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="astaroth"
-run/main_scene="uid://xu2ep7b0j5ws"
+run/main_scene="uid://74gckkiun8hy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[importer_defaults]
+
+scene={
+&"materials/extract": 1
+}
 
 [input]
 

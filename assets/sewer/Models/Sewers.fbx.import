@@ -1,0 +1,146 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://brdkgbsr17d1u"
+path="res://.godot/imported/Sewers.fbx-1fdcc7de35ac2a742c452bc1b27c0d65.scn"
+
+[deps]
+
+source_file="res://assets/sewer/Models/Sewers.fbx"
+dest_files=["res://.godot/imported/Sewers.fbx-1fdcc7de35ac2a742c452bc1b27c0d65.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"meshes": {
+"Serwers02_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/sewer/pieces/test.tres",
+"save_to_file/path": "uid://c0b7e6a4prlrv"
+},
+"SerwersP1": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/sewer/pieces/straight_door.tres",
+"save_to_file/path": "uid://jdvrqyh1em0g"
+},
+"SerwersP1_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/sewer/pieces/straight.tres",
+"save_to_file/path": "uid://sjnm50tvuuxr"
+},
+"SerwersP1_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/sewer/pieces/four_intersection.tres",
+"save_to_file/path": "uid://um80nxqaj0nd"
+},
+"SerwersP1_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/sewer/pieces/wall.tres",
+"save_to_file/path": "uid://sq1w7ryd5l"
+},
+"SerwersP_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/sewer/pieces/straight_doorway_2.tres",
+"save_to_file/path": "uid://tyyfjivvjcp6"
+},
+"SerwersP_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/sewer/pieces/short_curve_right.tres",
+"save_to_file/path": "uid://w12xvf7mih6s"
+},
+"SerwersP_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/sewer/pieces/curve_right.tres",
+"save_to_file/path": "uid://ddx381wjrveaq"
+},
+"SerwersP_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://grate_wall.tres",
+"save_to_file/path": "uid://bei8hcg12l70m"
+},
+"SerwersP_012": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://grate_doorway.tres",
+"save_to_file/path": "uid://di5sk0gqt4ldg"
+},
+"SerwersP_013": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/sewer/pieces/grate_door.tres",
+"save_to_file/path": "uid://nocx2fqshwlp"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

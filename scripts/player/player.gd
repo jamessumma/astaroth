@@ -21,7 +21,7 @@ var instance
 var free_look: bool = false
 var free_look_tilt: float = 10.0
 @export var cur_speed: float = 20.0
-var base_move_speed: float = 20.0
+var base_move_speed: float = 12.0
 var crouch_speed: float = base_move_speed * 0.5
 var crouch_depth: float = -0.7
 var lerp_speed: float = 6.0
@@ -118,7 +118,7 @@ func _physics_process(delta: float) -> void:
 	camera.rotation.z = -deg_to_rad(neck.rotation.y * free_look_tilt)
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
+		velocity.y += jump_velocity
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

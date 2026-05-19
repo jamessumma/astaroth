@@ -1,0 +1,105 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://jdvrqyh1em0g"]
+
+[ext_resource type="Texture2D" uid="uid://dv1d00pmrru5k" path="res://assets/sewer/textures/brick_modern.jpg" id="1_on6im"]
+[ext_resource type="Texture2D" uid="uid://dvl7lcapso4re" path="res://assets/sewer/textures/concrete_bare_01.jpg" id="2_l8wti"]
+[ext_resource type="Texture2D" uid="uid://hndmuxf2irn8" path="res://assets/sewer/textures/brick_pavement.jpg" id="3_4gd28"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uanoa"]
+resource_name = "brick_modern"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_on6im")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cnao"]
+resource_name = "concrete_bare_01"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_l8wti")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jeuaf"]
+resource_name = "brick_pavement"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_4gd28")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_my241"]
+_surfaces = [{
+"aabb": AABB(-0.023967661, -0.0033597257, -0.019266859, 0.041867204, 0.022397812, 0.038533717),
+"format": 34359742465,
+"index_count": 81,
+"index_data": PackedByteArray("AAABAAIAAwABAAAAAAAEAAMAAgAFAAAABAAAAAYABgAAAAUABgAHAAQABwAGAAgACAAGAAUACAAJAAcACgAIAAUACQAIAAoACgALAAkACgAFAAwACwAKAA0ADQAKAAwADQAOAAsADgANAA8ADwANAAwADwAQAA4ADwAMABEAEAAPABEAEQAMABIAEQATABAAEgAUABEAEwARABQAFAAVABMA"),
+"name": "brick_modern",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 22,
+"vertex_data": PackedByteArray("D6KSPA+dYjvDZZ08D6KSPNYuXLuJ1Z08D6KSPNcuXLsPBa871FfEvNYuXLuJ1Z081FfEvA+dYjvDZZ08D6KSPKFR3jsRBa87D6KSPLEmMTw6pX881FfEvLEmMTw6pX88D6KSPJSZhzyDmB081FfEvJSZhzyDmB08D6KSPMP1mzx9+QGy1FfEvMP1mzx9+QGyD6KSPKVR3ju/BK+7D6KSPJSZhzyRmB281FfEvJSZhzyRmB28D6KSPK4mMTw0pX+81FfEvK4mMTw0pX+8D6KSPCSdYju9ZZ28D6KSPNcuXLu/BK+71FfEvCSdYju9ZZ28D6KSPNguXLuI1Z281FfEvNguXLuI1Z28")
+}, {
+"aabb": AABB(-0.023967661, -0.016940264, -0.019266859, 0.041867204, 0.013580538, 0.038533717),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAABAAAAAAAFAAQABgAHAAgACAAJAAYACgAGAAkACQALAAoA"),
+"name": "concrete_bare_01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("D6KSPE/GirwFRUu8D6KSPNguXLuI1Z28D6KSPNcuXLu/BK+7D6KSPE/GirzBBK+71FfEvNguXLuI1Z281FfEvE/GirwFRUu8D6KSPE/Girz9REs8D6KSPE/GirwNBa87D6KSPNcuXLsPBa87D6KSPNYuXLuJ1Z081FfEvE/Girz9REs81FfEvNYuXLuJ1Z08")
+}, {
+"aabb": AABB(-0.023967661, -0.016940264, -0.012406592, 0.041867204, 1e-05, 0.024813177),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "brick_pavement",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("1FfEvE/GirwFRUu8D6KSPE/GirwFRUu8D6KSPE/Girz9REs81FfEvE/Girz9REs8")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "SerwersP1"
+_surfaces = [{
+"aabb": AABB(-0.023967661, -0.0033597257, -0.019266859, 0.041867204, 0.022397812, 0.038533717),
+"attribute_data": PackedByteArray("yHEpPRRMGD/0sSI9s0FOPxjG8D6yQU4/FsbwPtLu+z4pqBw+riy8PsNxKT0UTBg/Uw+tPgCeQj4/qSI/uN3nPVjvTD/Q7vs+1spuPwSeQj41FI8/siy8PqtdnT8QTBg/rF2dPw9MGD9Y70w/skFOP6yTnT+yQU4/YIsbv8h/oD4Y0y8/yn+gPhrTLz9yMv0+YYsbv3Yy/T5fixu/eJgnPxjTLz94mCc/GNMvPwPLAz9eixu/AssDP1+LG79SNvs+F9MvP1Q2+z4W0y8/kw9IP16LG7+VD0g/Xosbv3oy/T4X0y8/ejL9PhjTLz/If6A+Xosbv8R/oD5gixu/STQ5PxjTLz9KNDk/F9MvPzQqaT9dixu/MyppP1yLG7/YwV8+GdMvP9TBXz4Y0y8/3mQCP1yLG7/eZAI/X4sbvwDLAz8Y0y8//8oDPxjTLz94mCc/Xosbv3iYJz9gixu/SK62PRjTLz84rrY9GdMvP3KXjT5eixu/dJeNPg=="),
+"format": 34359742487,
+"index_count": 81,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAMABgAEAAMABwAGAAMABwADAAgACQAHAAgACgAJAAgACgAIAAsADAAIAA0ADQAOAAwADwAQABEAEQASAA8AEwAUABUAFQAWABMAFwAYABkAGQAaABcAGwAcAB0AHQAeABsAHwAgACEAIQAiAB8AIwAkACUAJQAmACMAJwAoACkAKQAqACcAKwAsAC0ALQAuACsA"),
+"material": SubResource("StandardMaterial3D_uanoa"),
+"name": "brick_modern",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 47,
+"vertex_data": PackedByteArray("D6KSPA+dYjvDZZ08D6KSPNYuXLuJ1Z08D6KSPNcuXLsPBa87D6KSPKFR3jsRBa87D6KSPLEmMTw6pX88D6KSPA+dYjvDZZ08D6KSPJSZhzyDmB08D6KSPMP1mzx9+QGyD6KSPKVR3ju/BK+7D6KSPJSZhzyRmB28D6KSPK4mMTw0pX+8D6KSPCSdYju9ZZ28D6KSPCSdYju9ZZ28D6KSPNcuXLu/BK+7D6KSPNguXLuI1Z281FfEvK4mMTw0pX+8D6KSPK4mMTw0pX+8D6KSPCSdYju9ZZ281FfEvCSdYju9ZZ281FfEvNYuXLuJ1Z08D6KSPNYuXLuJ1Z08D6KSPA+dYjvDZZ081FfEvA+dYjvDZZ081FfEvMP1mzx9+QGyD6KSPMP1mzx9+QGyD6KSPJSZhzyRmB281FfEvJSZhzyRmB281FfEvA+dYjvDZZ08D6KSPA+dYjvDZZ08D6KSPLEmMTw6pX881FfEvLEmMTw6pX881FfEvJSZhzyRmB28D6KSPJSZhzyRmB28D6KSPK4mMTw0pX+81FfEvK4mMTw0pX+81FfEvJSZhzyDmB08D6KSPJSZhzyDmB08D6KSPMP1mzx9+QGy1FfEvMP1mzx9+QGy1FfEvCSdYju9ZZ28D6KSPCSdYju9ZZ28D6KSPNguXLuI1Z281FfEvNguXLuI1Z281FfEvLEmMTw6pX88D6KSPLEmMTw6pX88D6KSPJSZhzyDmB081FfEvJSZhzyDmB08AAD/fwAA/n8AAP9/AAD+fwAA/38AAP5/AAD/fwAA/n8AAP9//v/+fwAA/38AAP5/AAD/f////n8AAP9/AAAAAAAA/3/+//5/AAD/fwAAAAAAAP9/AAAAAAAA/38AAAAAAAD/f////n8AAP9/AAD+fwAA/38AAP5//3/xSf///7//f/FJ////v/9/h2f///+//3+HZ/7//7+25///////P7bn//////8/h+cAAP///z+H5wAA////P/9/AAD///+//38AAP///7//f9Mt////v/9/0y3///+/h+cAAP7//z+H5wAA////P/DJAAD///8/8MkAAP7//z//f9Mt////v/9/0y3///+//3/xSf///7//f/FJ////v9KtAAD///+/0q0AAP///7//fwAA////v/9/AAD///+//3+HZ////7//f4dn////v/9/R5j///+//39HmP///7/wyQAA////v/DJAAD+//+/0q0AAP///7/SrQAA////vw==")
+}, {
+"aabb": AABB(-0.023967661, -0.016940264, -0.019266859, 0.041867204, 0.013580538, 0.038533717),
+"attribute_data": PackedByteArray("CQ3Zvl6ffT9iXGy/AHcPOwQRuT0Adg87BBG5PV6ffT987LA/Xp99P4IwXj9en30/hjBePwB2Dztu1/A/AHYPO5Ik4r8ARhk7BPCjPwBGGTsE8KM/Kql9P5Ak4r8qqX0/kiTivyqpfT8E8KM/Kql9PwTwoz8ARRk7kCTivwBGGTs="),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwA"),
+"material": SubResource("StandardMaterial3D_6cnao"),
+"name": "concrete_bare_01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("D6KSPE/GirwFRUu8D6KSPNguXLuI1Z28D6KSPNcuXLu/BK+7D6KSPE/GirzBBK+7D6KSPE/Girz9REs8D6KSPE/GirwNBa87D6KSPNcuXLsPBa87D6KSPNYuXLuJ1Z081FfEvNguXLuI1Z28D6KSPNguXLuI1Z28D6KSPE/GirwFRUu81FfEvE/GirwFRUu81FfEvE/Girz9REs8D6KSPE/Girz9REs8D6KSPNYuXLuJ1Z081FfEvNYuXLuJ1Z08AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/R5j///+//39HmP///7//f/Sq////v/9/9Kr///+/CdX//////z8J1f//////P7bn//////8/tuf//////z8=")
+}, {
+"aabb": AABB(-0.023967661, -0.016940264, -0.012406592, 0.041867204, 1e-05, 0.024813177),
+"attribute_data": PackedByteArray("rPgrvw+ofj9gcX8/D6h+P2Bxfz+A+Ks7qvgrv4D4qzs="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_jeuaf"),
+"name": "brick_pavement",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("1FfEvE/GirwFRUu8D6KSPE/GirwFRUu8D6KSPE/Girz9REs81FfEvE/Girz9REs8/3///////z//f///////P/9///////8//3///////z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_my241")

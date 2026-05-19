@@ -1,0 +1,105 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://sjnm50tvuuxr"]
+
+[ext_resource type="Texture2D" uid="uid://dv1d00pmrru5k" path="res://assets/sewer/Textures/brick_modern.jpg" id="1_smhiw"]
+[ext_resource type="Texture2D" uid="uid://dvl7lcapso4re" path="res://assets/sewer/Textures/concrete_bare_01.jpg" id="2_b7ixv"]
+[ext_resource type="Texture2D" uid="uid://hndmuxf2irn8" path="res://assets/sewer/Textures/brick_pavement.jpg" id="3_c2frj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uanoa"]
+resource_name = "brick_modern"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_smhiw")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cnao"]
+resource_name = "concrete_bare_01"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_b7ixv")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jeuaf"]
+resource_name = "brick_pavement"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_c2frj")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rs3rn"]
+_surfaces = [{
+"aabb": AABB(-0.020933602, -0.003104141, -0.019266859, 0.041867204, 0.02239781, 0.038533717),
+"format": 34359742465,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAABAACAAUABQAGAAQAAwAHAAEABwADAAgACAAJAAcACQAIAAoACgALAAkACwAKAAwADAANAAsADQAMAA4ADgAPAA0ADwAOABAAEAARAA8A"),
+"name": "brick_modern",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("8nyrvK1WNTw2pX+88nyrPK1WNTw2pX+88nyrPCRdczu+ZZ288nyrvJSxiTySmB288nyrvCRdczu+ZZ288nyrPNhuS7uI1Z288nyrvNhuS7uI1Z288nyrPJSxiTySmB288nyrvMINnjz3ZA+y8nyrPMINnjz3ZA+y8nyrvJSxiTyCmB088nyrPJSxiTyCmB088nyrvK9WNTw4pX888nyrPK9WNTw4pX888nyrvA9dczvCZZ088nyrPA9dczvCZZ088nyrvNZuS7uI1Z088nyrPNZuS7uI1Z08")
+}, {
+"aabb": AABB(-0.020933602, -0.01668468, -0.019266859, 0.041867204, 0.013580538, 0.038533717),
+"format": 34359742465,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQA"),
+"name": "concrete_bare_01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("8nyrvNhuS7uI1Z288nyrPNhuS7uI1Z288nyrPE+uiLwGRUu88nyrvE+uiLwGRUu88nyrvE+uiLz8REs88nyrPE+uiLz8REs88nyrPNZuS7uI1Z088nyrvNZuS7uI1Z08")
+}, {
+"aabb": AABB(-0.020933602, -0.01668468, -0.012406593, 0.041867204, 1e-05, 0.024813177),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "brick_pavement",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("8nyrvE+uiLwGRUu88nyrPE+uiLwGRUu88nyrPE+uiLz8REs88nyrvE+uiLz8REs8")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "SerwersP1_001"
+_surfaces = [{
+"aabb": AABB(-0.020933602, -0.003104141, -0.019266859, 0.041867204, 0.02239781, 0.038533717),
+"attribute_data": PackedByteArray("YIsbv8h/oD4Y0y8/yn+gPhrTLz9yMv0+YYsbv3Yy/T5fixu/eJgnPxjTLz94mCc/GNMvPwPLAz9eixu/AssDP1+LG79SNvs+F9MvP1Q2+z4W0y8/kw9IP16LG7+VD0g/Xosbv3oy/T4X0y8/ejL9PhjTLz/If6A+Xosbv8R/oD5gixu/STQ5PxjTLz9KNDk/F9MvPzQqaT9dixu/MyppP1yLG7/YwV8+GdMvP9TBXz4Y0y8/3mQCP1yLG7/eZAI/X4sbvwDLAz8Y0y8//8oDPxjTLz94mCc/Xosbv3iYJz9gixu/SK62PRjTLz84rrY9GdMvP3KXjT5eixu/dJeNPg=="),
+"format": 34359742487,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwA"),
+"material": SubResource("StandardMaterial3D_uanoa"),
+"name": "brick_modern",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("8nyrvK1WNTw2pX+88nyrPK1WNTw2pX+88nyrPCRdczu+ZZ288nyrvCRdczu+ZZ288nyrvNZuS7uI1Z088nyrPNZuS7uI1Z088nyrPA9dczvCZZ088nyrvA9dczvCZZ088nyrvMINnjz3ZA+y8nyrPMINnjz3ZA+y8nyrPJSxiTySmB288nyrvJSxiTySmB288nyrvA9dczvCZZ088nyrPA9dczvCZZ088nyrPK9WNTw4pX888nyrvK9WNTw4pX888nyrvJSxiTySmB288nyrPJSxiTySmB288nyrPK1WNTw2pX+88nyrvK1WNTw2pX+88nyrvJSxiTyCmB088nyrPJSxiTyCmB088nyrPMINnjz3ZA+y8nyrvMINnjz3ZA+y8nyrvCRdczu+ZZ288nyrPCRdczu+ZZ288nyrPNhuS7uI1Z288nyrvNhuS7uI1Z288nyrvK9WNTw4pX888nyrPK9WNTw4pX888nyrPJSxiTyCmB088nyrvJSxiTyCmB08/3/xSf///7//f/FJ////v/9/h2f///+//3+HZ/7//7+25///////P7bn//////8/h+cAAP///z+H5wAA////P/9/AAD///+//38AAP///7//f9Mt////v/9/0y3///+/h+cAAP7//z+H5wAA////P/DJAAD///8/8MkAAP7//z//f9Mt////v/9/0y3///+//3/xSf///7//f/FJ////v9KtAAD///+/0q0AAP///7//fwAA////v/9/AAD///+//3+HZ////7//f4dn////v/9/R5j///+//39HmP///7/wyQAA////v/DJAAD+//+/0q0AAP///7/SrQAA////vw==")
+}, {
+"aabb": AABB(-0.020933602, -0.01668468, -0.019266859, 0.041867204, 0.013580538, 0.038533717),
+"attribute_data": PackedByteArray("kiTivwBGGTsE8KM/AEYZOwTwoz8qqX0/kCTivyqpfT+SJOK/Kql9PwTwoz8qqX0/BPCjPwBFGTuQJOK/AEYZOw=="),
+"format": 34359742487,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQA"),
+"material": SubResource("StandardMaterial3D_6cnao"),
+"name": "concrete_bare_01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("8nyrvNhuS7uI1Z288nyrPNhuS7uI1Z288nyrPE+uiLwGRUu88nyrvE+uiLwGRUu88nyrvE+uiLz8REs88nyrPE+uiLz8REs88nyrPNZuS7uI1Z088nyrvNZuS7uI1Z08/39HmP///7//f0eY////v/9/9Kr///+//3/0qv///78J1f//////PwnV//////8/tuf//////z+25///////Pw==")
+}, {
+"aabb": AABB(-0.020933602, -0.01668468, -0.012406593, 0.041867204, 1e-05, 0.024813177),
+"attribute_data": PackedByteArray("rPgrvw+ofj9gcX8/D6h+P2Bxfz+A+Ks7qvgrv4D4qzs="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_jeuaf"),
+"name": "brick_pavement",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("8nyrvE+uiLwGRUu88nyrPE+uiLwGRUu88nyrPE+uiLz8REs88nyrvE+uiLz8REs8/3///////z//f///////P/9///////8//3///////z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_rs3rn")
