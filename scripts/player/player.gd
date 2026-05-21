@@ -104,12 +104,8 @@ func _physics_process(delta: float) -> void:
 	handle_movement_state(delta)
 	
 	if Input.is_action_just_pressed("shoot"):
-		if !db_shotgun_shoot_anim.is_playing():
-			db_shotgun_shoot_anim.play("shoot")
-			instance = bullet.instantiate()
-			instance.position = gun_barrel.global_position
-			instance.transform.basis = gun_barrel.global_transform.basis
-			get_parent().add_child(instance)
+		shoot()
+
 			
 			
 	if !free_look:
@@ -168,6 +164,12 @@ func restart():
 func shoot():
 	if !can_shoot:
 		return
+	if !db_shotgun_shoot_anim.is_playing():
+			db_shotgun_shoot_anim.play("shoot")
+			instance = bullet.instantiate()
+			instance.position = gun_barrel.global_position
+			instance.transform.basis = gun_barrel.global_transform.basis
+			get_parent().add_child(instance)
 
 func kill():
 	dead = true

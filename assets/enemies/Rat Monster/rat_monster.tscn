@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://rkenhrku2tc"]
+
+[ext_resource type="PackedScene" uid="uid://d1j0ep23pkmyj" path="res://assets/enemies/Rat Monster/Rat Monster.fbx" id="1_n0rmy"]
+
+[sub_resource type="GDScript" id="GDScript_n0rmy"]
+script/source = "extends Node3D
+
+@onready var animation_player = $AnimationPlayer
+var time_passed: float = 0.0
+const ATTACK_INTERVAL: float = 5.0
+
+func _ready() -> void:
+	animation_player.play(\"metarig|Attack 2 fists\")
+
+# _process runs every single frame
+func _process(delta: float) -> void:
+	time_passed += delta
+	
+	if time_passed >= ATTACK_INTERVAL:
+		animation_player.play(\"metarig|Attack 2 fists\")
+		time_passed = 0.0
+"
+
+[node name="Rat Monster" unique_id=703538982 instance=ExtResource("1_n0rmy")]
+script = SubResource("GDScript_n0rmy")
+
+[node name="Skeleton3D" parent="metarig" parent_id_path=PackedInt32Array(173375624) index="0" unique_id=1249026979]
+bones/0/position = Vector3(0, 0.000552, 0.0073907333)
+bones/0/rotation = Quaternion(0.8001267, 7.171184e-08, 9.5943506e-08, 0.59983116)
+bones/1/rotation = Quaternion(0.10786943, -1.727507e-13, 2.5718105e-08, 0.99416506)
+bones/2/rotation = Quaternion(-0.042423844, 5.162537e-14, -1.0114639e-08, 0.99909973)
+bones/3/rotation = Quaternion(-0.048459433, 0.047146164, -0.07809321, 0.9946509)
+bones/6/rotation = Quaternion(-0.30850568, -3.459824e-07, -2.5456096e-08, 0.95122254)
+bones/8/rotation = Quaternion(-0.50307566, -0.42999136, -0.49684697, 0.561396)
+bones/9/rotation = Quaternion(-0.25150487, 0.6490994, -0.42108083, 0.58146906)
+bones/10/rotation = Quaternion(0.32018563, -0.06522677, -0.027418993, 0.94470894)
+bones/23/rotation = Quaternion(-0.49010444, 0.46053007, 0.40077722, 0.62216353)
+bones/24/rotation = Quaternion(-0.24623111, -0.5766265, 0.55726594, 0.5443592)
+bones/25/rotation = Quaternion(0.20557587, 0.032227974, 0.09666106, 0.97332245)
+bones/38/rotation = Quaternion(-9.686434e-08, 0.69765794, 0.7164311, -9.1536926e-08)
+bones/46/rotation = Quaternion(0.9817145, 0.15455279, -0.046785574, 0.10080305)
+bones/47/rotation = Quaternion(0.301228, 0.048354343, 0.13442832, 0.9427898)
+bones/48/rotation = Quaternion(-0.75559604, 0.00563849, 0.0424668, 0.6536357)
+bones/49/rotation = Quaternion(5.5405275e-07, 0.96124876, -0.27568284, -2.974266e-07)
+bones/53/rotation = Quaternion(0.8476829, -0.07347452, 0.055496942, 0.5224514)
+bones/54/rotation = Quaternion(0.37368244, -0.06252449, -0.041572697, 0.92451286)
+bones/55/rotation = Quaternion(-0.45904964, 0.005531809, -0.019396784, 0.8881816)
+bones/56/rotation = Quaternion(-6.937366e-07, 0.96124864, -0.27568293, 3.374875e-07)
+bones/58/rotation = Quaternion(-0.6797046, 0.6797062, -0.19493653, -0.19493817)
+bones/60/rotation = Quaternion(0.9944325, -0.066136606, -0.04377462, -0.06938226)
+bones/61/rotation = Quaternion(0.09746147, -0.046822347, 0.04992392, 0.99288297)
+bones/62/rotation = Quaternion(0.20930359, -0.041384477, 0.038719613, 0.976207)
+bones/63/rotation = Quaternion(0.34139973, -0.024960298, 0.03671703, 0.93886906)
+bones/64/rotation = Quaternion(0.32074875, -0.0034616601, 0.027787397, 0.9467504)
+bones/65/rotation = Quaternion(-0.094560176, -0.13507678, 0.19740993, 0.96635497)
+
+[node name="Cube_001" parent="metarig/Skeleton3D" index="0" unique_id=578697607]
+transform = Transform3D(0.9833572, 0.14607711, 0.108026445, 0.14343494, -0.25926048, -0.9550966, -0.11151081, 0.95469606, -0.27589822, 0.0005715621, -0.0033521033, 0.015992207)
+bone_idx = 6
