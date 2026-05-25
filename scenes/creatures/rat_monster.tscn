@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 [node name="Rat Monster" unique_id=703538982 instance=ExtResource("1_n0rmy")]
 script = SubResource("GDScript_n0rmy")
 
-[node name="Skeleton3D" parent="metarig" parent_id_path=PackedInt32Array(173375624) index="0" unique_id=1249026979]
+[node name="Skeleton3D" parent="metarig" parent_id_path=PackedInt32Array(394503977) index="0" unique_id=1547477586]
 bones/0/position = Vector3(0, 0.000552, 0.0073907333)
 bones/0/rotation = Quaternion(0.8001267, 7.171184e-08, 9.5943506e-08, 0.59983116)
 bones/1/rotation = Quaternion(0.10786943, -1.727507e-13, 2.5718105e-08, 0.99416506)
@@ -54,6 +54,6 @@ bones/63/rotation = Quaternion(0.34139973, -0.024960298, 0.03671703, 0.93886906)
 bones/64/rotation = Quaternion(0.32074875, -0.0034616601, 0.027787397, 0.9467504)
 bones/65/rotation = Quaternion(-0.094560176, -0.13507678, 0.19740993, 0.96635497)
 
-[node name="Cube_001" parent="metarig/Skeleton3D" index="0" unique_id=578697607]
+[node name="Cube_001" parent="metarig/Skeleton3D" index="0" unique_id=544415205]
 transform = Transform3D(0.9833572, 0.14607711, 0.108026445, 0.14343494, -0.25926048, -0.9550966, -0.11151081, 0.95469606, -0.27589822, 0.0005715621, -0.0033521033, 0.015992207)
 bone_idx = 6
