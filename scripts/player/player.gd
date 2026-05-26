@@ -9,6 +9,8 @@ extends CharacterBody3D
 @onready var health_bar: TextureProgressBar = $CanvasLayer/HealthBar
 @onready var db_shotgun_shoot_anim: AnimationPlayer = $Neck/Head/Camera3D/double_barrel_shotgun/AnimationPlayer2
 @onready var gun_barrel: RayCast3D = $Neck/Head/Camera3D/double_barrel_shotgun/RayCast3D
+@onready var viewport_camera: Camera3D = $CanvasLayer/SubViewportContainer/SubViewport/ViewportCamera
+
 
 var bullet = load("res://assets/weapons/bullet.tscn")
 var instance
@@ -46,6 +48,15 @@ var dead: bool = false
 # this function runs once when the node enters the scene tree
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	# let the dynamic dungeon structure finish loading
+	await get_tree().process_frame
+	
+	# get active world structure of the current dungeon
+	var current_world = camera.get_world_3d()
+	
+	if current_world and current_world.environment:
+		# copy env to the viewport camera
+		viewport_camera.environment = current_world.environment
 
 # this function runs whenever an input event occurs
 func _input(event):
@@ -81,6 +92,7 @@ func _input(event):
 
 # on every rendered frame (expensive)
 func _process(delta):
+	viewport_camera.global_transform = camera.global_transform
 	update_ui()
 	if dead:
 		return

@@ -36,6 +36,19 @@ texture_under = ExtResource("4_jft68")
 texture_over = ExtResource("5_jft68")
 texture_progress = ExtResource("3_kai5h")
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=286250131]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=134968307]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="ViewportCamera" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1276769337]
+cull_mask = 1047554
+
 [node name="HeadCollisionRay" type="RayCast3D" parent="." unique_id=420859459]
 target_position = Vector3(0, 1.8, 0)
 

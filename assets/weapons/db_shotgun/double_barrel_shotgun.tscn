@@ -62,6 +62,7 @@ bones/1/rotation = Quaternion(0.0067209713, -0.7070746, -0.006720966, 0.70707506
 
 [node name="Shotgun_Rigged" parent="Armature/Skeleton3D" index="0" unique_id=1748038387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
+layers = 2
 cast_shadow = 0
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="2" unique_id=679111201]
