@@ -131,5 +131,5 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -2.3379202, -18.370234)
 environment = SubResource("Environment_xn2j3")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=408776771]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95330477, -7.759232)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95330477, 0.031465054)
 layers = 3

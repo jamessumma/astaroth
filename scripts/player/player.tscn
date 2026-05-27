@@ -31,7 +31,7 @@ offset_bottom = 40.0
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=134968307]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1920, 1080)
+size = Vector2i(1280, 960)
 render_target_update_mode = 4
 
 [node name="ViewportCamera" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1276769337]
