@@ -12,7 +12,7 @@ extends CharacterBody3D
 @onready var viewport_camera: Camera3D = $CanvasLayer/SubViewportContainer/SubViewport/ViewportCamera
 
 
-var bullet = load("res://assets/weapons/bullet.tscn")
+var bullet = load("res://scenes/weapons/bullet.tscn")
 var instance
 
 # player vals

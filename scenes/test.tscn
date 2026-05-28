@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cvivgyfglkt17" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_errlg"]
 [ext_resource type="Texture2D" uid="uid://dckv0ll15fq7p" path="res://assets/floor/grid_floor.png" id="1_iyx0m"]
 [ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="2_bl13t"]
-[ext_resource type="ArrayMesh" uid="uid://dxyf3pduyagpn" path="res://assets/sewer/pieces/test.tres" id="4_74lek"]
+[ext_resource type="ArrayMesh" uid="uid://c0b7e6a4prlrv" path="res://assets/sewer/pieces/test.tres" id="4_74lek"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_errlg"]
 albedo_color = Color(0.15117319, 0.22454134, 0.4149491, 1)
