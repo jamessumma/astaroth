@@ -5,11 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://ceev1p0ebitdi" path="res://assets/ui_resources/bar_backsplash.svg" id="4_jft68"]
 [ext_resource type="Texture2D" uid="uid://dolj6ktdxckfv" path="res://assets/ui_resources/bar_outline.svg" id="5_jft68"]
 [ext_resource type="PackedScene" uid="uid://ujbpn20cihgg" path="res://assets/weapons/db_shotgun/double_barrel_shotgun.tscn" id="6_1fo2x"]
+[ext_resource type="Shader" uid="uid://cvf617ytl5yx8" path="res://post_processing.gdshader" id="6_jft68"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ew1dm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jft68"]
 height = 1.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5amry"]
+render_priority = 0
+shader = ExtResource("6_jft68")
+shader_parameter/dither_amount = 0.0
+shader_parameter/hue_tint = Color(1, 1, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_b6sy1"]
+flip_faces = true
+size = Vector2(2, 2)
 
 [node name="Player" type="CharacterBody3D" unique_id=797199737]
 script = ExtResource("1_hmply")
@@ -60,3 +71,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="double_barrel_shotgun" parent="Neck/Head/Camera3D" unique_id=840155535 instance=ExtResource("6_1fo2x")]
 transform = Transform3D(-2.983604, 0.27431044, -0.15120113, 0.26047224, 2.977212, 0.2614672, 0.17396033, 0.2469103, -2.9847567, 0.44488978, -0.29784155, -0.64156497)
+
+[node name="ScreenQuad" type="MeshInstance3D" parent="Neck/Head/Camera3D" unique_id=1072693744]
+transform = Transform3D(1, 4.2351647e-22, 0, 4.2351647e-22, 1, 0, 0, 0, 1, 0, 0, 0)
+layers = 2
+material_override = SubResource("ShaderMaterial_5amry")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_b6sy1")
