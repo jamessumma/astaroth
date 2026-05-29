@@ -1,13 +1,19 @@
 extends Node3D
 
 const SPEED: float = 40.0
+
+var damage: float = 1.0
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var ray: RayCast3D = $RayCast3D
-@onready var particles: GPUParticles3D = $GPUParticles3D
+@onready var sparks: GPUParticles3D = $GPUParticles3D
+@onready var blood_splatter: GPUParticles3D = $BloodSplatter
+var has_impacted: bool = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	ray.collide_with_areas = true
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +26,20 @@ func _on_timer_timeout():
 	queue_free()
 	
 func handle_impact():
+	if has_impacted:
+		return
+	
+	has_impacted = true
+		
+	var collider = ray.get_collider()
+	var particles = sparks
+	
+	if collider and collider.has_method("hit"):
+		# Assuming your body_part.gd script has a hit() function, 
+		# or you can call a custom method there to trigger the signal
+		collider.hit(damage)
+		particles = blood_splatter
+	
 	# get point of the collision
 	var hit_point = ray.get_collision_point()
 	var hit_normal = ray.get_collision_normal()
