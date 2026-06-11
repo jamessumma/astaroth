@@ -27,3 +27,5 @@ func take_damage(damage: float) -> void:
 func die():
 	queue_free()
 	
+func move():
+ 	pass
