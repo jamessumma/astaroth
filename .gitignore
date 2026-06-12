@@ -2,3 +2,25 @@
 .godot/
 /android/
 assets/tmp
+
+.godot/
+.nomedia
+
+# Godot-specific
+.import/
+export.cfg
+export_credentials.cfg
+*.tmp
+*.translation
+
+# Mono
+.mono/
+data_*/
+mono_crash.*.json
+
+# macOS
+.DS_Store
+
+# Misc
+*.blend1
+~*.dll

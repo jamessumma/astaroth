@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bques3tv28vi1"]
+
+[ext_resource type="PackedScene" uid="uid://cdi001t077rwj" path="res://assets/PSX Sewer Pack/Models/Tunnel_02/Sewer_Tunnel_02_End.FBX" id="1_wwn0v"]
+[ext_resource type="Texture2D" uid="uid://dlmrackxf0c4x" path="res://assets/PSX Sewer Pack/Textures/Sewer_Brick_02.PNG" id="2_kcay6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5nne"]
+albedo_texture = ExtResource("2_kcay6")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7prig"]
+data = PackedVector3Array(-1.2011, 0, 3.1927, 0, 0, 3.5, 1.2011, 0, 3.1927, 1.75, 0, 0.79819995, -1.763, 0, 0.83959997, 2, 0, 1.5963, -1.763, 0, 0.83959997, -2, 0, 1.5963, 2, 0, 1.5963, -1.2011, 0, 3.1927, 1.2011, 0, 3.1927, -2, 0, 1.5963, 1.2011, 0, 3.1927, 2, 0, 1.5963, -2, 0, 1.5963, -1.5, 0, 0, -1.763, 0, 0.83959997, 1.75, 0, 0.79819995, 1.5, 0, 0, -1.5, 0, 0, 1.75, 0, 0.79819995)
+
+[node name="Sewer_Tunnel_02_End" unique_id=2112552912 instance=ExtResource("1_wwn0v")]
+
+[node name="Sewer_Tunnel_02_End" parent="." index="0" unique_id=707419134]
+surface_material_override/0 = SubResource("StandardMaterial3D_u5nne")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sewer_Tunnel_02_End" index="0" unique_id=972446119]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sewer_Tunnel_02_End/StaticBody3D" index="0" unique_id=252174474]
+shape = SubResource("ConcavePolygonShape3D_7prig")

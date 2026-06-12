@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bqnnh5xx2isi5"]
+
+[ext_resource type="PackedScene" uid="uid://xj8senfv0x1d" path="res://procedural/pieces/sewer_spawn_02.tscn" id="1_vw3dh"]
+
+[node name="Node3D" type="Node3D" unique_id=1487781326]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=8307443]
+
+[node name="Node3D" parent="." unique_id=2024394698 instance=ExtResource("1_vw3dh")]
+transform = Transform3D(0.8158248, 0, -0.5782991, 0, 1, 0, 0.5782991, 0, 0.8158248, 0, 0, 0)
