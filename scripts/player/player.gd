@@ -181,7 +181,7 @@ func shoot():
 			instance = bullet.instantiate()
 			instance.position = gun_barrel.global_position
 			instance.transform.basis = gun_barrel.global_transform.basis
-			get_parent().add_child(instance)
+			get_tree().root.add_child(instance)
 
 func kill():
 	dead = true

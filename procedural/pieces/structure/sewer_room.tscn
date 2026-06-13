@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bysj88nfbgyid"]
+
+[ext_resource type="PackedScene" uid="uid://dvogjon84266" path="res://procedural/pieces/structure/concrete_floor.tscn" id="1_7p0u0"]
+[ext_resource type="PackedScene" uid="uid://v3bjw6g6dnrq" path="res://procedural/pieces/structure/sewer_arch.tscn" id="2_7p0u0"]
+[ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="3_js5mu"]
+[ext_resource type="PackedScene" uid="uid://olr8l8kx5j8h" path="res://procedural/pieces/sewer_tunnel_02_straight.tscn" id="4_0qsq1"]
+
+[node name="Node3D" type="Node3D" unique_id=1441166170]
+
+[node name="Node3D" parent="." unique_id=218073939 instance=ExtResource("1_7p0u0")]
+
+[node name="Node3D2" parent="." unique_id=1197515141 instance=ExtResource("1_7p0u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.000232, 0, 0)
+
+[node name="Node3D3" parent="." unique_id=1018017051 instance=ExtResource("1_7p0u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.000232, 0, 2.0047717)
+
+[node name="Node3D4" parent="." unique_id=69944360 instance=ExtResource("1_7p0u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0034673214, 0, 2.0047717)
+
+[node name="Node3D5" parent="." unique_id=2112446113 instance=ExtResource("1_7p0u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0034673214, 0, 3.993905)
+
+[node name="Node3D6" parent="." unique_id=23989824 instance=ExtResource("1_7p0u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9802403, 0, 3.993905)
+
+[node name="sewer_arch" parent="." unique_id=720149926 instance=ExtResource("2_7p0u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="Player" parent="." unique_id=797199737 instance=ExtResource("3_js5mu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.14152)
+
+[node name="Sewer_Tunnel_02_Straight" parent="." unique_id=1744926999 instance=ExtResource("4_0qsq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -7)

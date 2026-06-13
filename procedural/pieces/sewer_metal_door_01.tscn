@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://njuve71e8i5w"]
+
+[ext_resource type="PackedScene" uid="uid://djb2uvkaosbws" path="res://procedural/pieces/sewer_tunnel_02_door_frame.tscn" id="1_qgjp8"]
+[ext_resource type="PackedScene" uid="uid://c4v1x7kli4iwf" path="res://procedural/pieces/door_01.tscn" id="2_jmqqq"]
+
+[node name="Node3D" type="Node3D" unique_id=921447664]
+
+[node name="Sewer_Tunnel_02_Door_Frame" parent="." unique_id=1175858987 instance=ExtResource("1_qgjp8")]
+
+[node name="Door_01" parent="." unique_id=2031612162 instance=ExtResource("2_jmqqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5562425, 0, 0.16800582)

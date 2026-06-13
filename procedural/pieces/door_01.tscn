@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c4v1x7kli4iwf"]
+
+[ext_resource type="PackedScene" uid="uid://dp2ymlpj28wgg" path="res://assets/PSX Sewer Pack/Models/Door_01.FBX" id="1_vgfrw"]
+[ext_resource type="Texture2D" uid="uid://d0plp2qenywr" path="res://assets/PSX Sewer Pack/Textures/Door_Metal_01_B.PNG" id="2_l00y3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f11sh"]
+albedo_texture = ExtResource("2_l00y3")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qv5ac"]
+data = PackedVector3Array(0, 0, 2.32, 0, 0, 0, 0, 0.04, 2.32, 0, 0.04, 0, 0, 0.04, 2.32, 0, 0, 0, 0, 0.04, 2.32, 0, 0.04, 0, 1.12, 0.04, 2.32, 1.12, 0.04, 0, 1.12, 0.04, 2.32, 0, 0.04, 0, 1.12, 0.04, 2.32, 1.12, 0.04, 0, 1.12, 0, 2.32, 1.12, 0, 0, 1.12, 0, 2.32, 1.12, 0.04, 0, 1.12, 0, 2.32, 1.12, 0, 0, 0, 0, 2.32, 0, 0, 0, 0, 0, 2.32, 1.12, 0, 0, 1.12, 0, 0, 1.12, 0.04, 0, 0, 0, 0, 0, 0.04, 0, 0, 0, 0, 1.12, 0.04, 0, 0, 0, 2.32, 0, 0.04, 2.32, 1.12, 0.04, 2.32, 1.12, 0, 2.32, 0, 0, 2.32, 1.12, 0.04, 2.32)
+
+[node name="Door_01" unique_id=2031612162 instance=ExtResource("1_vgfrw")]
+
+[node name="Door_01" parent="." index="0" unique_id=538836481]
+surface_material_override/0 = SubResource("StandardMaterial3D_f11sh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door_01" index="0" unique_id=74069455]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_01/StaticBody3D" index="0" unique_id=2034664865]
+shape = SubResource("ConcavePolygonShape3D_qv5ac")

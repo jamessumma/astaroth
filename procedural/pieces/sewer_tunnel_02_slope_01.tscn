@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cyc5l7uchcr6j"]
+
+[ext_resource type="PackedScene" uid="uid://djsjypr57bgwl" path="res://assets/PSX Sewer Pack/Models/Tunnel_02/Sewer_Tunnel_02_Slope_01.FBX" id="1_kars4"]
+[ext_resource type="Texture2D" uid="uid://dlmrackxf0c4x" path="res://assets/PSX Sewer Pack/Textures/Sewer_Brick_02.PNG" id="2_y0j2a"]
+[ext_resource type="Texture2D" uid="uid://itvhqvvyu464" path="res://assets/PSX Sewer Pack/Textures/Sewer_Floor_01.PNG" id="3_xfthg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4y1yk"]
+albedo_texture = ExtResource("2_y0j2a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lddwo"]
+albedo_texture = ExtResource("3_xfthg")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_n5h3q"]
+data = PackedVector3Array(1.75, 0, 0.79819995, 1.75, -6, 0.29819998, 1.5, 0, 0, 1.5, -6, -0.5, 1.5, 0, 0, 1.75, -6, 0.29819998, -2, 0, 1.5963, -1.763, 0, 0.83959997, -2, -6, 1.0963, -1.763, -6, 0.3396, -2, -6, 1.0963, -1.763, 0, 0.83959997, -1.2011, 0, 3.1927, -2, 0, 1.5963, -1.2011, -6, 2.6927, -2, -6, 1.0963, -1.2011, -6, 2.6927, -2, 0, 1.5963, 1.2011, -6, 2.6927, 0, 0, 3.5, 0, -6, 3, 1.2011, 0, 3.1927, 0, 0, 3.5, 1.2011, -6, 2.6927, 1.2011, 0, 3.1927, 1.2011, -6, 2.6927, 2, 0, 1.5963, 2, -6, 1.0963, 2, 0, 1.5963, 1.2011, -6, 2.6927, 0, -6, 3, -1.2011, 0, 3.1927, -1.2011, -6, 2.6927, 0, 0, 3.5, -1.2011, 0, 3.1927, 0, -6, 3, 2, 0, 1.5963, 2, -6, 1.0963, 1.75, 0, 0.79819995, 1.75, -6, 0.29819998, 1.75, 0, 0.79819995, 2, -6, 1.0963, -1.763, 0, 0.83959997, -1.5, 0, 0, -1.763, -6, 0.3396, -1.5, -6, -0.5, -1.763, -6, 0.3396, -1.5, 0, 0, 1.5, 0, 0, 1.5, -6, -0.5, -1.5, 0, 0, -1.5, -6, -0.5, -1.5, 0, 0, 1.5, -6, -0.5)
+
+[node name="Sewer_Tunnel_02_Slope_01" unique_id=180071513 instance=ExtResource("1_kars4")]
+
+[node name="Sewer_Tunnel_02_Slope_01" parent="." index="0" unique_id=1604955606]
+surface_material_override/0 = SubResource("StandardMaterial3D_4y1yk")
+surface_material_override/1 = SubResource("StandardMaterial3D_lddwo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sewer_Tunnel_02_Slope_01" index="0" unique_id=1419365626]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sewer_Tunnel_02_Slope_01/StaticBody3D" index="0" unique_id=133223332]
+shape = SubResource("ConcavePolygonShape3D_n5h3q")

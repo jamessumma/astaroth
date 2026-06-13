@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://llai4mcw0gk7"]
+
+[ext_resource type="Texture2D" uid="uid://dv1d00pmrru5k" path="res://assets/sewer/Textures/brick_modern.jpg" id="1_70ahn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d8o7b"]
+size = Vector2(6, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rht6"]
+albedo_texture = ExtResource("1_70ahn")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ochdn"]
+data = PackedVector3Array(3, 0, 3, -3, 0, 3, 3, 0, -3, -3, 0, 3, -3, 0, -3, 3, 0, -3)
+
+[node name="Node3D" type="Node3D" unique_id=830501530]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=91796232]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3, 0)
+mesh = SubResource("PlaneMesh_d8o7b")
+surface_material_override/0 = SubResource("StandardMaterial3D_8rht6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=962464002]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=929488605]
+shape = SubResource("ConcavePolygonShape3D_ochdn")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dvogjon84266"]
+
+[ext_resource type="Texture2D" uid="uid://hndmuxf2irn8" path="res://assets/sewer/Textures/brick_pavement.jpg" id="1_iksb8"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iksb8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xov4u"]
+albedo_texture = ExtResource("1_iksb8")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_iksb8"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Node3D" type="Node3D" unique_id=218073939]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1220075308]
+mesh = SubResource("PlaneMesh_iksb8")
+surface_material_override/0 = SubResource("StandardMaterial3D_xov4u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=163870080]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=711977231]
+shape = SubResource("ConcavePolygonShape3D_iksb8")

@@ -1,10 +1,88 @@
 [gd_scene format=3 uid="uid://bqnnh5xx2isi5"]
 
 [ext_resource type="PackedScene" uid="uid://xj8senfv0x1d" path="res://procedural/pieces/sewer_spawn_02.tscn" id="1_vw3dh"]
+[ext_resource type="PackedScene" uid="uid://njuve71e8i5w" path="res://procedural/pieces/sewer_metal_door_01.tscn" id="1_y8r5j"]
+[ext_resource type="PackedScene" uid="uid://bocprwmeouk73" path="res://procedural/pieces/sewer_tunnel_02_split_3.tscn" id="3_uanoq"]
+[ext_resource type="PackedScene" uid="uid://bvle063hx15kx" path="res://procedural/pieces/sewer_tunnel_02_corner_01.tscn" id="4_2fr5p"]
+[ext_resource type="PackedScene" uid="uid://olr8l8kx5j8h" path="res://procedural/pieces/sewer_tunnel_02_straight.tscn" id="5_mvjqs"]
+[ext_resource type="PackedScene" uid="uid://bques3tv28vi1" path="res://procedural/pieces/sewer_tunnel_02_end.tscn" id="6_2dvi2"]
+[ext_resource type="PackedScene" uid="uid://bb3me3x01p3qv" path="res://procedural/pieces/sewer_tunnel_02_split_4.tscn" id="7_km7ww"]
+[ext_resource type="PackedScene" uid="uid://croqjl0uouvqp" path="res://procedural/pieces/sewer_tunnel_02_straight_half.tscn" id="7_y8r5j"]
+
+[sub_resource type="Environment" id="Environment_uanoq"]
 
 [node name="Node3D" type="Node3D" unique_id=1487781326]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=8307443]
+environment = SubResource("Environment_uanoq")
 
-[node name="Node3D" parent="." unique_id=2024394698 instance=ExtResource("1_vw3dh")]
-transform = Transform3D(0.8158248, 0, -0.5782991, 0, 1, 0, 0.5782991, 0, 0.8158248, 0, 0, 0)
+[node name="Spawn" parent="." unique_id=2024394698 instance=ExtResource("1_vw3dh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Sewer_Tunnel_02_Split_3" parent="." unique_id=54583917 instance=ExtResource("3_uanoq")]
+
+[node name="Sewer_Tunnel_02_Split_5" parent="." unique_id=1171166710 instance=ExtResource("3_uanoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 37.645905)
+
+[node name="Sewer_Tunnel_02_Split_6" parent="." unique_id=1372098218 instance=ExtResource("3_uanoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.639149, 0, 59.302116)
+
+[node name="Sewer_Tunnel_02_Straight" parent="." unique_id=1744926999 instance=ExtResource("5_mvjqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.1697693)
+
+[node name="Sewer_Tunnel_02_Straight4" parent="." unique_id=2076900188 instance=ExtResource("5_mvjqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.278229)
+
+[node name="Sewer_Tunnel_02_Straight6" parent="." unique_id=1474937763 instance=ExtResource("5_mvjqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.922949)
+
+[node name="Sewer_Tunnel_02_Straight8" parent="." unique_id=407703854 instance=ExtResource("5_mvjqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.167292)
+
+[node name="Sewer_Tunnel_02_Straight5" parent="." unique_id=640090478 instance=ExtResource("5_mvjqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.056613, 0, 8.055973)
+
+[node name="Sewer_Tunnel_02_Split_4" parent="." unique_id=598416007 instance=ExtResource("7_km7ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.517082)
+
+[node name="Sewer_Tunnel_02_Straight2" parent="." unique_id=876090980 instance=ExtResource("5_mvjqs")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.0566072, 0, 3.2055326)
+
+[node name="Sewer_Tunnel_02_Straight3" parent="." unique_id=1747564430 instance=ExtResource("5_mvjqs")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.176291, 0, 3.2055326)
+
+[node name="Sewer_Tunnel_02_Straight7" parent="." unique_id=219657992 instance=ExtResource("5_mvjqs")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.5287895, 0, 51.5927)
+
+[node name="Sewer_Tunnel_02_Straight9" parent="." unique_id=20668623 instance=ExtResource("5_mvjqs")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.5287895, 0, 73.28946)
+
+[node name="Sewer_Tunnel_02_Corner_01" parent="." unique_id=742428871 instance=ExtResource("4_2fr5p")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.399775, 0, 3.2640247)
+
+[node name="Sewer_Tunnel_02_Corner_05" parent="." unique_id=759700542 instance=ExtResource("4_2fr5p")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -14.374583, 0, 51.245453)
+
+[node name="Sewer_Tunnel_02_Corner_02" parent="." unique_id=323964265 instance=ExtResource("4_2fr5p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.5188694, 0, 21.804228)
+
+[node name="Sewer_Tunnel_02_Corner_06" parent="." unique_id=1659907274 instance=ExtResource("4_2fr5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.47666, 0, 65.743324)
+
+[node name="Sewer_Tunnel_02_Corner_04" parent="." unique_id=1381269649 instance=ExtResource("4_2fr5p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.343424, 0, 51.31248)
+
+[node name="Sewer_Tunnel_02_Corner_03" parent="." unique_id=1688914184 instance=ExtResource("4_2fr5p")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.164289, 0, 4.378479)
+
+[node name="Node3D" parent="." unique_id=921447664 instance=ExtResource("1_y8r5j")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -23.156942, 0, 11.017561)
+
+[node name="Sewer_Tunnel_02_Straight_Half" parent="." unique_id=1444670929 instance=ExtResource("7_y8r5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 4.6)
+
+[node name="Sewer_Tunnel_02_End" parent="." unique_id=2112552912 instance=ExtResource("6_2dvi2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.610299, 0, -3.2527618)
+
+[node name="Sewer_Tunnel_02_End2" parent="." unique_id=803593593 instance=ExtResource("6_2dvi2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.250929, 0, 73.50432)
