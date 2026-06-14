@@ -1,8 +1,8 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://ddx381wjrveaq"]
 
-[ext_resource type="Texture2D" uid="uid://dv1d00pmrru5k" path="res://assets/sewer/textures/brick_modern.jpg" id="1_67tnf"]
-[ext_resource type="Texture2D" uid="uid://dvl7lcapso4re" path="res://assets/sewer/textures/concrete_bare_01.jpg" id="2_l22dn"]
-[ext_resource type="Texture2D" uid="uid://hndmuxf2irn8" path="res://assets/sewer/textures/brick_pavement.jpg" id="3_ob3tx"]
+[ext_resource type="Texture2D" uid="uid://dv1d00pmrru5k" path="res://assets/sewer/Textures/brick_modern.jpg" id="1_67tnf"]
+[ext_resource type="Texture2D" uid="uid://dvl7lcapso4re" path="res://assets/sewer/Textures/concrete_bare_01.jpg" id="2_l22dn"]
+[ext_resource type="Texture2D" uid="uid://hndmuxf2irn8" path="res://assets/sewer/Textures/brick_pavement.jpg" id="3_ob3tx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uanoa"]
 resource_name = "brick_modern"

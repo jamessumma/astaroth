@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://nocx2fqshwlp"]
 
-[ext_resource type="Texture2D" uid="uid://dw74uyefeqxsq" path="res://assets/sewer/textures/Metal.jpg" id="1_qjxgr"]
+[ext_resource type="Texture2D" uid="uid://dw74uyefeqxsq" path="res://assets/sewer/Textures/Metal.jpg" id="1_qjxgr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb567"]
 resource_name = "Metal"
