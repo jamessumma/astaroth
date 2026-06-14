@@ -16,14 +16,14 @@ var bullet = load("res://scenes/weapons/bullet.tscn")
 var instance
 
 # player vals
-@export var max_health: float = 100.0
-@export var cur_heatlh: float = 100.0
+var max_health: float = 100.0
+var cur_health: float = 100.0
 
 # movement vals
 var free_look: bool = false
 var free_look_tilt: float = 10.0
-@export var cur_speed: float = 20.0
-var base_move_speed: float = 12.0
+var base_move_speed: float = 9.0
+var cur_speed: float = base_move_speed
 var crouch_speed: float = base_move_speed * 0.5
 var crouch_depth: float = -0.7
 var lerp_speed: float = 6.0
@@ -57,6 +57,9 @@ func _ready():
 	if current_world and current_world.environment:
 		# copy env to the viewport camera
 		viewport_camera.environment = current_world.environment
+	
+	# set a maximum for the healthbar
+	health_bar.max_value = max_health
 
 # this function runs whenever an input event occurs
 func _input(event):
@@ -187,15 +190,17 @@ func kill():
 	dead = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-func take_damage():
-	pass
-	
-func heal():
-	pass
+func take_damage(amount: float):
+	cur_health = clamp(cur_health - amount, 0, max_health)
+	if cur_health == 0:
+		kill()
+
+func heal(amount: float):
+	cur_health = clamp(cur_health + amount, 0, max_health)
 
 func update_ui():
 	if health_bar:
-		health_bar.value = cur_heatlh
+		health_bar.value = cur_health
 
 func get_magnitude(x: float, y: float, z: float) -> float:
 	return sqrt((x*x) + (y*y) + (z*z))
