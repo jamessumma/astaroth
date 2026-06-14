@@ -24,3 +24,4 @@ mono_crash.*.json
 # Misc
 *.blend1
 ~*.dll
+.vscode
