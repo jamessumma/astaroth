@@ -50,6 +50,9 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	# let the dynamic dungeon structure finish loading
 	await get_tree().process_frame
+
+	# add the player node to group so enemies and such can find them
+	add_to_group("player")
 	
 	# get active world structure of the current dungeon
 	var current_world = camera.get_world_3d()
