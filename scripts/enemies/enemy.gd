@@ -18,6 +18,19 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	handle_state()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func take_damage(amount: float) -> void:
+	cur_health = clamp(cur_health - amount, 0, max_health)
+	if cur_health <= 0:
+		cur_state = state.DEAD
+		
+func handle_state():
 	match cur_state:
 		state.IDLE:
 			handle_idle()
@@ -29,15 +42,6 @@ func _physics_process(delta: float) -> void:
 			# play death animation, then free from memory
 			queue_free()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func take_damage(amount: float) -> void:
-	cur_health = clamp(cur_health - amount, 0, max_health)
-	if cur_health <= 0:
-		cur_state = state.DEAD
-		
 func die():
 	pass
 	

@@ -3,7 +3,36 @@
 [ext_resource type="Script" uid="uid://qwny5oeihvi5" path="res://scripts/enemies/rat.gd" id="1_mu21v"]
 [ext_resource type="PackedScene" uid="uid://tw2d4t7opqki" path="res://scenes/creatures/rat_model.tscn" id="1_xehk6"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mu21v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_be1qc"]
+radius = 0.6010742
+height = 1.8764648
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pktx4"]
+
 [node name="Rat" type="CharacterBody3D" unique_id=792475936]
 script = ExtResource("1_mu21v")
 
 [node name="RatModel" parent="." unique_id=262088448 instance=ExtResource("1_xehk6")]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1702802026]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2139489527]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, -2, 0, 2, -8.742278e-08, 0, 1, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_mu21v")
+
+[node name="BodyHitbox" type="Area3D" parent="." unique_id=504044084]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BodyHitbox" unique_id=541343807]
+transform = Transform3D(1.5, 0, 0, 0, 0.16290988, -1.4911273, 0, 1.4911273, 0.16290988, 0.062966466, 1.4265845, -0.7296776)
+shape = SubResource("CapsuleShape3D_be1qc")
+
+[node name="HeadHitbox" type="Area3D" parent="." unique_id=317232372]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HeadHitbox" unique_id=236445825]
+transform = Transform3D(1, 0, 0, 0, 0.052196503, 0.99863684, 0, -0.99863684, 0.052196503, 0, 1.1974483, 1.0251336)
+shape = SubResource("CapsuleShape3D_pktx4")
