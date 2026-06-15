@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://74gckkiun8hy"]
 
-[ext_resource type="ArrayMesh" uid="uid://1u7rng26tuj1" path="res://assets/sewer/pieces/four_intersection.tres" id="1_qr36t"]
+[ext_resource type="ArrayMesh" uid="uid://um80nxqaj0nd" path="res://assets/sewer/pieces/four_intersection.tres" id="1_qr36t"]
 [ext_resource type="ArrayMesh" uid="uid://sq1w7ryd5l" path="res://assets/sewer/pieces/wall.tres" id="2_3nl3d"]
 [ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="2_sfly1"]
 [ext_resource type="ArrayMesh" uid="uid://di5sk0gqt4ldg" path="res://grate_doorway.tres" id="3_hni1e"]
@@ -126,6 +126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29865265, 0, 0)
 
 [node name="Rat Monster" parent="." unique_id=703538982 instance=ExtResource("6_xn2j3")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -2.3379202, -18.370234)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=480438496]
 environment = SubResource("Environment_xn2j3")

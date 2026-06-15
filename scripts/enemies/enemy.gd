@@ -18,18 +18,16 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	match state:
+	match cur_state:
 		state.IDLE:
-			pass
+			handle_idle()
 		state.CHASE:
-			pass
+			handle_chase()
 		state.ATTACK:
-			pass
+			handle_attack()
 		state.DEAD:
 			# play death animation, then free from memory
 			queue_free()
-			pass
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -41,7 +39,7 @@ func take_damage(amount: float) -> void:
 		cur_state = state.DEAD
 		
 func die():
-	queue_free()
+	pass
 	
 func move():
 	pass
