@@ -47,20 +47,24 @@ var dead: bool = false
 
 # this function runs once when the node enters the scene tree
 func _ready():
+	print("1")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	print("2")
 	# let the dynamic dungeon structure finish loading
 	await get_tree().process_frame
-
+	print("3")
 	# add the player node to group so enemies and such can find them
 	add_to_group("player")
-	
+	print("4")
 	# get active world structure of the current dungeon
 	var current_world = camera.get_world_3d()
-	
+	print("5")
+
 	if current_world and current_world.environment:
 		# copy env to the viewport camera
 		viewport_camera.environment = current_world.environment
-	
+	print("6")
+
 	# set a maximum for the healthbar
 	health_bar.max_value = max_health
 

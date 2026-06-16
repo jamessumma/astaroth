@@ -9,16 +9,23 @@ class_name Rat
 
 var gravity = 10.0
 var base_move_speed = 7
-var attack_range = 5
+var attack_range = 3
 var vision_range = 10
 var player = null
 var distance_to_player = 0
 
 func _ready() -> void:
-	player = get_tree().get_nodes_in_group("player")[0]
-	pass
+	print("rat on ready")
+	await get_tree().process_frame	
+
 
 func _physics_process(delta: float) -> void:
+	if player == null:
+		var players = get_tree().get_nodes_in_group("player")
+		if players.size() > 0:
+			player = players[0]
+		else:
+			return
 	handle_state()
 	distance_to_player = body.global_position.distance_to(player.global_position)
 	
@@ -48,6 +55,9 @@ func handle_chase():
 	velocity.z = base_move_speed * dir.z
 	if distance_to_player < attack_range:
 		cur_state = state.ATTACK
+		
+	# make the enemy face the player
+	look_at(global_position - dir)
 
 
 

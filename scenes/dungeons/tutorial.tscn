@@ -5,7 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="2_sfly1"]
 [ext_resource type="ArrayMesh" uid="uid://di5sk0gqt4ldg" path="res://grate_doorway.tres" id="3_hni1e"]
 [ext_resource type="ArrayMesh" uid="uid://sjnm50tvuuxr" path="res://assets/sewer/pieces/straight.tres" id="4_of2fq"]
+[ext_resource type="PackedScene" uid="uid://cgvqml7o8l41r" path="res://scenes/creatures/rat.tscn" id="5_ycsod"]
 [ext_resource type="PackedScene" uid="uid://rkenhrku2tc" path="res://scenes/creatures/rat_monster.tscn" id="6_xn2j3"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_xn2j3"]
+vertices = PackedVector3Array(1.4085045, -2.0849984, -16.65182, 1.9085045, -1.8349984, -16.65182, 1.9085045, -2.0849984, -17.15182, -1.3414955, -2.0849984, -16.90182, -1.5914955, -2.0849984, -20.15182, -2.3414955, -2.0849984, -20.15182, -2.3414955, -2.0849984, -17.15182, -1.3414955, -2.0849984, -15.151819, 1.4085045, -2.0849984, -14.901819, 7.1585045, -2.0849984, -20.40182, 4.1585045, -2.0849984, -21.40182, 3.6585045, -2.0849984, -19.90182, 3.9085045, -2.0849984, -17.15182, 7.1585045, -2.0849984, -16.90182, 7.1585045, -2.0849984, -21.40182, 4.1585045, -2.0849984, -14.901819, 7.1585045, -2.0849984, -14.901819, 1.9085045, -2.0849984, -19.90182, 1.6585045, -2.0849984, -20.90182, -1.3414955, -2.0849984, -20.90182, 8.4085045, -2.0849984, -17.15182, 8.4085045, -2.0849984, -20.15182, -1.3414955, -2.0849984, -3.6518192, -0.3414955, -2.0849984, -3.4018192, 1.4085045, -2.0849984, -3.6518192, 6.9085045, -2.0849984, 2.3481808, 4.1585045, -2.0849984, 2.5981808, 2.4085045, -2.0849984, -0.9018192, 2.4085045, -2.0849984, -1.4018192, 1.4085045, -2.0849984, -1.6518192, -1.5914955, -2.0849984, 1.3481808, -1.3414955, -2.0849984, 2.0981808, -0.5914955, -2.0849984, 2.3481808, 1.4085045, -2.0849984, 2.3481808, 1.4085045, -2.0849984, 1.5981808, 2.1585045, -2.0849984, 1.3481808, 1.4085045, -2.0849984, -2.4018192, -1.3414955, -2.0849984, -2.1518192, -1.5914955, -2.0849984, -1.4018192, -2.5914955, -2.0849984, -1.4018192, -2.5914955, -2.0849984, 1.3481808, 4.1585045, -2.0849984, 9.098181, 7.1585045, -2.0849984, 9.098181, 7.1585045, -2.0849984, 8.098181, 8.4085045, -2.0849984, 7.848181, 8.4085045, -2.0849984, 5.098181, 7.1585045, -2.0849984, 4.848181, 4.1585045, -2.0849984, 4.598181, 3.9085045, -2.0849984, 7.848181, 1.6585045, -2.0849984, 5.348181, 2.4085045, -2.0849984, 7.848181, -8.5914955, -2.0849984, 5.348181, -9.3414955, -2.0849984, 5.598181, -9.3414955, -2.0849984, 8.348181, -0.5914955, -2.0849984, 8.348181)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 3), PackedInt32Array(3, 0, 7), PackedInt32Array(7, 0, 8), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(12, 9, 13), PackedInt32Array(10, 14, 9), PackedInt32Array(16, 15, 13), PackedInt32Array(13, 15, 12), PackedInt32Array(17, 11, 2), PackedInt32Array(2, 11, 12), PackedInt32Array(19, 18, 4), PackedInt32Array(4, 18, 17), PackedInt32Array(4, 17, 2), PackedInt32Array(4, 2, 3), PackedInt32Array(20, 13, 21), PackedInt32Array(21, 13, 9), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 8), PackedInt32Array(8, 22, 7), PackedInt32Array(16, 25, 15), PackedInt32Array(15, 25, 26), PackedInt32Array(29, 28, 27), PackedInt32Array(32, 31, 30), PackedInt32Array(34, 33, 32), PackedInt32Array(27, 35, 34), PackedInt32Array(36, 29, 37), PackedInt32Array(37, 29, 38), PackedInt32Array(38, 30, 39), PackedInt32Array(39, 30, 40), PackedInt32Array(32, 30, 34), PackedInt32Array(34, 30, 38), PackedInt32Array(34, 38, 29), PackedInt32Array(34, 29, 27), PackedInt32Array(43, 42, 41), PackedInt32Array(44, 43, 45), PackedInt32Array(45, 43, 46), PackedInt32Array(26, 25, 47), PackedInt32Array(47, 25, 46), PackedInt32Array(41, 48, 43), PackedInt32Array(43, 48, 46), PackedInt32Array(46, 48, 47), PackedInt32Array(50, 49, 48), PackedInt32Array(48, 49, 47), PackedInt32Array(52, 51, 53), PackedInt32Array(53, 51, 54), PackedInt32Array(54, 51, 49), PackedInt32Array(54, 49, 50)]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qr36t"]
 data = PackedVector3Array(0.019199999, 0.0037, 0.019199999, 0.0156, 0.0111, 0.0156, 0.0156, 0.0111, 0.0209, 0.0156, 0.0111, 0.0209, 0.019199999, 0.0037, 0.0209, 0.019199999, 0.0037, 0.019199999, 0.0209, 0.0111, 0.0156, 0.0156, 0.0111, 0.0156, 0.019199999, 0.0037, 0.019199999, 0.019199999, 0.0037, 0.019199999, 0.0209, 0.0037, 0.019199999, 0.0209, 0.0111, 0.0156, -0.019299999, -0.0030999999, 0.019299999, -0.019299999, -0.0030999999, 0.0209, -0.019199999, 0.0037, 0.0209, -0.019199999, 0.0037, 0.0209, -0.019199999, 0.0037, 0.019199999, -0.019299999, -0.0030999999, 0.019299999, 0.0095999995, 0.0168, 0.0095999995, 0, 0.019299999, 0, 0, 0.019299999, 0.0209, 0, 0.019299999, 0.0209, 0.0095999995, 0.0168, 0.0209, 0.0095999995, 0.0168, 0.0095999995, 0, 0.019299999, -0.0209, 0, 0.019299999, 0, 0.0095999995, 0.0168, -0.0095999995, 0.0095999995, 0.0168, -0.0095999995, 0.0095999995, 0.0168, -0.0209, 0, 0.019299999, -0.0209, -0.019199999, 0.0037, 0.019199999, -0.019199999, 0.0037, 0.0209, -0.0156, 0.0111, 0.0209, -0.0156, 0.0111, 0.0209, -0.0156, 0.0111, 0.0156, -0.019199999, 0.0037, 0.019199999, 0.0156, 0.0111, 0.0156, 0.0095999995, 0.0168, 0.0095999995, 0.0095999995, 0.0168, 0.0209, 0.0095999995, 0.0168, 0.0209, 0.0156, 0.0111, 0.0209, 0.0156, 0.0111, 0.0156, -0.0095999995, 0.0168, 0.0095999995, -0.0095999995, 0.0168, 0.0209, 0, 0.019299999, 0.0209, 0, 0.019299999, 0.0209, 0, 0.019299999, 0, -0.0095999995, 0.0168, 0.0095999995, -0.0095999995, 0.0168, -0.0095999995, 0, 0.019299999, 0, 0, 0.019299999, -0.0209, 0, 0.019299999, -0.0209, -0.0095999995, 0.0168, -0.0209, -0.0095999995, 0.0168, -0.0095999995, 0.019299999, -0.0030999999, 0.019299999, 0.019199999, 0.0037, 0.019199999, 0.019199999, 0.0037, 0.0209, 0.019199999, 0.0037, 0.0209, 0.019299999, -0.0030999999, 0.0209, 0.019299999, -0.0030999999, 0.019299999, -0.0156, 0.0111, 0.0156, -0.0156, 0.0111, 0.0209, -0.0095999995, 0.0168, 0.0209, -0.0095999995, 0.0168, 0.0209, -0.0095999995, 0.0168, 0.0095999995, -0.0156, 0.0111, 0.0156, 0.019199999, 0.0037, -0.019199999, 0.0156, 0.0111, -0.0156, 0.0209, 0.0111, -0.0156, 0.0209, 0.0111, -0.0156, 0.0209, 0.0037, -0.019199999, 0.019199999, 0.0037, -0.019199999, 0.019299999, -0.0030999999, 0.019299999, 0.0209, -0.0030999999, 0.019299999, 0.0209, 0.0037, 0.019199999, 0.0209, 0.0037, 0.019199999, 0.019199999, 0.0037, 0.019199999, 0.019299999, -0.0030999999, 0.019299999, 0.0095999995, 0.0168, -0.0095999995, 0, 0.019299999, 0, 0.0209, 0.019299999, 0, 0.0209, 0.019299999, 0, 0.0209, 0.0168, -0.0095999995, 0.0095999995, 0.0168, -0.0095999995, -0.0209, 0.019299999, 0, 0, 0.019299999, 0, -0.0095999995, 0.0168, -0.0095999995, -0.0095999995, 0.0168, -0.0095999995, -0.0209, 0.0168, -0.0095999995, -0.0209, 0.019299999, 0, 0.0156, 0.0111, -0.0156, 0.0095999995, 0.0168, -0.0095999995, 0.0209, 0.0168, -0.0095999995, 0.0209, 0.0168, -0.0095999995, 0.0209, 0.0111, -0.0156, 0.0156, 0.0111, -0.0156, 0.0095999995, 0.0168, 0.0095999995, 0.0209, 0.0168, 0.0095999995, 0.0209, 0.019299999, 0, 0.0209, 0.019299999, 0, 0, 0.019299999, 0, 0.0095999995, 0.0168, 0.0095999995, -0.0095999995, 0.0168, 0.0095999995, 0, 0.019299999, 0, -0.0209, 0.019299999, 0, -0.0209, 0.019299999, 0, -0.0209, 0.0168, 0.0095999995, -0.0095999995, 0.0168, 0.0095999995, 0.019299999, -0.0030999999, -0.019299999, 0.019199999, 0.0037, -0.019199999, 0.0209, 0.0037, -0.019199999, 0.0209, 0.0037, -0.019199999, 0.0209, -0.0030999999, -0.019299999, 0.019299999, -0.0030999999, -0.019299999, 0.0156, 0.0111, 0.0156, 0.0209, 0.0111, 0.0156, 0.0209, 0.0168, 0.0095999995, 0.0209, 0.0168, 0.0095999995, 0.0095999995, 0.0168, 0.0095999995, 0.0156, 0.0111, 0.0156, 0.019199999, 0.0037, -0.0209, 0.019199999, 0.0037, -0.019199999, 0.019299999, -0.0030999999, -0.019299999, 0.019299999, -0.0030999999, -0.019299999, 0.019299999, -0.0030999999, -0.0209, 0.019199999, 0.0037, -0.0209, -0.0156, 0.0111, -0.0209, -0.019199999, 0.0037, -0.0209, -0.019199999, 0.0037, -0.019199999, -0.019199999, 0.0037, -0.019199999, -0.0156, 0.0111, -0.0156, -0.0156, 0.0111, -0.0209, -0.0209, 0.0111, -0.0156, -0.0156, 0.0111, -0.0156, -0.019199999, 0.0037, -0.019199999, -0.019199999, 0.0037, -0.019199999, -0.0209, 0.0037, -0.019199999, -0.0209, 0.0111, -0.0156, -0.0095999995, 0.0168, -0.0209, -0.0156, 0.0111, -0.0209, -0.0156, 0.0111, -0.0156, -0.0156, 0.0111, -0.0156, -0.0095999995, 0.0168, -0.0095999995, -0.0095999995, 0.0168, -0.0209, -0.0209, 0.0168, -0.0095999995, -0.0095999995, 0.0168, -0.0095999995, -0.0156, 0.0111, -0.0156, -0.0156, 0.0111, -0.0156, -0.0209, 0.0111, -0.0156, -0.0209, 0.0168, -0.0095999995, -0.0209, 0.0111, 0.0156, -0.0209, 0.0037, 0.019199999, -0.019199999, 0.0037, 0.019199999, -0.019199999, 0.0037, 0.019199999, -0.0156, 0.0111, 0.0156, -0.0209, 0.0111, 0.0156, -0.0209, 0.0168, 0.0095999995, -0.0209, 0.0111, 0.0156, -0.0156, 0.0111, 0.0156, -0.0156, 0.0111, 0.0156, -0.0095999995, 0.0168, 0.0095999995, -0.0209, 0.0168, 0.0095999995, 0.0156, 0.0111, -0.0209, 0.0156, 0.0111, -0.0156, 0.019199999, 0.0037, -0.019199999, 0.019199999, 0.0037, -0.019199999, 0.019199999, 0.0037, -0.0209, 0.0156, 0.0111, -0.0209, -0.0209, 0.0037, -0.019199999, -0.019199999, 0.0037, -0.019199999, -0.019299999, -0.0030999999, -0.019299999, -0.019299999, -0.0030999999, -0.019299999, -0.0209, -0.0030999999, -0.019299999, -0.0209, 0.0037, -0.019199999, -0.019199999, 0.0037, -0.0209, -0.019299999, -0.0030999999, -0.0209, -0.019299999, -0.0030999999, -0.019299999, -0.019299999, -0.0030999999, -0.019299999, -0.019199999, 0.0037, -0.019199999, -0.019199999, 0.0037, -0.0209, -0.0209, 0.0037, 0.019199999, -0.0209, -0.0030999999, 0.019299999, -0.019299999, -0.0030999999, 0.019299999, -0.019299999, -0.0030999999, 0.019299999, -0.019199999, 0.0037, 0.019199999, -0.0209, 0.0037, 0.019199999, 0.0095999995, 0.0168, -0.0209, 0.0095999995, 0.0168, -0.0095999995, 0.0156, 0.0111, -0.0156, 0.0156, 0.0111, -0.0156, 0.0156, 0.0111, -0.0209, 0.0095999995, 0.0168, -0.0209, -0.012399999, -0.0167, 0.0209, -0.019299999, -0.0030999999, 0.0209, -0.012399999, -0.0167, 0.012399999, -0.019299999, -0.0030999999, 0.0209, -0.019299999, -0.0030999999, 0.019299999, -0.012399999, -0.0167, 0.012399999, -0.012399999, -0.0167, 0.0209, -0.012399999, -0.0167, 0.012399999, -0.012399999, -0.0167, -0.012399999, -0.012399999, -0.0167, 0.012399999, -0.012399999, -0.0167, 0.0074, -0.012399999, -0.0167, -0.012399999, -0.012399999, -0.0167, 0.0074, -0.012399999, -0.0167, 0.0209, -0.012399999, -0.0167, -0.012399999, -0.012399999, -0.0167, 0.012399999, 0.0074, -0.0167, 0.012399999, 0.012399999, -0.0167, 0.012399999, 0.012399999, -0.0167, -0.0209, 0.019299999, -0.0030999999, -0.0209, 0.019299999, -0.0030999999, -0.019299999, 0.019299999, -0.0030999999, -0.019299999, 0.012399999, -0.0167, -0.012399999, 0.012399999, -0.0167, -0.0209, -0.012399999, -0.0167, -0.0209, -0.012399999, -0.0167, -0.012399999, -0.019299999, -0.0030999999, -0.019299999, -0.019299999, -0.0030999999, -0.019299999, -0.019299999, -0.0030999999, -0.0209, -0.012399999, -0.0167, -0.0209, -0.0209, -0.0167, -0.012399999, -0.0209, -0.0030999999, -0.019299999, -0.019299999, -0.0030999999, -0.019299999, -0.019299999, -0.0030999999, -0.019299999, -0.012399999, -0.0167, -0.012399999, -0.0209, -0.0167, -0.012399999, -0.0209, -0.0167, 0.012399999, -0.012399999, -0.0167, 0.012399999, -0.019299999, -0.0030999999, 0.019299999, -0.019299999, -0.0030999999, 0.019299999, -0.0209, -0.0030999999, 0.019299999, -0.0209, -0.0167, 0.012399999, 0.019299999, -0.0030999999, 0.0209, 0.012399999, -0.0167, 0.0209, 0.019299999, -0.0030999999, 0.019299999, 0.019299999, -0.0030999999, 0.019299999, 0.012399999, -0.0167, 0.0209, 0.012399999, -0.0167, 0.012399999, 0.0209, -0.0030999999, -0.019299999, 0.0209, -0.0167, -0.012399999, 0.019299999, -0.0030999999, -0.019299999, 0.019299999, -0.0030999999, -0.019299999, 0.0209, -0.0167, -0.012399999, 0.012399999, -0.0167, -0.012399999, 0.019299999, -0.0030999999, 0.019299999, 0.012399999, -0.0167, 0.012399999, 0.0209, -0.0167, 0.012399999, 0.0209, -0.0167, 0.012399999, 0.0209, -0.0030999999, 0.019299999, 0.019299999, -0.0030999999, 0.019299999, 0.0074, -0.0167, 0.012399999, -0.012399999, -0.0167, 0.0209, -0.012399999, -0.0167, 0.0074, 0.0074, -0.0167, 0.012399999, 0.012399999, -0.0167, 0.0209, -0.012399999, -0.0167, 0.0209, 0.0074, -0.0167, 0.012399999, -0.012399999, -0.0167, 0.0074, -0.012399999, -0.0167, 0.012399999, 0.0074, -0.0167, 0.012399999, 0.012399999, -0.0167, 0.012399999, 0.012399999, -0.0167, 0.0209, 0.0074, -0.0167, 0.012399999, -0.012399999, -0.0167, 0.012399999, -0.012399999, -0.0167, 0.0074, 0.0074, -0.0167, 0.012399999, -0.012399999, -0.0167, 0.0074, -0.012399999, -0.0167, -0.012399999, 0.012399999, -0.0167, 0.012399999, 0.012399999, -0.0167, -0.012399999, 0.012399999, -0.0167, 0.0209, 0.0074, -0.0167, 0.012399999, -0.012399999, -0.0167, -0.012399999, -0.0074, -0.0167, -0.012399999, 0.0074, -0.0167, 0.012399999, -0.0074, -0.0167, -0.012399999, 0.012399999, -0.0167, 0.012399999, 0.012399999, -0.0167, 0.012399999, -0.0074, -0.0167, -0.012399999, 0.012399999, -0.0167, -0.012399999, 0.012399999, -0.0167, -0.0209, 0.012399999, -0.0167, -0.012399999, -0.0074, -0.0167, -0.012399999, -0.012399999, -0.0167, -0.0209, 0.012399999, -0.0167, -0.0209, -0.0074, -0.0167, -0.012399999, -0.012399999, -0.0167, -0.0209, -0.0074, -0.0167, -0.012399999, -0.012399999, -0.0167, -0.012399999, -0.0209, -0.0167, 0.012399999, -0.012399999, -0.0167, 0.0074, -0.012399999, -0.0167, 0.012399999, -0.0209, -0.0167, 0.012399999, -0.0209, -0.0167, -0.012399999, -0.012399999, -0.0167, 0.0074, -0.0209, -0.0167, -0.012399999, -0.012399999, -0.0167, -0.012399999, -0.012399999, -0.0167, 0.0074, 0.012399999, -0.0167, 0.012399999, 0.012399999, -0.0167, -0.012399999, 0.0209, -0.0167, -0.012399999, 0.0209, -0.0167, -0.012399999, 0.0209, -0.0167, 0.012399999, 0.012399999, -0.0167, 0.012399999)
@@ -31,94 +36,160 @@ data = PackedVector3Array(-0.0209, 0.0111, -0.0156, 0.0209, 0.0111, -0.0156, 0.0
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1332767276]
 
-[node name="Spawn" type="MeshInstance3D" parent="Node3D" unique_id=1924795913]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Node3D" unique_id=1366614329]
+navigation_mesh = SubResource("NavigationMesh_xn2j3")
+
+[node name="Spawn" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1924795913]
 transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, 0, 0)
 mesh = ExtResource("1_qr36t")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Spawn" unique_id=1781707705]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Spawn" unique_id=1781707705]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Spawn/StaticBody3D" unique_id=417510201]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Spawn/StaticBody3D" unique_id=417510201]
 shape = SubResource("ConcavePolygonShape3D_qr36t")
 
-[node name="Wall" type="MeshInstance3D" parent="Node3D" unique_id=603661447]
+[node name="Wall" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=603661447]
 transform = Transform3D(3.594167, 0, 149.95694, 0, 150, 0, -149.95694, 0, 3.594167, 0, 0, 3.0050282)
 mesh = ExtResource("2_3nl3d")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Wall" unique_id=542136714]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Wall" unique_id=542136714]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Wall/StaticBody3D" unique_id=118256912]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Wall/StaticBody3D" unique_id=118256912]
 shape = SubResource("ConcavePolygonShape3D_3nl3d")
 
-[node name="Wall2" type="MeshInstance3D" parent="Node3D" unique_id=1549121021]
+[node name="Wall2" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1549121021]
 transform = Transform3D(-149.9926, 0, 1.4896256, 0, 150, 0, -1.4896256, 0, -149.9926, 3.2066054, 0, -0.021520734)
 mesh = ExtResource("2_3nl3d")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Wall2" unique_id=843887167]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Wall2" unique_id=843887167]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Wall2/StaticBody3D" unique_id=247318390]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Wall2/StaticBody3D" unique_id=247318390]
 shape = SubResource("ConcavePolygonShape3D_hni1e")
 
-[node name="Wall3" type="MeshInstance3D" parent="Node3D" unique_id=578287628]
+[node name="Wall3" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=578287628]
 transform = Transform3D(-149.9926, 0, 1.4896256, 0, 150, 0, -1.4896256, 0, -149.9926, -3.248456, 0, -0.00078213215)
 mesh = ExtResource("2_3nl3d")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Wall3" unique_id=156413574]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Wall3" unique_id=156413574]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Wall3/StaticBody3D" unique_id=1228967122]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Wall3/StaticBody3D" unique_id=1228967122]
 shape = SubResource("ConcavePolygonShape3D_of2fq")
 
-[node name="Intersection" type="MeshInstance3D" parent="Node3D" unique_id=1253602370]
+[node name="Intersection" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1253602370]
 transform = Transform3D(149.96121, 0.03958812, -3.4107227, 0, 149.9899, 1.7409267, 3.4109523, -1.7404766, 149.95111, 0.13072705, -0.040340424, -18.586597)
 mesh = ExtResource("1_qr36t")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Intersection" unique_id=1207572807]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Intersection" unique_id=1207572807]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Intersection/StaticBody3D" unique_id=328738889]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Intersection/StaticBody3D" unique_id=328738889]
 shape = SubResource("ConcavePolygonShape3D_qr36t")
 
-[node name="Wall4" type="MeshInstance3D" parent="Node3D" unique_id=482116660]
+[node name="Intersection2" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=651773161]
+transform = Transform3D(0.7173252, 1.740907, -149.98817, 3.176697e-09, 149.9899, 1.7409269, 149.99829, -0.008325275, 0.7172766, 5.6866484, -0.040340424, -18.586597)
+mesh = ExtResource("1_qr36t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Intersection2" unique_id=1760902841]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Intersection2/StaticBody3D" unique_id=870891235]
+shape = SubResource("ConcavePolygonShape3D_qr36t")
+
+[node name="Intersection3" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1848979934]
+transform = Transform3D(1.5341144, -1.7408357, 149.98206, 3.7223875e-09, 149.9899, 1.7409269, -149.99217, -0.017805334, 1.5340111, 5.6866484, -0.040340424, 6.4166355)
+mesh = ExtResource("1_qr36t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Intersection3" unique_id=611706932]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Intersection3/StaticBody3D" unique_id=271884524]
+shape = SubResource("ConcavePolygonShape3D_qr36t")
+
+[node name="Wall4" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=482116660]
 transform = Transform3D(7.003216, 0, 149.83643, 0, 150, 0, -149.83643, 0, 7.003216, 0.2219503, -0.040340424, -21.630753)
 mesh = ExtResource("2_3nl3d")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Wall4" unique_id=590744841]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Wall4" unique_id=590744841]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Wall4/StaticBody3D" unique_id=1909471333]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Wall4/StaticBody3D" unique_id=1909471333]
 shape = SubResource("ConcavePolygonShape3D_3nl3d")
 
-[node name="Wall6" type="MeshInstance3D" parent="Node3D" unique_id=1729780318]
+[node name="Wall6" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1729780318]
 transform = Transform3D(-149.91995, 0, 4.9000115, 0, 150, 0, -4.9000115, 0, -149.91995, -3.0476098, -0.040340424, -18.719028)
 mesh = ExtResource("2_3nl3d")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Wall6" unique_id=400572879]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Wall6" unique_id=400572879]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Wall6/StaticBody3D" unique_id=1176289431]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Wall6/StaticBody3D" unique_id=1176289431]
 shape = SubResource("ConcavePolygonShape3D_of2fq")
 
-[node name="GrateDoor1" type="MeshInstance3D" parent="Node3D" unique_id=177978513]
+[node name="GrateDoor1" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=177978513]
 transform = Transform3D(-2.1335962, 0, 149.98483, 0, 150, 0, -149.98483, 0, -2.1335962, -0.10392785, -0.4382651, -2.9810054)
 mesh = ExtResource("3_hni1e")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/GrateDoor1" unique_id=982906483]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/GrateDoor1" unique_id=982906483]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/GrateDoor1/StaticBody3D" unique_id=2006718700]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/GrateDoor1/StaticBody3D" unique_id=2006718700]
 shape = SubResource("ConcavePolygonShape3D_xn2j3")
 
-[node name="Hallway1" type="MeshInstance3D" parent="Node3D" unique_id=1877341992]
+[node name="Hallway1" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1877341992]
 transform = Transform3D(-0.5105169, 0, 149.99913, 0, 149.99998, 0, -149.99913, 0, -0.5105169, -0.008108854, 0, -6.129693)
 mesh = ExtResource("4_of2fq")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Hallway1" unique_id=62484545]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Hallway1" unique_id=62484545]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Hallway1/StaticBody3D" unique_id=264781787]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Hallway1/StaticBody3D" unique_id=264781787]
 shape = SubResource("ConcavePolygonShape3D_ycsod")
 
-[node name="Hallway2" type="MeshInstance3D" parent="Node3D" unique_id=663525988]
+[node name="Hallway2" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=663525988]
 transform = Transform3D(2.6518805, 0, 149.97656, 0, 150, 0, -149.97656, 0, 2.6518805, 0.027508587, 0, -12.357692)
 mesh = ExtResource("4_of2fq")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Hallway2" unique_id=780374193]
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Hallway2" unique_id=780374193]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Hallway2/StaticBody3D" unique_id=863993133]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Hallway2/StaticBody3D" unique_id=863993133]
+shape = SubResource("ConcavePolygonShape3D_ycsod")
+
+[node name="Hallway3" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=210549373]
+transform = Transform3D(2.6518805, 0, 149.97656, 0, 150, 0, -149.97656, 0, 2.6518805, 5.6022406, 0, -12.357692)
+mesh = ExtResource("4_of2fq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Hallway3" unique_id=882408348]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Hallway3/StaticBody3D" unique_id=1101220548]
+shape = SubResource("ConcavePolygonShape3D_ycsod")
+
+[node name="Hallway4" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1156978611]
+transform = Transform3D(2.6518805, 0, 149.97656, 0, 150, 0, -149.97656, 0, 2.6518805, 5.6022406, 0, -6.127234)
+mesh = ExtResource("4_of2fq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Hallway4" unique_id=1540801567]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Hallway4/StaticBody3D" unique_id=923357351]
+shape = SubResource("ConcavePolygonShape3D_ycsod")
+
+[node name="Hallway5" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1522602099]
+transform = Transform3D(2.6518805, 0, 149.97656, 0, 150, 0, -149.97656, 0, 2.6518805, 5.6022406, 0, 0.16474295)
+mesh = ExtResource("4_of2fq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Hallway5" unique_id=113599389]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Hallway5/StaticBody3D" unique_id=1414370476]
+shape = SubResource("ConcavePolygonShape3D_ycsod")
+
+[node name="Hallway6" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1110064836]
+transform = Transform3D(149.7686, 0, 8.328797, 0, 149.99998, 0, -8.328797, 0, 149.7686, -0.28129292, 0, 6.7835)
+mesh = ExtResource("4_of2fq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Hallway6" unique_id=1045827149]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Hallway6/StaticBody3D" unique_id=662691806]
+shape = SubResource("ConcavePolygonShape3D_ycsod")
+
+[node name="Hallway7" type="MeshInstance3D" parent="Node3D/NavigationRegion3D" unique_id=1961029372]
+transform = Transform3D(149.7686, 0, 8.328797, 0, 149.99998, 0, -8.328797, 0, 149.7686, -6.54583, 0, 6.7835)
+mesh = ExtResource("4_of2fq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/NavigationRegion3D/Hallway7" unique_id=363500815]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/NavigationRegion3D/Hallway7/StaticBody3D" unique_id=1902836811]
 shape = SubResource("ConcavePolygonShape3D_ycsod")
 
 [node name="Player" parent="." unique_id=797199737 instance=ExtResource("2_sfly1")]
@@ -134,3 +205,6 @@ environment = SubResource("Environment_xn2j3")
 [node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=408776771]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95330477, 0.031465054)
 layers = 3
+
+[node name="Rat" parent="." unique_id=792475936 instance=ExtResource("5_ycsod")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9373889, -17.88448)
