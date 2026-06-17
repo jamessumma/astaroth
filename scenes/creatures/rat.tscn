@@ -10,6 +10,7 @@ radius = 0.6010742
 height = 1.8764648
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pktx4"]
+height = 1.7431641
 
 [node name="Rat" type="CharacterBody3D" unique_id=792475936]
 script = ExtResource("1_mu21v")
@@ -20,7 +21,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1702802026]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2139489527]
-transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0.21043384, 0)
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0.26219928, -0.33537766)
 shape = SubResource("CapsuleShape3D_mu21v")
 
 [node name="BodyHitbox" type="Area3D" parent="." unique_id=504044084]
@@ -34,5 +35,5 @@ shape = SubResource("CapsuleShape3D_be1qc")
 [node name="HeadHitbox" type="Area3D" parent="." unique_id=317232372]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HeadHitbox" unique_id=236445825]
-transform = Transform3D(0.5, 0, 0, 0, 0.026098225, 0.49931842, 0, -0.49931842, 0.026098225, 0, 0.71062696, 0.6722684)
+transform = Transform3D(0.5, 0, 0, 0, 0.026098225, 0.49931842, 0, -0.49931842, 0.026098225, 0, 0.71397847, 0.6081469)
 shape = SubResource("CapsuleShape3D_pktx4")

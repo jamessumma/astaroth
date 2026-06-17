@@ -45,28 +45,30 @@ var camera_anglev: float = 0.0
 var can_shoot: bool = true
 var dead: bool = false
 
+signal player_ready
+
 # this function runs once when the node enters the scene tree
 func _ready():
-	print("1")
+
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	print("2")
+
 	# let the dynamic dungeon structure finish loading
 	await get_tree().process_frame
-	print("3")
 	# add the player node to group so enemies and such can find them
 	add_to_group("player")
-	print("4")
+	GameManager.player = self
 	# get active world structure of the current dungeon
 	var current_world = camera.get_world_3d()
-	print("5")
 
 	if current_world and current_world.environment:
 		# copy env to the viewport camera
 		viewport_camera.environment = current_world.environment
-	print("6")
 
 	# set a maximum for the healthbar
 	health_bar.max_value = max_health
+
+	# let other classes dependent on player know its ready
+	emit_signal("player_ready")
 
 # this function runs whenever an input event occurs
 func _input(event):

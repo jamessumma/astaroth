@@ -1,68 +1,33 @@
 extends Enemy
 
 class_name Rat
+var attack_timer_max: float = 2
+var attack_timer_cur: float = 0
 
 @onready var animation_player = $RatModel/AnimationPlayer
-@onready var navigation_agent = $NavigationAgent3D
-@onready var body = $CollisionShape3D
-
-
-var gravity = 10.0
-var base_move_speed = 7
-var attack_range = 3
-var vision_range = 10
-var player = null
-var distance_to_player = 0
 
 func _ready() -> void:
-	print("rat on ready")
-	await get_tree().process_frame	
-
+	enemy_setup()
 
 func _physics_process(delta: float) -> void:
-	if player == null:
-		var players = get_tree().get_nodes_in_group("player")
-		if players.size() > 0:
-			player = players[0]
-		else:
-			return
-	handle_state()
-	distance_to_player = body.global_position.distance_to(player.global_position)
-	
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+	attack_timer_cur = clamp(attack_timer_cur - delta, 0, attack_timer_max)
+	enemy_process(delta)
 
-	move_and_slide()
-
-func handle_idle():
+func handle_idle(delta: float):
 	if !animation_player.is_playing():
 		animation_player.play("Armature|Rat_Idle")
-	if distance_to_player < vision_range:
-		cur_state = state.CHASE
 
-
-func handle_chase():
-	# chase involves moving toward the player, when in range, switch to attack
-	# this needs to loop while the chase is happening
+func handle_chase(delta: float):
 	if !animation_player.is_playing():
 		animation_player.play("Armature|Rat_Run")
-	
-	navigation_agent.target_position = player.global_position
-	var pos = navigation_agent.get_next_path_position()
-	var dir: Vector3 = global_position.direction_to(pos)
-
-	velocity.x = base_move_speed * dir.x
-	velocity.z = base_move_speed * dir.z
-	if distance_to_player < attack_range:
-		cur_state = state.ATTACK
 		
-	# make the enemy face the player
-	look_at(global_position - dir)
-
-
-
-func handle_attack():
-	if !animation_player.is_playing():
+func handle_attack(delta: float):
+	#var flat_dir = Vector3(cur_direction.x, 0, cur_direction.z).normalized()
+	look_at_slerp(delta)
+	if !animation_player.is_playing() and attack_timer_cur <= 0:
 		animation_player.play("Armature|Rat_Attack")
-	if distance_to_player > attack_range:
-		cur_state = state.CHASE
+		attack_timer_cur = attack_timer_max
+	
+func die():
+	if !animation_player.is_playing() and attack_timer_cur <= 0:
+		animation_player.play("Armature|Rat_Death")
