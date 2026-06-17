@@ -20,6 +20,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += transform.basis * Vector3(0, 0, SPEED) * delta
 	if ray.is_colliding():
+		print("ray is colliding with: ", ray.get_collider())
 		handle_impact()	
 
 func _on_timer_timeout():

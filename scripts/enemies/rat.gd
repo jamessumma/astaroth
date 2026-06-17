@@ -7,7 +7,13 @@ var attack_timer_cur: float = 0
 @onready var animation_player = $RatModel/AnimationPlayer
 
 func _ready() -> void:
+	max_health = 1
+	cur_health = max_health
+	$BodyHitbox.body_part_hit.connect(hit)
+	$HeadHitbox.body_part_hit.connect(hit)
 	enemy_setup()
+
+	animation_player.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
 	attack_timer_cur = clamp(attack_timer_cur - delta, 0, attack_timer_max)
@@ -29,5 +35,8 @@ func handle_attack(delta: float):
 		attack_timer_cur = attack_timer_max
 	
 func die():
-	if !animation_player.is_playing() and attack_timer_cur <= 0:
-		animation_player.play("Armature|Rat_Death")
+	animation_player.play("Armature|Rat_Death")
+
+func _on_animation_finished(anim_name):
+	if anim_name == "Armature|Rat_Death":
+		queue_free()

@@ -5,7 +5,7 @@ class_name Enemy
 # different variants will override these attributes and methods
 var max_health: int = 100
 var cur_health: int = max_health
-var turn_speed: float = 5.0
+
 
 @onready var navigation_agent = $NavigationAgent3D
 @onready var body = $CollisionShape3D
@@ -17,14 +17,16 @@ var attack_range = 2
 var vision_range = 10
 var distance_to_player = 1000
 var cur_direction: Vector3 = Vector3()
+var turn_speed: float = 5.0
+var path_desired_distance: float = 0.5
+var target_desired_distance: float = 0.5
 
 # enemy starts as idle
 # if enemy sees player, they chase
 # if in range, attack
 enum state {IDLE, CHASE, ATTACK, DEAD}
 var cur_state: state = state.IDLE
-var path_desired_distance: float = 0.5
-var target_desired_distance: float = 0.5
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -65,7 +67,6 @@ func handle_state(delta:float):
 		state.DEAD:
 			# play death animation, then free from memory
 			die()
-			queue_free()
 	check_state()
 	
 # checks the conditions for each state and changes accordingly
@@ -93,6 +94,7 @@ func update_player_distance():
 
 # override this function to call the death animation
 func die():
+	queue_free()
 	pass
 
 func handle_idle(delta: float):
@@ -103,7 +105,6 @@ func handle_chase(delta: float):
 
 func handle_chase_movement(delta):
 	if GameManager.player == null:
-		print("player is null")
 		return
 	# set the nav to the players position
 	navigation_agent.target_position = GameManager.player.global_position
@@ -136,4 +137,7 @@ func look_at_slerp(delta):
 
 func hit(damage: float):
 	# add some code for armor or something here
+	print("hit detected")
+	print(damage)
+	print(cur_health)
 	take_damage(damage)

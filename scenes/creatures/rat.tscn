@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qwny5oeihvi5" path="res://scripts/enemies/rat.gd" id="1_mu21v"]
 [ext_resource type="PackedScene" uid="uid://tw2d4t7opqki" path="res://scenes/creatures/rat_model.tscn" id="1_xehk6"]
+[ext_resource type="Script" uid="uid://dm1rmv8572wsw" path="res://scripts/enemies/body_part.gd" id="3_be1qc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mu21v"]
 
@@ -13,6 +14,8 @@ height = 1.8764648
 height = 1.7431641
 
 [node name="Rat" type="CharacterBody3D" unique_id=792475936]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_mu21v")
 
 [node name="RatModel" parent="." unique_id=262088448 instance=ExtResource("1_xehk6")]
@@ -27,12 +30,16 @@ shape = SubResource("CapsuleShape3D_mu21v")
 [node name="BodyHitbox" type="Area3D" parent="." unique_id=504044084]
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("3_be1qc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BodyHitbox" unique_id=541343807]
 transform = Transform3D(0.75, 0, 0, 0, 0.08145493, -0.7455636, 0, 0.7455636, 0.08145493, 0.062966466, 0.6184385, -0.55050737)
 shape = SubResource("CapsuleShape3D_be1qc")
 
 [node name="HeadHitbox" type="Area3D" parent="." unique_id=317232372]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_be1qc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HeadHitbox" unique_id=236445825]
 transform = Transform3D(0.5, 0, 0, 0, 0.026098225, 0.49931842, 0, -0.49931842, 0.026098225, 0, 0.71397847, 0.6081469)
