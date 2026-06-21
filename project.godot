@@ -20,8 +20,11 @@ GameManager="*uid://54wihngwuqxu"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=960
+window/size/viewport_width=320
+window/size/viewport_height=240
+window/size/mode=2
+window/size/window_width_override=1280
+window/size/window_height_override=960
 window/stretch/mode="viewport"
 
 [importer_defaults]
@@ -111,5 +114,5 @@ resolution={
 }
 color_depth={
 "type": "float",
-"value": 128.0
+"value": 32.0
 }
