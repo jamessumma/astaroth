@@ -56,11 +56,11 @@ _data = {
 
 [node name="double_barrel_shotgun" unique_id=840155535 instance=ExtResource("1_vfm31")]
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1279581048) index="0" unique_id=1528277150]
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1193498035) index="0" unique_id=1489723414]
 bones/0/rotation = Quaternion(-2.2476463e-08, 0.7071068, 0.7071068, -2.2476463e-08)
 bones/1/rotation = Quaternion(0.0067209713, -0.7070746, -0.006720966, 0.70707506)
 
-[node name="Shotgun_Rigged" parent="Armature/Skeleton3D" index="0" unique_id=1748038387]
+[node name="Shotgun_Rigged" parent="Armature/Skeleton3D" index="0" unique_id=465044544]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
 layers = 2
 cast_shadow = 0
@@ -73,3 +73,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3155677)
 target_position = Vector3(0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4" unique_id=136736795]
+volume_db = -10.0
