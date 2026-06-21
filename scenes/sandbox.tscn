@@ -1,3 +1,39 @@
 [gd_scene format=3 uid="uid://dk2i0o4u3vjqh"]
 
+[ext_resource type="Texture2D" uid="uid://dckv0ll15fq7p" path="res://assets/floor/grid_floor.png" id="1_rgld7"]
+[ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="2_a8pr3"]
+
+[sub_resource type="Environment" id="Environment_j6lu3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpt06"]
+albedo_texture = ExtResource("1_rgld7")
+
+[sub_resource type="BoxMesh" id="BoxMesh_16ffl"]
+material = SubResource("StandardMaterial3D_tpt06")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rgld7"]
+data = PackedVector3Array(-5, 0.5, 5, 5, 0.5, 5, -5, -0.5, 5, 5, 0.5, 5, 5, -0.5, 5, -5, -0.5, 5, 5, 0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, 0.5, -5, -5, -0.5, -5, 5, -0.5, -5, 5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, -5, 5, -0.5, -5, 5, -0.5, 5, -5, 0.5, -5, -5, 0.5, 5, -5, -0.5, -5, -5, 0.5, 5, -5, -0.5, 5, -5, -0.5, -5, 5, 0.5, 5, -5, 0.5, 5, 5, 0.5, -5, -5, 0.5, 5, -5, 0.5, -5, 5, 0.5, -5, -5, -0.5, 5, 5, -0.5, 5, -5, -0.5, -5, 5, -0.5, 5, 5, -0.5, -5, -5, -0.5, -5)
+
 [node name="Sandbox" type="Node3D" unique_id=986301404]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1815038140]
+environment = SubResource("Environment_j6lu3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1569629002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.681591, 0)
+layers = 3
+light_energy = 6.37
+light_indirect_energy = 2.188
+omni_range = 316.268
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1210998065]
+mesh = SubResource("BoxMesh_16ffl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=918576320]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1055280898]
+shape = SubResource("ConcavePolygonShape3D_rgld7")
+
+[node name="Player" parent="." unique_id=797199737 instance=ExtResource("2_a8pr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3402545, 0)
