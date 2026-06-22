@@ -23,7 +23,6 @@ environment = SubResource("Environment_j6lu3")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1569629002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.681591, 0)
-visible = false
 layers = 3
 light_energy = 6.37
 light_indirect_energy = 2.188
@@ -32,8 +31,9 @@ omni_range = 316.268
 [node name="OmniLight3D2" type="OmniLight3D" parent="WorldEnvironment" unique_id=1826375152]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.355804, -8.624706)
 layers = 3
-light_color = Color(0.013265833, 0.47828496, 1.92523e-07, 1)
-light_energy = 10.0
+light_color = Color(0.018328022, 0.58664006, 9.62615e-07, 1)
+light_energy = 9.412
+light_indirect_energy = 2.437
 omni_range = 15.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1210998065]

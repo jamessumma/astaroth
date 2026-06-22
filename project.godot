@@ -20,12 +20,13 @@ GameManager="*uid://54wihngwuqxu"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=240
+window/size/viewport_width=1280
+window/size/viewport_height=960
 window/size/mode=2
 window/size/window_width_override=1280
 window/size/window_height_override=960
 window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [importer_defaults]
 
@@ -102,6 +103,7 @@ sprint={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 shading/overrides/force_vertex_shading=true
 anti_aliasing/screen_space_roughness_limiter/enabled=false
@@ -110,9 +112,9 @@ anti_aliasing/screen_space_roughness_limiter/enabled=false
 
 resolution={
 "type": "vec2",
-"value": Vector2(640, 480)
+"value": Vector2(320, 240)
 }
 color_depth={
 "type": "float",
-"value": 16.0
+"value": 64.0
 }
