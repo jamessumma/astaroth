@@ -33,6 +33,8 @@
 - Pick an algorithm for node branching
 - export office from blender
 - export sewer from blender
+- make office work in godot
+- make sewer work in godot
 
 
 
