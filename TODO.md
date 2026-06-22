@@ -6,7 +6,6 @@
 - Fix issue where you can walk around enemies and they wont turn to face you
 
 ### Visuals
-- redo shader so we can use transparent textures
 - test out vhs filter
 
 ### Enemy Features
@@ -17,6 +16,7 @@
 - enemy attacks should deal damage to the player
 
 ### Weapons
+- Make the gun bouncy
 - Fix make it so bullet doesn't appear to spawn inside the gun
 - Add multiple bullets that shoot out in a cone
 - Fix issue where shooting enemies too closely doesnt register
@@ -33,3 +33,8 @@
 - Pick an algorithm for node branching
 - export office from blender
 - export sewer from blender
+
+
+
+## DONE
+- redo shader so we can use transparent textures
