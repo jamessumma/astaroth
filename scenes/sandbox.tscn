@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dckv0ll15fq7p" path="res://assets/floor/grid_floor.png" id="1_rgld7"]
 [ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="2_a8pr3"]
+[ext_resource type="PackedScene" uid="uid://dyrv7o1kv0gb5" path="res://procedural/pieces/sewer/tunnel03/sewer_tunnel_03_straight.tscn" id="3_a8pr3"]
 
 [sub_resource type="Environment" id="Environment_j6lu3"]
 
@@ -22,10 +23,18 @@ environment = SubResource("Environment_j6lu3")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1569629002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.681591, 0)
+visible = false
 layers = 3
 light_energy = 6.37
 light_indirect_energy = 2.188
 omni_range = 316.268
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="WorldEnvironment" unique_id=1826375152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.355804, -8.624706)
+layers = 3
+light_color = Color(0.013265833, 0.47828496, 1.92523e-07, 1)
+light_energy = 10.0
+omni_range = 15.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1210998065]
 mesh = SubResource("BoxMesh_16ffl")
@@ -37,3 +46,6 @@ shape = SubResource("ConcavePolygonShape3D_rgld7")
 
 [node name="Player" parent="." unique_id=797199737 instance=ExtResource("2_a8pr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3402545, 0)
+
+[node name="Sewer_Tunnel_03_Straight" parent="." unique_id=1078205534 instance=ExtResource("3_a8pr3")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -14.143388)

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oxjcj5vov7i7"
-path.s3tc="res://.godot/imported/Water_01.PNG-6aaa5f5a351c04faaa8d868bf63e4401.s3tc.ctex"
+uid="uid://d4b1wshnw4qx1"
+path.s3tc="res://.godot/imported/brick_pavement.jpg-9d886a555a629d43861993633df339be.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/PSX Sewer Pack/Textures/Water_01.PNG"
-dest_files=["res://.godot/imported/Water_01.PNG-6aaa5f5a351c04faaa8d868bf63e4401.s3tc.ctex"]
+source_file="res://assets/PSX Sewer Pack/Textures/brick_pavement.jpg"
+dest_files=["res://.godot/imported/brick_pavement.jpg-9d886a555a629d43861993633df339be.s3tc.ctex"]
 
 [params]
 

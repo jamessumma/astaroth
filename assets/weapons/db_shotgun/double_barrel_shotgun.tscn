@@ -73,4 +73,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3155677)
 target_position = Vector3(0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4" unique_id=136736795]
-volume_db = -10.0
+volume_db = -20.0
