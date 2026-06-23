@@ -8,7 +8,7 @@
 sky_top_color = Color(0.28410813, 0.14279792, 0.47118783, 1)
 sky_horizon_color = Color(0.40103045, 0.08369274, 0.43862784, 1)
 sky_cover = ExtResource("3_stars")
-energy_multiplier = 0.1
+energy_multiplier = 0.2
 
 [sub_resource type="Sky" id="Sky_n0wcf"]
 sky_material = SubResource("ProceduralSkyMaterial_3e7dm")
@@ -17,7 +17,8 @@ sky_material = SubResource("ProceduralSkyMaterial_3e7dm")
 background_mode = 2
 sky = SubResource("Sky_n0wcf")
 ambient_light_source = 2
-ambient_light_color = Color(0.47826135, 0.47335112, 0.4806562, 1)
+ambient_light_color = Color(0.74109656, 0.33924404, 0.2156494, 1)
+ambient_light_energy = 0.6
 
 [sub_resource type="BoxMesh" id="BoxMesh_jwaux"]
 size = Vector3(10, 0.1, 10)
