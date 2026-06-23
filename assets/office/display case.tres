@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bbhh3fuwbtya8"]
+
+[ext_resource type="Texture2D" uid="uid://vvpv2w47kmm5" path="res://assets/office/office_5.png" id="1_nqaxn"]
+
+[resource]
+resource_name = "display case"
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_nqaxn")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://db0ot7rju7t5d"]
+
+[ext_resource type="Texture2D" uid="uid://c8opuxunl1v2i" path="res://assets/office/office_6.png" id="1_vsfgf"]
+
+[resource]
+resource_name = "Material.004"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_vsfgf")
+emission_enabled = true
+emission_energy_multiplier = 0.099999994
+emission_texture = ExtResource("1_vsfgf")

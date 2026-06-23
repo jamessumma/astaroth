@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chq4isk08mp51"]
+
+[ext_resource type="Texture2D" uid="uid://jkk7jchde1y8" path="res://assets/office/office_21.png" id="1_uokmi"]
+
+[resource]
+resource_name = "picture2_texture"
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_uokmi")
+emission_enabled = true
