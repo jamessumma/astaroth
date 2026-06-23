@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bqjs40nshv7ao"]
+
+[ext_resource type="PackedScene" uid="uid://ccly428a3m8i1" path="res://assets/PSX Sewer Pack/Models/Tunnel_03/water/Sewer_Tunnel_03_Straight_Water.FBX" id="1_tualq"]
+[ext_resource type="Texture2D" uid="uid://oxjcj5vov7i7" path="res://assets/PSX Sewer Pack/Textures/Water_01.PNG" id="2_a6akl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ceoy"]
+albedo_texture = ExtResource("2_a6akl")
+
+[node name="Sewer_Tunnel_03_Straight_Water" unique_id=803537380 instance=ExtResource("1_tualq")]
+
+[node name="Sewer_Tunnel_03_Straight_Water" parent="." index="0" unique_id=1288294267]
+surface_material_override/0 = SubResource("StandardMaterial3D_0ceoy")

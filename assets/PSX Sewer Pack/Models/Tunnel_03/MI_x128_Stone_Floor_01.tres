@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccknwcr1cngol"]
+
+[resource]
+resource_name = "MI_x128_Stone_Floor_01"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.50196075, 0.50196075, 0.50196075, 1)
+emission_enabled = true

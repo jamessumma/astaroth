@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://y6q2vipusgn6"]
+
+[ext_resource type="PackedScene" uid="uid://do6lyh0disbkh" path="res://assets/PSX Sewer Pack/Models/Tunnel_03/Sewer_Tunnel_03_End.FBX" id="1_1k8qj"]
+[ext_resource type="Texture2D" uid="uid://1lofbhncricn" path="res://assets/PSX Sewer Pack/Textures/white_brick_256.PNG" id="2_dwexy"]
+[ext_resource type="Texture2D" uid="uid://d4b1wshnw4qx1" path="res://assets/PSX Sewer Pack/Textures/brick_pavement.jpg" id="3_cyxlu"]
+[ext_resource type="PackedScene" uid="uid://bqjs40nshv7ao" path="res://procedural/pieces/sewer/tunnel03/water/sewer_tunnel_03_straight_water.tscn" id="4_dwexy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bpqm"]
+albedo_texture = ExtResource("2_dwexy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4m6qo"]
+albedo_texture = ExtResource("3_cyxlu")
+
+[node name="Sewer_Tunnel_03_End" unique_id=1622094967 instance=ExtResource("1_1k8qj")]
+
+[node name="Sewer_Tunnel_03_End" parent="." index="0" unique_id=1721467707]
+surface_material_override/0 = SubResource("StandardMaterial3D_3bpqm")
+surface_material_override/1 = SubResource("StandardMaterial3D_4m6qo")
+
+[node name="Sewer_Tunnel_03_Straight_Water" parent="." index="2" unique_id=803537380 instance=ExtResource("4_dwexy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
