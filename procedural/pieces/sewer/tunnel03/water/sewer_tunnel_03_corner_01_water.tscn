@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://oxjcj5vov7i7" path="res://assets/PSX Sewer Pack/Textures/Water_01.PNG" id="2_86no6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qngm"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.5019608)
 albedo_texture = ExtResource("2_86no6")
 
 [node name="Sewer_Tunnel_03_Corner_01_Water" unique_id=227746982 instance=ExtResource("1_jwd7v")]
