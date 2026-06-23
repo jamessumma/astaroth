@@ -2,50 +2,44 @@
 
 [ext_resource type="Texture2D" uid="uid://dckv0ll15fq7p" path="res://assets/floor/grid_floor.png" id="1_rgld7"]
 [ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="2_a8pr3"]
-[ext_resource type="PackedScene" uid="uid://dyrv7o1kv0gb5" path="res://procedural/pieces/sewer/tunnel03/sewer_tunnel_03_straight.tscn" id="3_a8pr3"]
+[ext_resource type="PackedScene" uid="uid://cgvqml7o8l41r" path="res://scenes/creatures/rat.tscn" id="3_a8pr3"]
 
-[sub_resource type="Environment" id="Environment_j6lu3"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_rgld7"]
+vertices = PackedVector3Array(-9.5, 0.45, -9.5, -9.5, 0.45, 9.5, 9.5, 0.45, 9.5, 9.5, 0.45, -9.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpt06"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ddto"]
 albedo_texture = ExtResource("1_rgld7")
 
-[sub_resource type="BoxMesh" id="BoxMesh_16ffl"]
-material = SubResource("StandardMaterial3D_tpt06")
-size = Vector3(10, 1, 10)
+[sub_resource type="BoxMesh" id="BoxMesh_rgld7"]
+material = SubResource("StandardMaterial3D_2ddto")
+size = Vector3(20, 0.1, 20)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rgld7"]
-data = PackedVector3Array(-5, 0.5, 5, 5, 0.5, 5, -5, -0.5, 5, 5, 0.5, 5, 5, -0.5, 5, -5, -0.5, 5, 5, 0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, 0.5, -5, -5, -0.5, -5, 5, -0.5, -5, 5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, -5, 5, -0.5, -5, 5, -0.5, 5, -5, 0.5, -5, -5, 0.5, 5, -5, -0.5, -5, -5, 0.5, 5, -5, -0.5, 5, -5, -0.5, -5, 5, 0.5, 5, -5, 0.5, 5, 5, 0.5, -5, -5, 0.5, 5, -5, 0.5, -5, 5, 0.5, -5, -5, -0.5, 5, 5, -0.5, 5, -5, -0.5, -5, 5, -0.5, 5, 5, -0.5, -5, -5, -0.5, -5)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a8pr3"]
+data = PackedVector3Array(-10, 0.049999997, 10, 10, 0.049999997, 10, -10, -0.049999997, 10, 10, 0.049999997, 10, 10, -0.049999997, 10, -10, -0.049999997, 10, 10, 0.049999997, -10, -10, 0.049999997, -10, 10, -0.049999997, -10, -10, 0.049999997, -10, -10, -0.049999997, -10, 10, -0.049999997, -10, 10, 0.049999997, 10, 10, 0.049999997, -10, 10, -0.049999997, 10, 10, 0.049999997, -10, 10, -0.049999997, -10, 10, -0.049999997, 10, -10, 0.049999997, -10, -10, 0.049999997, 10, -10, -0.049999997, -10, -10, 0.049999997, 10, -10, -0.049999997, 10, -10, -0.049999997, -10, 10, 0.049999997, 10, -10, 0.049999997, 10, 10, 0.049999997, -10, -10, 0.049999997, 10, -10, 0.049999997, -10, 10, 0.049999997, -10, -10, -0.049999997, 10, 10, -0.049999997, 10, -10, -0.049999997, -10, 10, -0.049999997, 10, 10, -0.049999997, -10, -10, -0.049999997, -10)
 
-[node name="Sandbox" type="Node3D" unique_id=986301404]
+[sub_resource type="Environment" id="Environment_j6lu3"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1815038140]
-environment = SubResource("Environment_j6lu3")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1569629002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.681591, 0)
-layers = 3
-light_energy = 6.37
-light_indirect_energy = 2.188
-omni_range = 316.268
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="WorldEnvironment" unique_id=1826375152]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.355804, -8.624706)
-layers = 3
-light_color = Color(0.018328022, 0.58664006, 9.62615e-07, 1)
-light_energy = 9.412
-light_indirect_energy = 2.437
-omni_range = 15.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1210998065]
-mesh = SubResource("BoxMesh_16ffl")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=918576320]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1055280898]
-shape = SubResource("ConcavePolygonShape3D_rgld7")
+[node name="Sandbox" type="Node3D" unique_id=2046297457]
 
 [node name="Player" parent="." unique_id=797199737 instance=ExtResource("2_a8pr3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3402545, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Sewer_Tunnel_03_Straight" parent="." unique_id=1078205534 instance=ExtResource("3_a8pr3")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, -14.143388)
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1196893313]
+navigation_mesh = SubResource("NavigationMesh_rgld7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D" unique_id=1378192081]
+mesh = SubResource("BoxMesh_rgld7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D" unique_id=978897272]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D" unique_id=1995119996]
+shape = SubResource("ConcavePolygonShape3D_a8pr3")
+
+[node name="Rat" parent="." unique_id=792475936 instance=ExtResource("3_a8pr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0208063, 6.2074156)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1054179587]
+environment = SubResource("Environment_j6lu3")
