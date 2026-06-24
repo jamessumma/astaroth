@@ -9,6 +9,7 @@ albedo_color = Color(0, 0.5921569, 0, 0.2627451)
 albedo_texture = ExtResource("2_a6akl")
 emission_enabled = true
 emission = Color(0, 0.5921569, 0, 1)
+emission_energy_multiplier = 0.5
 
 [node name="Sewer_Tunnel_03_Straight_Water" unique_id=803537380 instance=ExtResource("1_tualq")]
 
