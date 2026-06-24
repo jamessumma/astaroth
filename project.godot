@@ -115,5 +115,5 @@ resolution={
 }
 color_depth={
 "type": "float",
-"value": 128.0
+"value": 64.0
 }
