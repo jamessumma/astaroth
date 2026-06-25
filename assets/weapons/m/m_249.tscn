@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b8yxrsjyh2ia7"]
+
+[ext_resource type="PackedScene" uid="uid://cldjgrgnirnrd" path="res://assets/weapons/m/m249.fbx" id="1_jmlfb"]
+
+[node name="m249" unique_id=1356342381 instance=ExtResource("1_jmlfb")]

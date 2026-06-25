@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b6m4xl4tyljof"]
+
+[ext_resource type="Texture2D" uid="uid://74ks73mwp5t4" path="res://assets/weapons/m/txt.png" id="1_e01f0"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_e01f0")
+roughness = 0.5
+texture_filter = 2

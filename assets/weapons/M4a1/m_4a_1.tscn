@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://clu7rvhiu2fp"]
+
+[ext_resource type="PackedScene" uid="uid://gr2bdu5ra585" path="res://assets/weapons/M4a1/m4a1.fbx" id="1_g3plr"]
+[ext_resource type="Texture2D" uid="uid://msuk3g8feq0m" path="res://assets/weapons/M4a1/txt.png" id="2_1gpxn"]
+[ext_resource type="Texture2D" uid="uid://b1kuq5krg7b8l" path="res://assets/weapons/M4a1/mag.png" id="3_4w6dp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quh4r"]
+albedo_texture = ExtResource("2_1gpxn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpdy2"]
+albedo_texture = ExtResource("3_4w6dp")
+
+[node name="m4a1" unique_id=1079124217 instance=ExtResource("1_g3plr")]
+
+[node name="Cube" parent="." index="0" unique_id=1674361211]
+surface_material_override/0 = SubResource("StandardMaterial3D_quh4r")
+
+[node name="Cube_001" parent="." index="1" unique_id=2072363643]
+surface_material_override/0 = SubResource("StandardMaterial3D_fpdy2")

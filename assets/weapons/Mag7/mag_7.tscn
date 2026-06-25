@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dvctl3q6v81q3"]
+
+[ext_resource type="PackedScene" uid="uid://skodwnvc86ln" path="res://assets/weapons/Mag7/mag7.fbx" id="1_o75wl"]
+[ext_resource type="Texture2D" uid="uid://cps4r1vdfdref" path="res://assets/weapons/Mag7/Material_Base_color.png" id="2_lbbr2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81f7p"]
+albedo_texture = ExtResource("2_lbbr2")
+
+[node name="mag7" unique_id=2073524198 instance=ExtResource("1_o75wl")]
+
+[node name="Cube" parent="." index="0" unique_id=658166601]
+surface_material_override/0 = SubResource("StandardMaterial3D_81f7p")
+
+[node name="Cube_001" parent="." index="2" unique_id=967433897]
+visible = false

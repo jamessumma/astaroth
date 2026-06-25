@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://te7x16x2o6hn"]
+
+[ext_resource type="PackedScene" uid="uid://fcs7te4mcssj" path="res://assets/weapons/Galil/galil.fbx" id="1_sh70g"]
+[ext_resource type="Texture2D" uid="uid://p835plnmh3wg" path="res://assets/weapons/Galil/txt.png" id="2_hyk4y"]
+[ext_resource type="Texture2D" uid="uid://ca65lu63fvqx2" path="res://assets/weapons/Galil/mag.png" id="3_tx0q8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fnjs"]
+albedo_texture = ExtResource("2_hyk4y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctka7"]
+albedo_texture = ExtResource("3_tx0q8")
+
+[node name="galil" unique_id=663829838 instance=ExtResource("1_sh70g")]
+
+[node name="Cube" parent="." index="0" unique_id=1980215243]
+surface_material_override/0 = SubResource("StandardMaterial3D_7fnjs")
+
+[node name="Cube_001" parent="." index="1" unique_id=1509753366]
+surface_material_override/0 = SubResource("StandardMaterial3D_ctka7")

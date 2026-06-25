@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bl1y68kvoid8u"]
+
+[ext_resource type="PackedScene" uid="uid://cmt8ebrgjovs3" path="res://assets/weapons/Ak/ak.fbx" id="1_5ihvt"]
+[ext_resource type="Texture2D" uid="uid://cks7uf46kx6e4" path="res://assets/weapons/Ak/txt.png" id="2_iriuy"]
+[ext_resource type="Texture2D" uid="uid://csw6vg6q7px64" path="res://assets/weapons/Ak/mag.png" id="3_psfr2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kiqqj"]
+albedo_texture = ExtResource("2_iriuy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akm6x"]
+albedo_texture = ExtResource("3_psfr2")
+
+[node name="ak" unique_id=2060584719 instance=ExtResource("1_5ihvt")]
+
+[node name="Cube" parent="." index="0" unique_id=507279921]
+surface_material_override/0 = SubResource("StandardMaterial3D_kiqqj")
+
+[node name="Cube_001" parent="." index="1" unique_id=381840564]
+surface_material_override/0 = SubResource("StandardMaterial3D_akm6x")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b5eaqydsjr7at"]
+
+[ext_resource type="PackedScene" uid="uid://dtiwtdtg5wgve" path="res://assets/weapons/Beretta/beretta.fbx" id="1_g7e7f"]
+[ext_resource type="Texture2D" uid="uid://bnkh5yeecb42n" path="res://assets/weapons/Beretta/beretta.png" id="2_voiu4"]
+[ext_resource type="Texture2D" uid="uid://clq7tc1tv5j2a" path="res://assets/weapons/Beretta/magazine.png" id="3_b4vqg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fuwi"]
+albedo_texture = ExtResource("2_voiu4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjm5s"]
+albedo_texture = ExtResource("3_b4vqg")
+
+[node name="beretta" unique_id=53582475 instance=ExtResource("1_g7e7f")]
+
+[node name="Cube" parent="." index="0" unique_id=1530850902]
+surface_material_override/0 = SubResource("StandardMaterial3D_6fuwi")
+
+[node name="Cube_001" parent="." index="1" unique_id=421447502]
+surface_material_override/0 = SubResource("StandardMaterial3D_bjm5s")
+
+[node name="Cube_002" parent="." index="2" unique_id=1737639856]
+visible = false
+
+[node name="Cube_003" parent="." index="3" unique_id=1342815549]
+visible = false
