@@ -29,7 +29,7 @@ data = PackedVector3Array(-5, 0.049999997, 5, 5, 0.049999997, 5, -5, -0.04999999
 [sub_resource type="CylinderMesh" id="CylinderMesh_jwaux"]
 top_radius = 0.2
 bottom_radius = 1.3
-height = 6.0
+height = 7.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jj4f"]
 transparency = 1
@@ -64,6 +64,6 @@ spot_range = 9.0
 spot_angle = 15.04
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1901949008]
-transform = Transform3D(1, 0, 0, 0, 0.97160697, -0.23660074, 0, 0.23660074, 0.97160697, -0.6486733, 3.267187, 2.9382598)
+transform = Transform3D(1, 0, 0, 0, 0.97160697, -0.23660074, 0, 0.23660074, 0.97160697, -0.6486733, 2.4855895, 2.9382598)
 mesh = SubResource("CylinderMesh_jwaux")
 surface_material_override/0 = SubResource("StandardMaterial3D_7jj4f")
