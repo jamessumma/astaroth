@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://8l4tgk0ghtgj"]
+
+[ext_resource type="Script" uid="uid://dl517kll61cdj" path="res://scripts/extras/custom_box_shape.gd" id="1_l5x2r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l5x2r"]
+
+[node name="CustomBoxShape" type="MeshInstance3D" unique_id=831945774]
+mesh = SubResource("BoxMesh_l5x2r")
+script = ExtResource("1_l5x2r")

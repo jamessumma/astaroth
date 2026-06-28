@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://4wry1cn75b0p"]
+[gd_scene format=4 uid="uid://4wry1cn75b0p"]
 
 [ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="2_jwaux"]
 [ext_resource type="PackedScene" uid="uid://dhffc1r8jkrye" path="res://scenes/office_base.tscn" id="3_jwaux"]
 [ext_resource type="Texture2D" uid="uid://cecvqdxxlriom" path="res://starfield.png" id="3_stars"]
+[ext_resource type="PackedScene" uid="uid://8l4tgk0ghtgj" path="res://scenes/extras/custom_box_shape.tscn" id="4_7jj4f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3e7dm"]
 sky_top_color = Color(0.28410813, 0.14279792, 0.47118783, 1)
@@ -17,8 +18,9 @@ sky_material = SubResource("ProceduralSkyMaterial_3e7dm")
 background_mode = 2
 sky = SubResource("Sky_n0wcf")
 ambient_light_source = 2
-ambient_light_color = Color(0.74109656, 0.33924404, 0.2156494, 1)
-ambient_light_energy = 0.6
+ambient_light_color = Color(0.9783825, 0.31234336, 0.26418588, 1)
+ambient_light_energy = 0.2
+sdfgi_read_sky_light = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_jwaux"]
 size = Vector3(10, 0.1, 10)
@@ -26,15 +28,21 @@ size = Vector3(10, 0.1, 10)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jwaux"]
 data = PackedVector3Array(-5, 0.049999997, 5, 5, 0.049999997, 5, -5, -0.049999997, 5, 5, 0.049999997, 5, 5, -0.049999997, 5, -5, -0.049999997, 5, 5, 0.049999997, -5, -5, 0.049999997, -5, 5, -0.049999997, -5, -5, 0.049999997, -5, -5, -0.049999997, -5, 5, -0.049999997, -5, 5, 0.049999997, 5, 5, 0.049999997, -5, 5, -0.049999997, 5, 5, 0.049999997, -5, 5, -0.049999997, -5, 5, -0.049999997, 5, -5, 0.049999997, -5, -5, 0.049999997, 5, -5, -0.049999997, -5, -5, 0.049999997, 5, -5, -0.049999997, 5, -5, -0.049999997, -5, 5, 0.049999997, 5, -5, 0.049999997, 5, 5, 0.049999997, -5, -5, 0.049999997, 5, -5, 0.049999997, -5, 5, 0.049999997, -5, -5, -0.049999997, 5, 5, -0.049999997, 5, -5, -0.049999997, -5, 5, -0.049999997, 5, 5, -0.049999997, -5, -5, -0.049999997, -5)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_jwaux"]
-top_radius = 0.2
-bottom_radius = 1.3
-height = 7.0
+[sub_resource type="ArrayMesh" id="ArrayMesh_7jj4f"]
+_surfaces = [{
+"aabb": AABB(-3, -1.5, -0.5, 5, 2.5, 3.5),
+"format": 34359738375,
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AAAAPwAAgD8AAAC/AACAvwAAwL/NzEy+AACAPwAAwL/NzEy+AAAAvwAAgD8AAAC/AACAvwAAwL/NzEy+AAAAPwAAgD8AAAC/AAAAQAAAwL8AAEBAAABAwAAAwL8AAEBAAAAAPwAAgD8AAAA/AAAAPwAAgD8AAAA/AABAwAAAwL8AAEBAAAAAvwAAgD8AAAA/AABAwAAAwL8AAEBAAACAvwAAwL/NzEy+AAAAvwAAgD8AAAA/AAAAvwAAgD8AAAA/AACAvwAAwL/NzEy+AAAAvwAAgD8AAAC/AAAAPwAAgD8AAAC/AACAPwAAwL/NzEy+AAAAPwAAgD8AAAA/AAAAPwAAgD8AAAA/AACAPwAAwL/NzEy+AAAAQAAAwL8AAEBAAACAPwAAwL/NzEy+AACAvwAAwL/NzEy+AAAAQAAAwL8AAEBAAAAAQAAAwL8AAEBAAACAvwAAwL/NzEy+AABAwAAAwL8AAEBAAAAAvwAAgD8AAAA/AAAAvwAAgD8AAAC/AAAAPwAAgD8AAAA/AAAAPwAAgD8AAAA/AAAAvwAAgD8AAAC/AAAAPwAAgD8AAAC/wOAC4LKyP438JAomHUsPtQzqXj9kmzSsokEC4Rwp9KP8JAomHUsPtcDgAuCysj+Nv7FrSAlC56eCVbWlnYlMoT+j2sevOX3MP6Pax685fcyCVbWlnYlMoXJJSMN7UPmqglW1pZ2JTKH8JAomHUsPtXJJSMN7UPmqcklIw3tQ+ar8JAomHUsPtaJBAuEcKfSjwOAC4LKyP40M6l4/ZJs0rD+j2sevOX3MP6Pax685fcwM6l4/ZJs0rL+xa0gJQuenDOpeP2SbNKz8JAomHUsPtb+xa0gJQuenv7FrSAlC56f8JAomHUsPtYJVtaWdiUyhcklIw3tQ+aqiQQLhHCn0oz+j2sevOX3MP6Pax685fcyiQQLhHCn0o8DgAuCysj+N")
+}]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jj4f"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qphb6"]
 transparency = 1
-blend_mode = 1
-albedo_color = Color(1, 1, 0.02745098, 0.43529412)
+albedo_color = Color(1, 1, 0.09803922, 0.3764706)
+emission_enabled = true
+emission = Color(0.9411765, 0.92156863, 0.08235294, 1)
 
 [node name="Office" type="Node3D" unique_id=31677207]
 
@@ -57,13 +65,32 @@ mesh = SubResource("BoxMesh_jwaux")
 shape = SubResource("ConcavePolygonShape3D_jwaux")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=166222676]
-transform = Transform3D(0.9998767, 0.015538816, -0.002294574, 0, 0.1460831, 0.98927236, 0.01570732, -0.9891503, 0.14606509, -0.6238549, 5.9729323, 3.62254)
+transform = Transform3D(0.69966334, 0.60853565, 0.3743736, -4.58083e-08, -0.5239859, 0.85172695, 0.71447265, -0.5959222, -0.36661372, 0.69355124, 1.7216973, 1.0298388)
+layers = 7
 light_color = Color(0.7879684, 0.7874136, 3.85046e-07, 1)
-light_energy = 100.0
-spot_range = 9.0
-spot_angle = 15.04
+light_energy = 10.0
+spot_range = 1.0
+spot_angle = 33.4
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1901949008]
-transform = Transform3D(1, 0, 0, 0, 0.97160697, -0.23660074, 0, 0.23660074, 0.97160697, -0.6486733, 2.4855895, 2.9382598)
-mesh = SubResource("CylinderMesh_jwaux")
-surface_material_override/0 = SubResource("StandardMaterial3D_7jj4f")
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=154402068]
+transform = Transform3D(0.9348257, 0.021060186, 0.35448188, 8.7268894e-08, -0.9982398, 0.059306376, 0.35510692, -0.055441096, -0.9331803, 0.54134077, 1.5519154, 1.4497297)
+layers = 3
+light_color = Color(0.7879684, 0.7874136, 3.85046e-07, 1)
+light_energy = 10.0
+spot_range = 2.0
+spot_angle = 122.43
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=1726913211]
+transform = Transform3D(0.9702957, -0.24182756, -0.006754839, -2.440982e-09, -0.02792158, 0.9996101, -0.24192189, -0.9699174, -0.02709219, 0.54134077, 5.61278, 1.4497297)
+layers = 3
+light_color = Color(0.7879684, 0.7874136, 3.85046e-07, 1)
+light_energy = 10.0
+spot_range = 6.0
+spot_angle = 35.87
+
+[node name="CustomBoxShape" parent="." unique_id=831945774 instance=ExtResource("4_7jj4f")]
+transform = Transform3D(0.14215991, 0, -0.14067894, 0, 0.2, 0, 0.14067894, 0, 0.14215991, 0.6733254, 1.4922839, 1.0901288)
+layers = 4
+mesh = SubResource("ArrayMesh_7jj4f")
+surface_material_override/0 = SubResource("StandardMaterial3D_qphb6")
+corners = Array[Vector3]([Vector3(-1, -1.5, -0.2), Vector3(1, -1.5, -0.2), Vector3(0.5, 1, -0.5), Vector3(-0.5, 1, -0.5), Vector3(-3, -1.5, 3), Vector3(2, -1.5, 3), Vector3(0.5, 1, 0.5), Vector3(-0.5, 1, 0.5)])
