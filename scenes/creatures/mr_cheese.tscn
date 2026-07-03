@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dak2aq3jo0o4h"]
+
+[ext_resource type="PackedScene" uid="uid://d34sigrbomklb" path="res://assets/enemies/MrCheese/MrCheese.fbx" id="1_825en"]
+[ext_resource type="AnimationLibrary" uid="uid://chci34j46yfkg" path="res://assets/enemies/MrCheese/Baseball Pitching.fbx" id="2_56p2u"]
+[ext_resource type="AnimationLibrary" uid="uid://bnjiqw0kc6pn4" path="res://assets/enemies/MrCheese/Flying Kick.fbx" id="2_76iis"]
+[ext_resource type="AnimationLibrary" uid="uid://bgvmow4xj5hlo" path="res://assets/enemies/MrCheese/Dying.fbx" id="3_745gj"]
+[ext_resource type="AnimationLibrary" uid="uid://b3acy8e7rl5oc" path="res://assets/enemies/MrCheese/Goalkeeper Drop Kick.fbx" id="5_xpxnv"]
+[ext_resource type="AnimationLibrary" uid="uid://ccrpmrvivl0mc" path="res://assets/enemies/MrCheese/Jump.fbx" id="6_xuyjb"]
+[ext_resource type="AnimationLibrary" uid="uid://c0kdnlc4hjmxg" path="res://assets/enemies/MrCheese/Lead Jab.fbx" id="7_whnwb"]
+[ext_resource type="AnimationLibrary" uid="uid://bnndreyo5gbn2" path="res://assets/enemies/MrCheese/Mma Kick.fbx" id="8_n4b4v"]
+[ext_resource type="AnimationLibrary" uid="uid://cxmntumbl8kyn" path="res://assets/enemies/MrCheese/Orc Idle.fbx" id="9_crn1c"]
+[ext_resource type="AnimationLibrary" uid="uid://dp2wwm6y4m50d" path="res://assets/enemies/MrCheese/Punching Bag.fbx" id="10_av7re"]
+[ext_resource type="AnimationLibrary" uid="uid://cu5ld4ngill" path="res://assets/enemies/MrCheese/Running.fbx" id="11_1cgm2"]
+[ext_resource type="AnimationLibrary" uid="uid://dt0mvhgwoj253" path="res://assets/enemies/MrCheese/Standing Melee Attack Downward.fbx" id="12_hbms1"]
+
+[node name="MrCheese" unique_id=2028083268 instance=ExtResource("1_825en")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1850167659) index="0" unique_id=154943134]
+bones/0/position = Vector3(0.0094618555, 0.7914815, -0.007535463)
+bones/0/rotation = Quaternion(0.050670236, -0.42268568, 0.04734351, 0.90361935)
+bones/1/rotation = Quaternion(0.0779559, 0.025601566, -0.015865203, 0.9965018)
+bones/2/rotation = Quaternion(0.05130417, 0.05160287, -0.03299468, 0.9968031)
+bones/3/rotation = Quaternion(-0.051849347, 0.054746307, -0.027414426, 0.9967763)
+bones/4/rotation = Quaternion(0.037203986, 0.081648804, 0.00075613253, 0.9959663)
+bones/5/rotation = Quaternion(-0.041594397, 0.1994374, -0.037356876, 0.9783144)
+bones/8/rotation = Quaternion(-0.62480104, -0.35847154, 0.48559028, -0.49530184)
+bones/9/rotation = Quaternion(0.29170132, -0.088839754, 0.017315814, 0.9522175)
+bones/10/rotation = Quaternion(0.17488693, -0.48874414, 0.19070013, 0.83317304)
+bones/11/rotation = Quaternion(-0.05745213, 0.6664345, 0.025271975, 0.74291694)
+bones/12/rotation = Quaternion(-0.073009856, 0.1925106, 0.21453178, 0.9547699)
+bones/13/rotation = Quaternion(0.09664595, -0.08393822, 0.056860007, 0.99014187)
+bones/14/rotation = Quaternion(0.057472307, -0.039803922, 0.2864302, 0.95554715)
+bones/17/rotation = Quaternion(-0.031155914, -0.010584403, 0.04390162, 0.9984939)
+bones/18/rotation = Quaternion(0.030808568, -0.0013442198, -0.026560402, 0.9991715)
+bones/19/rotation = Quaternion(0.050043683, -0.0046674553, 0.16172458, 0.9855552)
+bones/22/rotation = Quaternion(0.6361705, -0.3155213, 0.44549564, 0.54522204)
+bones/23/rotation = Quaternion(0.34590766, 0.12228887, 0.28834924, 0.88444793)
+bones/24/rotation = Quaternion(0.235842, 0.41721183, -0.33332244, 0.8119169)
+bones/25/rotation = Quaternion(0.083817214, -0.6179259, -0.29976854, 0.72199804)
+bones/26/rotation = Quaternion(-0.15656583, -0.47496518, -0.24935487, 0.8292873)
+bones/27/rotation = Quaternion(0.10493824, 0.08660827, -0.08004126, 0.9874616)
+bones/28/rotation = Quaternion(0.2107907, 0.090172604, -0.09121299, 0.96908015)
+bones/31/rotation = Quaternion(0.23378459, -0.062245544, -0.24229395, 0.9395552)
+bones/32/rotation = Quaternion(0.44983965, -0.033538997, -0.28811902, 0.8446934)
+bones/33/rotation = Quaternion(0.41160655, -0.023267012, -0.3774038, 0.8292196)
+bones/36/rotation = Quaternion(0.37878478, 0.40460035, 0.80381465, -0.21610819)
+bones/37/rotation = Quaternion(-0.44684333, 0.18468566, -0.069269516, 0.87259614)
+bones/38/rotation = Quaternion(0.50656486, 0.11796358, -0.15158486, 0.84053487)
+bones/39/rotation = Quaternion(0.2872197, -0.0764446, -0.013027467, 0.9547207)
+bones/42/rotation = Quaternion(-0.061529834, 0.2588374, 0.9297026, 0.25469697)
+bones/43/rotation = Quaternion(-0.5240122, -0.05471242, -0.0077644796, 0.8499162)
+bones/44/rotation = Quaternion(0.7404537, -0.09413697, 0.23995546, 0.6207156)
+bones/45/rotation = Quaternion(0.2678351, 0.08460785, 0.005809973, 0.959725)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=360321151]
+root_node = NodePath("../Armature")
+"libraries/Baseball Pitching" = ExtResource("2_56p2u")
+libraries/Dying = ExtResource("3_745gj")
+"libraries/Flying Kick" = ExtResource("2_76iis")
+"libraries/Goalkeeper Drop Kick" = ExtResource("5_xpxnv")
+libraries/Jump = ExtResource("6_xuyjb")
+"libraries/Lead Jab" = ExtResource("7_whnwb")
+"libraries/Mma Kick" = ExtResource("8_n4b4v")
+"libraries/Orc Idle" = ExtResource("9_crn1c")
+"libraries/Punching Bag" = ExtResource("10_av7re")
+libraries/Running = ExtResource("11_1cgm2")
+"libraries/Standing Melee Attack Downward" = ExtResource("12_hbms1")
