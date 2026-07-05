@@ -13,7 +13,7 @@ var cur_health: int = max_health
 # movement vars
 var gravity = 10.0
 var base_move_speed = 7
-var attack_range = 2
+var attack_range: float = 2.0
 var vision_range = 10
 var distance_to_player = 1000
 var cur_direction: Vector3 = Vector3()
@@ -66,6 +66,9 @@ func handle_state(delta:float):
 			handle_attack(delta)
 		state.DEAD:
 			# play death animation, then free from memory
+			if cur_state == state.DEAD:
+				velocity.x = 0
+				velocity.z = 0
 			die()
 	check_state()
 	

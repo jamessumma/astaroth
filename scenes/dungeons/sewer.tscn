@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://whdismeswutj" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_corner_01.tscn" id="5_2dvi2"]
 [ext_resource type="PackedScene" uid="uid://bc4ycdt1xopb" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_split_4.tscn" id="6_2dvi2"]
 [ext_resource type="PackedScene" uid="uid://cgvqml7o8l41r" path="res://scenes/creatures/rat.tscn" id="7_km7ww"]
+[ext_resource type="PackedScene" uid="uid://cmcekypkar2bh" path="res://scenes/creatures/mr_cheese.tscn" id="8_y8r5j"]
 
 [sub_resource type="Environment" id="Environment_bvf7l"]
 background_color = Color(0.76240367, 0.76240367, 0.76240367, 1)
@@ -100,8 +101,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7036667, 7.1021886)
 [node name="Rat4" parent="EnemySpawns" unique_id=338682883 instance=ExtResource("7_km7ww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.258788, 0.2508081, 13.447302)
 
+[node name="MrCheese" parent="EnemySpawns" unique_id=224283511 instance=ExtResource("8_y8r5j")]
+
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=932469001]
 transform = Transform3D(0.9998767, 0.015538816, -0.002294574, 0, 0.1460831, 0.98927236, 0.01570732, -0.9891503, 0.14606509, -0.6238549, 5.9729323, 3.62254)
+visible = false
 layers = 3
 light_color = Color(0.7879684, 0.7874136, 3.85046e-07, 1)
 light_energy = 100.0
@@ -110,10 +114,12 @@ spot_angle = 15.04
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=125237380]
 transform = Transform3D(1, 0, 0, 0, 0.97160697, -0.23660074, 0, 0.23660074, 0.97160697, -0.6486733, 3.267187, 2.9382598)
+visible = false
 layers = 3
 mesh = SubResource("CylinderMesh_km7ww")
 surface_material_override/0 = SubResource("StandardMaterial3D_y8r5j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=852655040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35020947, 0, 2.667918)
+visible = false
 mesh = SubResource("PlaneMesh_km7ww")
