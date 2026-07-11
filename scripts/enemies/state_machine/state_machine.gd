@@ -8,6 +8,7 @@ var enemy: Enemy
 func _init(enemy: Enemy):
   self.enemy = enemy
   self.cur_state = StateIdle.new(enemy)
+  cur_state.enter()
 
 func trigger_event(event):
   var next = cur_state.handle_event(event)

@@ -19,11 +19,11 @@ func _physics_process(delta: float) -> void:
 	attack_timer_cur = clamp(attack_timer_cur - delta, 0, attack_timer_max)
 	enemy_process(delta)
 
-func handle_idle(delta: float):
+func enter_idle():
 	if !animation_player.is_playing():
 		animation_player.play("Armature|Rat_Idle")
 
-func handle_chase(delta: float):
+func enter_chase(delta: float):
 	if !animation_player.is_playing():
 		animation_player.play("Armature|Rat_Run")
 		
@@ -34,7 +34,7 @@ func handle_attack(delta: float):
 		animation_player.play("Armature|Rat_Attack")
 		attack_timer_cur = attack_timer_max
 	
-func die():
+func enter_dead():
 	animation_player.play("Armature|Rat_Death")
 
 func _on_animation_finished(anim_name):
