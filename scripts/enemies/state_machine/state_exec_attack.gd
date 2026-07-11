@@ -1,12 +1,13 @@
-extends RefCounted
+extends State
 
-class_name StateAttack
+class_name StateExecAttack
 
 func enter():
-  print("entering attack")
+  print("entering exec attack")
+  enemy.enter_exec_attack()
 
 func exit():
-  print("exiting attack")
+  print("exiting exec attack")
 
 func update(delta):
   pass

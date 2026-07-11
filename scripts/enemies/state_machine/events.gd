@@ -1,9 +1,13 @@
 class_name Events
 
 enum type {
-  DETECT_PLAYER, 
-  IN_RANGE,
+  ATTACK_CHOSEN,
   ATTACK_FINISHED,
+  DETECT_PLAYER, 
   DIE,
-  HIT
+  FLINCH_FINISH,
+  FLINCHING_HIT,
+  HIT,
+  IN_ATTACK_RANGE, # signals that the enemy has entered range to execute chosen attack
+  IN_COMBAT_RANGE # signals that the enemy has entered range to choose an attack
 }

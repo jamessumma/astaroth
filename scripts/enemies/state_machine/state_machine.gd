@@ -18,3 +18,6 @@ func change_state(state: State):
   cur_state.exit()
   cur_state = state
   cur_state.enter()
+
+func update(delta: float):
+  cur_state.update(delta)

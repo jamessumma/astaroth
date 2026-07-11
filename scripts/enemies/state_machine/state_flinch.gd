@@ -1,20 +1,20 @@
 extends State
 
-class_name StateIdle
+class_name StateFlinch
 
 func enter():
-  print("entering idle")
-  enemy.enter_idle()
+  print("entering flinch")
+  enemy.enter_flinch()
 
 func exit():
-  print("exiting idle")
+  print("exiting choose attack")
 
 func update(delta):
-  enemy.handle_idle()
+  pass
 
 func handle_event(event: Events.type) -> State:
   match event:
-    Events.type.DETECT_PLAYER:
+    Events.type.FLINCH_FINISH:
       return StateChase.new(self.enemy)
     Events.type.DIE:
       return StateDead.new(self.enemy)

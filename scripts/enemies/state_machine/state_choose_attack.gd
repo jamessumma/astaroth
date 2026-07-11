@@ -1,21 +1,21 @@
 extends State
 
-class_name StateIdle
+class_name StateChooseAttack
 
 func enter():
-  print("entering idle")
-  enemy.enter_idle()
+  print("entering choose attack")
+  enemy.enter_choose_attack()
 
 func exit():
-  print("exiting idle")
+  print("exiting choose attack")
 
 func update(delta):
-  enemy.handle_idle()
+  pass
 
 func handle_event(event: Events.type) -> State:
   match event:
-    Events.type.DETECT_PLAYER:
-      return StateChase.new(self.enemy)
+    Events.type.ATTACK_CHOSEN:
+      return StateReposition.new(self.enemy)
     Events.type.DIE:
       return StateDead.new(self.enemy)
     _:
