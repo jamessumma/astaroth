@@ -1,5 +1,6 @@
 class_name Attack
-extends Resource
+
+extends RefCounted
 
 @export var attack_name: String
 @export var min_range: float

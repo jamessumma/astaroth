@@ -21,6 +21,7 @@ var cur_direction: Vector3 = Vector3()
 var turn_speed: float = 5.0
 var path_desired_distance: float = 0.5
 var target_desired_distance: float = 0.5
+var attacks: Array[Attack] = []
   
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -110,6 +111,38 @@ func handle_move(delta):
 func update_movement_vectors(delta: float, dir: Vector3):
 	velocity.x = base_move_speed * dir.x
 	velocity.z = base_move_speed * dir.z
+
+func choose_attack() -> Attack:
+	var cur_attack = null
+	var cur_attack_weight = -INF
+
+	for attack in self.attacks:
+		var cur = attack_value(attack)
+		if cur > cur_attack_weight:
+			cur_attack = attack
+			cur_attack_weight = cur
+
+	adjust_weights(cur_attack)
+	return cur_attack
+
+# function shifts the weights after an attack is selected 
+func adjust_weights(chosen_attack: Attack):
+	if not chosen_attack:
+		return
+	for attack in self.attacks:
+		attack.cur_weight += self.attacks.size()
+	chosen_attack.cur_weight = 0.0
+
+
+func attack_value(attack: Attack) -> float:
+	var res = attack.cur_weight
+	if attack_in_range(attack):
+		res += self.attacks.size()
+	return res
+
+func attack_in_range(attack: Attack) -> bool:
+	return ((attack.min_range <= self.distance_to_player) and (attack.max_range >= self.distance_to_player))
+
 
 # below are the functions the inheriting class will want to edit
 
