@@ -6,11 +6,14 @@ class_name StateReposition
 # ie, move until in range of chosen attack, or move to specific position
 func enter():
   print("entering reposition")
+  enemy.enter_reposition()
 
 func exit():
   print("exiting reposition")
+  enemy.exit_move_state()
 
 func update(delta):
+  enemy.handle_reposition()
   enemy.handle_move(delta)
   enemy.look_at_slerp(delta)
 

@@ -10,6 +10,7 @@ func enter():
 
 func exit():
   print("exiting chase")
+  enemy.exit_move_state()
 
 
 func update(delta):

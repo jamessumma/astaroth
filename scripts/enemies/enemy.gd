@@ -22,6 +22,7 @@ var turn_speed: float = 5.0
 var path_desired_distance: float = 0.5
 var target_desired_distance: float = 0.5
 var attacks: Array[Attack] = []
+var next_attack: Attack = null
   
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -38,6 +39,7 @@ func enemy_process(delta: float):
 
 # one time setup, needs to be called in ready of inherited class
 func enemy_setup():
+	print("enemy setup called")
 	self.state_machine = StateMachine.new(self)
 	navigation_agent.path_desired_distance = path_desired_distance
 	navigation_agent.target_desired_distance = target_desired_distance
@@ -55,7 +57,8 @@ func handle_chase():
 # this function serves to choose an attack from a pool based
 # on some criteria
 func handle_choose_attack():
-	pass
+	self.next_attack = self.choose_attack()
+	state_machine.trigger_event(Events.type.ATTACK_CHOSEN)
 
 func handle_exec_attack():
 	pass
@@ -66,6 +69,9 @@ func play_chase_anim():
 func handle_flinch():
 	pass
 
+func handle_reposition():
+	if attack_in_range(self.next_attack):
+		state_machine.trigger_event(Events.type.IN_ATTACK_RANGE)
 
 func update_player_distance():
 	if GameManager.player == null:
@@ -106,9 +112,12 @@ func handle_move(delta):
 	var pos = navigation_agent.get_next_path_position()
 	cur_direction = global_position.direction_to(pos)
 	# make the enemy face the direction its moving in
-	update_movement_vectors(delta, cur_direction)
+	update_movement_vectors(cur_direction)
 
-func update_movement_vectors(delta: float, dir: Vector3):
+func stop_moving():
+	update_movement_vectors(Vector3(0, velocity.y, 0))
+
+func update_movement_vectors(dir: Vector3):
 	velocity.x = base_move_speed * dir.x
 	velocity.z = base_move_speed * dir.z
 
@@ -143,7 +152,6 @@ func attack_value(attack: Attack) -> float:
 func attack_in_range(attack: Attack) -> bool:
 	return ((attack.min_range <= self.distance_to_player) and (attack.max_range >= self.distance_to_player))
 
-
 # below are the functions the inheriting class will want to edit
 
 func enter_idle():
@@ -153,6 +161,9 @@ func enter_chase():
 	pass
 
 func enter_choose_attack():
+	pass
+
+func enter_reposition():
 	pass
 
 func enter_exec_attack():
@@ -165,3 +176,6 @@ func enter_dead():
 	# insert death animation here
 	queue_free()
 	pass
+
+func exit_move_state():
+	stop_moving()

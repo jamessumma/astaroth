@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cgvqml7o8l41r"]
 
-[ext_resource type="Script" uid="uid://qwny5oeihvi5" path="res://scripts/enemies/rat.gd" id="1_mu21v"]
+[ext_resource type="Script" uid="uid://belumosgxsx3w" path="res://scripts/enemies/rat_enemy/rat.gd" id="1_mu21v"]
 [ext_resource type="PackedScene" uid="uid://tw2d4t7opqki" path="res://scenes/creatures/rat_model.tscn" id="1_xehk6"]
 [ext_resource type="Script" uid="uid://dm1rmv8572wsw" path="res://scripts/enemies/body_part.gd" id="3_be1qc"]
 

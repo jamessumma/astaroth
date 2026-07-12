@@ -2,10 +2,12 @@ class_name AttackRatBite
 
 extends Attack
 
-@export var attack_name: String = "Armature|Rat_Attack"
-@export var min_range: float = 0.0
-@export var max_range: float = 2.0
-@export var base_weight: float = 1.0
-@export var cur_weight: float = 1.0
-@export var base_damage: float = 1.0
-@export var knockback: bool = false
+func _init():
+  attack_name = "Armature|Rat_Attack"
+  attack_duration = 0.75
+  min_range = 0.0
+  max_range = 2.0
+  base_weight = 1.0
+  cur_weight = 1.0
+  base_damage = 1.0
+  knockback = false

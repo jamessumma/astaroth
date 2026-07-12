@@ -4,6 +4,7 @@ class_name StateChooseAttack
 
 func enter():
   print("entering choose attack")
+  enemy.handle_choose_attack()
   enemy.enter_choose_attack()
 
 func exit():
