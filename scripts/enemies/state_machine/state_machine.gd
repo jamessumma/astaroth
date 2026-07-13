@@ -25,6 +25,7 @@ func update(delta: float):
 	cur_state.update(delta)
 	flush()
 
+# purpose of flush is to make sure the exit function is the last thing to happen
 func flush():
 	while pending:
 		var next = pending
