@@ -17,13 +17,15 @@ var base_move_speed = 7
 var combat_range: float = 2.0
 var vision_range = 10
 var distance_to_player = 1000
-var cur_direction: Vector3 = Vector3()
 var turn_speed: float = 5.0
 var path_desired_distance: float = 0.5
 var target_desired_distance: float = 0.5
 var attacks: Array[Attack] = []
 var next_attack: Attack = null
-  
+var lerp_weight: float = 5.0
+var cur_facing_direction_vector: Vector3 = Vector3(0,0,0)
+var cur_direction_vector_pull: Vector3 = Vector3(0,0,0)
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	enemy_setup()
@@ -35,12 +37,15 @@ func _physics_process(delta: float) -> void:
 func enemy_process(delta: float):
 	state_machine.update(delta)
 	handle_gravity(delta)
+	move_process(delta)
 	move_and_slide()
 
 # one time setup, needs to be called in ready of inherited class
 func enemy_setup():
 	print("enemy setup called")
 	self.state_machine = StateMachine.new(self)
+	self.cur_facing_direction_vector = Vector3(0.0, 0.0, 0.0)
+	self.cur_direction_vector_pull = Vector3(0.0, 0.0, 0.0)
 	navigation_agent.path_desired_distance = path_desired_distance
 	navigation_agent.target_desired_distance = target_desired_distance
 
@@ -86,11 +91,10 @@ func handle_gravity(delta):
 
 
 func look_at_slerp(delta):
-	var flat_dir = Vector3(cur_direction.x, 0, cur_direction.z).normalized()
+	var flat_dir = Vector3(cur_facing_direction_vector.x, 0, cur_facing_direction_vector.z).normalized()
 	var target_transform = transform.looking_at(global_position - flat_dir, Vector3.UP)
 	var target_basis = target_transform.basis
 	transform.basis = transform.basis.slerp(target_basis, turn_speed * delta)
-	pass
 
 func hit(damage: float):
 	# add some code for armor or something here
@@ -104,22 +108,43 @@ func take_damage(amount: float) -> void:
 	if cur_health <= 0:
 		state_machine.trigger_event(Events.type.DIE)
 
-func handle_move(delta):
+# update velocity vector to the path to the player
+func set_pull_to_player():
 	if GameManager.player == null:
 		return
 	# set the nav to the players position
 	navigation_agent.target_position = GameManager.player.global_position
 	var pos = navigation_agent.get_next_path_position()
-	cur_direction = global_position.direction_to(pos)
+	self.cur_direction_vector_pull = global_position.direction_to(pos)
 	# make the enemy face the direction its moving in
-	update_movement_vectors(cur_direction)
 
-func stop_moving():
-	update_movement_vectors(Vector3(0, velocity.y, 0))
+func set_pull_vector_stop():
+	self.cur_direction_vector_pull.x = 0.0
+	self.cur_direction_vector_pull.y = velocity.y
+	self.cur_direction_vector_pull.z = 0.0
 
-func update_movement_vectors(dir: Vector3):
-	velocity.x = base_move_speed * dir.x
-	velocity.z = base_move_speed * dir.z
+
+# move process gets called every call to physics proces
+func move_process(delta):
+	# every physics process, update the movement vector to pull towards the pull vector
+	# so the idea is, by default, pull towards zero
+	# then, certain states will call functions that will modify the pull vector
+	# for instance, chase will set the pull to the player on the nav graph
+	update_movement_vectors(self.cur_direction_vector_pull, delta)
+
+func update_movement_vectors(dir: Vector3, delta: float):
+	var cur = Vector3(velocity.x, velocity.y, velocity.z)
+
+	var x_tmp = base_move_speed * dir.x
+	var z_tmp = base_move_speed * dir.z
+
+	velocity.x = lerp(cur.x, x_tmp, lerp_weight * delta)
+	velocity.z = lerp(cur.z, z_tmp, lerp_weight * delta)
+
+	# update facing direction
+	cur_facing_direction_vector.x = velocity.x
+	cur_facing_direction_vector.z = velocity.z
+
 
 func choose_attack() -> Attack:
 	var cur_attack = null
@@ -178,4 +203,4 @@ func enter_dead():
 	pass
 
 func exit_move_state():
-	stop_moving()
+	pass
