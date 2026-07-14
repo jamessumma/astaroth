@@ -34,9 +34,8 @@ func handle_attack():
 	pass
 
 func enter_exec_attack():
-	if attack_timer_cur <= 0:
-		animation_player.play(self.next_attack.attack_name)
-		attack_timer_cur = attack_timer_max
+	animation_player.play(self.next_attack.attack_name)
+	attack_timer_cur = attack_timer_max
 	
 func enter_dead():
 	animation_player.play("Armature|Rat_Death")
@@ -48,3 +47,5 @@ func enter_reposition():
 func _on_animation_finished(anim_name):
 	if anim_name == "Armature|Rat_Death":
 		queue_free()
+	if anim_name == next_attack.attack_name:
+		self.state_machine.trigger_event(Events.type.ATTACK_FINISHED)

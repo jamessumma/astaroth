@@ -22,10 +22,12 @@ var path_desired_distance: float = 0.5
 var target_desired_distance: float = 0.5
 var attacks: Array[Attack] = []
 var next_attack: Attack = null
+var attack_timer: float = 0.0
+
 var lerp_weight: float = 5.0
 var cur_facing_direction_vector: Vector3 = Vector3(0,0,0)
 var cur_direction_vector_pull: Vector3 = Vector3(0,0,0)
-	
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	enemy_setup()
@@ -63,6 +65,8 @@ func handle_chase():
 # on some criteria
 func handle_choose_attack():
 	self.next_attack = self.choose_attack()
+	if self.next_attack:
+		print(self.next_attack.attack_name)
 	state_machine.trigger_event(Events.type.ATTACK_CHOSEN)
 
 func handle_exec_attack():
@@ -75,6 +79,7 @@ func handle_flinch():
 	pass
 
 func handle_reposition():
+	update_player_distance()
 	if attack_in_range(self.next_attack):
 		state_machine.trigger_event(Events.type.IN_ATTACK_RANGE)
 
@@ -145,6 +150,13 @@ func update_movement_vectors(dir: Vector3, delta: float):
 	cur_facing_direction_vector.x = velocity.x
 	cur_facing_direction_vector.z = velocity.z
 
+func set_facing_to_player():
+    # flattened direction from self to player, into cur_facing_direction_vector
+		pass
+
+func aligned_to_player(tol: float) -> bool:
+    # angle between forward vector and flat dir-to-player <= tol
+		pass
 
 func choose_attack() -> Attack:
 	var cur_attack = null
@@ -175,6 +187,8 @@ func attack_value(attack: Attack) -> float:
 	return res
 
 func attack_in_range(attack: Attack) -> bool:
+	if distance_to_player > 1.0:
+		print(distance_to_player)
 	return ((attack.min_range <= self.distance_to_player) and (attack.max_range >= self.distance_to_player))
 
 # below are the functions the inheriting class will want to edit
