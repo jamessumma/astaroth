@@ -27,6 +27,8 @@ var attack_timer: float = 0.0
 var lerp_weight: float = 5.0
 var cur_facing_direction_vector: Vector3 = Vector3(0,0,0)
 var cur_direction_vector_pull: Vector3 = Vector3(0,0,0)
+# degrees of tolerance to determine whether enemy is facing player or not
+var facing_player_angle: float = 5.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -81,7 +83,11 @@ func handle_flinch():
 func handle_reposition():
 	update_player_distance()
 	if attack_in_range(self.next_attack):
-		state_machine.trigger_event(Events.type.IN_ATTACK_RANGE)
+		if aligned_to_player():
+			state_machine.trigger_event(Events.type.IN_ATTACK_RANGE)
+		else:
+			set_facing_to_player()
+
 
 func update_player_distance():
 	if GameManager.player == null:
@@ -151,12 +157,20 @@ func update_movement_vectors(dir: Vector3, delta: float):
 	cur_facing_direction_vector.z = velocity.z
 
 func set_facing_to_player():
-    # flattened direction from self to player, into cur_facing_direction_vector
-		pass
+	if GameManager.player == null:
+		return
+	# set the direction to the players position
+	self.cur_facing_direction_vector = global_position.direction_to(GameManager.player.global_position)
 
-func aligned_to_player(tol: float) -> bool:
-    # angle between forward vector and flat dir-to-player <= tol
-		pass
+func aligned_to_player() -> bool:
+	if GameManager.player == null:
+		return false
+	var to_player = global_position.direction_to(GameManager.player.global_position)
+	var forward = global_transform.basis.z
+	to_player.y = 0
+	forward.y = 0
+	return to_player.angle_to(forward) <= deg_to_rad(self.facing_player_angle)
+
 
 func choose_attack() -> Attack:
 	var cur_attack = null

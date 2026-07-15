@@ -110,4 +110,25 @@ visible = false
 mesh = SubResource("PlaneMesh_km7ww")
 
 [node name="Rat" parent="." unique_id=792475936 instance=ExtResource("7_km7ww")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89239097, -9.490306)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89239097, -5.381848)
+
+[node name="Rat2" parent="." unique_id=249629323 instance=ExtResource("7_km7ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24943, 0.89239097, -5.296009)
+
+[node name="Rat3" parent="." unique_id=1187385074 instance=ExtResource("7_km7ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89239097, -7.334214)
+
+[node name="Rat4" parent="." unique_id=1504885300 instance=ExtResource("7_km7ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9209967, 0.89239097, -9.490306)
+
+[node name="Rat5" parent="." unique_id=245510729 instance=ExtResource("7_km7ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89239097, -11.900213)
+
+[node name="Rat6" parent="." unique_id=76291102 instance=ExtResource("7_km7ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1951737, 0.89239097, -4.0870833)
+
+[node name="Rat7" parent="." unique_id=1318654821 instance=ExtResource("7_km7ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1647904, 0.89239097, -7.6247168)
+
+[node name="Rat8" parent="." unique_id=591324812 instance=ExtResource("7_km7ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8553176, 0.89239097, -13.981893)

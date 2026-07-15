@@ -17,6 +17,7 @@ func update(delta):
 	enemy.handle_reposition()
   # change this later to something more generic
 	enemy.set_pull_to_player()
+	
 	enemy.look_at_slerp(delta)
 
 func handle_event(event: Events.type) -> State:
