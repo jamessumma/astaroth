@@ -8,7 +8,6 @@ var attack_timer_cur: float = 0
 @onready var animation_player: AnimationPlayer = $MrCheese/AnimationPlayer
 
 func _ready() -> void:
-	attack_range = 4.5
 	base_move_speed = 4
 	max_health = 1
 	cur_health = max_health

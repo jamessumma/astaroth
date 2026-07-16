@@ -20,17 +20,23 @@ emission = Color(0.5764706, 1, 0, 1)
 emission_energy_multiplier = 8.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dnt7v"]
+lifetime_randomness = 0.2
 direction = Vector3(0, 0, -1)
 initial_velocity_min = 1.0
 initial_velocity_max = 2.0
+scale_min = 0.5
+scale_max = 1.1999999
+collision_mode = 1
+collision_friction = 0.5
+collision_bounce = 0.5
 
 [sub_resource type="BoxMesh" id="BoxMesh_1t05q"]
-size = Vector3(0.04, 0.04, 0.04)
+size = Vector3(0.06, 0.06, 0.06)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnt7v"]
-albedo_color = Color(0.49417436, 0, 0.0021452357, 1)
+albedo_color = Color(0.4198558, 1.293514e-06, 0.0027678069, 1)
 emission_enabled = true
-emission = Color(0.41675407, 8.4830447e-07, 2.1658838e-07, 1)
+emission = Color(0.30756196, 2.1358021e-07, 7.219613e-08, 1)
 emission_energy_multiplier = 4.0
 
 [node name="Bullet" type="Node3D" unique_id=1243891815]
@@ -62,11 +68,11 @@ draw_pass_1 = SubResource("BoxMesh_1t05q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5626915)
 material_override = SubResource("StandardMaterial3D_dnt7v")
 emitting = false
-amount = 16
-lifetime = 0.3
+amount = 64
+lifetime = 2.0
 one_shot = true
 speed_scale = 2.0
-explosiveness = 1.0
+explosiveness = 0.5
 process_material = SubResource("ParticleProcessMaterial_dnt7v")
 draw_pass_1 = SubResource("BoxMesh_1t05q")
 
