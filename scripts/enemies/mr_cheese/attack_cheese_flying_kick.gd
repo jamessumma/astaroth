@@ -3,7 +3,7 @@ class_name AttackCheeseFlyingKick
 extends Attack
 
 func _init():
-  attack_name = "Flying Kick|mixamo_com"
+  attack_name = "Flying Kick/mixamo_com"
   attack_duration = 0.75
   min_range = 1.0
   max_range = 5.0
