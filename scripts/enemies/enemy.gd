@@ -191,7 +191,7 @@ func adjust_weights(chosen_attack: Attack):
 		return
 	for attack in self.attacks:
 		attack.cur_weight += self.attacks.size()
-	chosen_attack.cur_weight = 0.0
+	chosen_attack.cur_weight = chosen_attack.base_weight
 
 
 func attack_value(attack: Attack) -> float:

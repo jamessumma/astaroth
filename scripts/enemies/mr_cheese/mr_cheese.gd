@@ -8,6 +8,7 @@ var attack_timer_cur: float = 0
 @onready var animation_player: AnimationPlayer = $MrCheese/AnimationPlayer
 
 func _ready() -> void:
+	self.combat_range = 10.0
 	max_health = 1
 	cur_health = max_health
 	enemy_setup()
@@ -18,15 +19,17 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	attack_timer_cur = clamp(attack_timer_cur - delta, 0, attack_timer_max)
+	#var rm := animation_player.get_root_motion_position()
+	#velocity = (global_transform.basis * rm) / delta
 	enemy_process(delta)
 
 
 func enter_idle():
-	animation_player.play("Punching Bag/mixamo_com", 0.3)
+	animation_player.play("Punching Bag/mixamo_com", 0.6)
 
 
 func enter_chase():
-	animation_player.play("Mutant Run-2/mixamo_com", 0.3)
+	animation_player.play("Mutant Run-2/mixamo_com", 0.6)
 
 		
 func handle_attack(delta: float):
@@ -40,16 +43,16 @@ func handle_attack(delta: float):
 
 func enter_exec_attack():
 	print(self.next_attack.attack_name)
-	animation_player.play(self.next_attack.attack_name, 0.3)
+	animation_player.play(self.next_attack.attack_name, 0.6)
 	print("post attack")
 	attack_timer_cur = attack_timer_max
 
 func enter_dead():
-	animation_player.play("Dying/mixamo_com", 0.3)
+	animation_player.play("Dying/mixamo_com", 0.6)
 
 func enter_reposition():
 	print("enter reposition")
-	animation_player.play("Mutant Run-2/mixamo_com")
+	animation_player.play("Mutant Run-2/mixamo_com", 0.6)
 
 func _on_animation_finished(anim_name):
 	if anim_name == "Dying/mixamo_com":
@@ -57,3 +60,4 @@ func _on_animation_finished(anim_name):
 	if next_attack:
 		if anim_name == next_attack.attack_name:
 			self.state_machine.trigger_event(Events.type.ATTACK_FINISHED)
+			animation_player.root_motion_track = NodePath()
