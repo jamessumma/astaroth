@@ -31,13 +31,24 @@ collision_friction = 0.5
 collision_bounce = 0.5
 
 [sub_resource type="BoxMesh" id="BoxMesh_1t05q"]
-size = Vector3(0.06, 0.06, 0.06)
+size = Vector3(0.08, 0.08, 0.08)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnt7v"]
 albedo_color = Color(0.4198558, 1.293514e-06, 0.0027678069, 1)
 emission_enabled = true
 emission = Color(0.30756196, 2.1358021e-07, 7.219613e-08, 1)
 emission_energy_multiplier = 4.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mx1hr"]
+lifetime_randomness = 0.2
+direction = Vector3(0, 0, -1)
+initial_velocity_min = 0.29999998
+initial_velocity_max = 0.59999996
+scale_min = 0.5
+scale_max = 1.1999999
+collision_mode = 1
+collision_friction = 0.5
+collision_bounce = 0.5
 
 [node name="Bullet" type="Node3D" unique_id=1243891815]
 script = ExtResource("1_8s1nb")
@@ -73,7 +84,7 @@ lifetime = 2.0
 one_shot = true
 speed_scale = 2.0
 explosiveness = 0.5
-process_material = SubResource("ParticleProcessMaterial_dnt7v")
+process_material = SubResource("ParticleProcessMaterial_mx1hr")
 draw_pass_1 = SubResource("BoxMesh_1t05q")
 
 [node name="Timer" type="Timer" parent="." unique_id=1029929039]

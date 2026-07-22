@@ -12,8 +12,13 @@ script = ExtResource("1_76iis")
 [node name="MrCheese" parent="." unique_id=2028083268 instance=ExtResource("1_825en")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
+[node name="AnimationPlayer" parent="MrCheese" index="1" unique_id=1683128258]
+callback_mode_process = 0
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1414452169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_825en")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1549506609]
+
+[editable path="MrCheese"]
