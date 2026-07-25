@@ -47,5 +47,6 @@ func enter_reposition():
 func _on_animation_finished(anim_name):
 	if anim_name == "Armature|Rat_Death":
 		queue_free()
-	if anim_name == next_attack.attack_name:
-		self.state_machine.trigger_event(Events.type.ATTACK_FINISHED)
+	if next_attack:
+		if anim_name == next_attack.attack_name:
+			self.state_machine.trigger_event(Events.type.ATTACK_FINISHED)
