@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://y6q2vipusgn6" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_end.tscn" id="1_pp8em"]
 [ext_resource type="PackedScene" uid="uid://cmcekypkar2bh" path="res://scenes/creatures/mr_cheese.tscn" id="1_ticmk"]
-[ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="2_uanoq"]
 [ext_resource type="PackedScene" uid="uid://cbgwm2mv54te3" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_split_3.tscn" id="3_mvjqs"]
 [ext_resource type="PackedScene" uid="uid://b8eagdd4dlar0" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_straight.tscn" id="3_uanoq"]
 [ext_resource type="PackedScene" uid="uid://whdismeswutj" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_corner_01.tscn" id="5_2dvi2"]
 [ext_resource type="PackedScene" uid="uid://bc4ycdt1xopb" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_split_4.tscn" id="6_2dvi2"]
 [ext_resource type="PackedScene" uid="uid://cgvqml7o8l41r" path="res://scenes/creatures/rat.tscn" id="7_km7ww"]
 [ext_resource type="CompressedTexture3D" uid="uid://cbhw88it6b0f3" path="res://scenes/dungeons/sewer.GPUParticlesCollisionSDF3D_data.exr" id="7_y8r5j"]
+[ext_resource type="PackedScene" uid="uid://bbh4icwobuar6" path="res://scripts/spectator/spectator.tscn" id="10_iawdg"]
 
 [sub_resource type="Environment" id="Environment_bvf7l"]
 background_color = Color(0.76240367, 0.76240367, 0.76240367, 1)
@@ -43,15 +43,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.282629)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1279216676]
 environment = SubResource("Environment_bvf7l")
-
-[node name="Player" parent="." unique_id=797199737 instance=ExtResource("2_uanoq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7872963, 4.3521996)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=1231799350]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8143585, 0)
-layers = 3
-light_color = Color(0.085942514, 0.38420433, 0.30716965, 1)
-light_energy = 3.0
 
 [node name="Map" type="Node3D" parent="." unique_id=547470570]
 
@@ -122,3 +113,5 @@ mesh = SubResource("PlaneMesh_km7ww")
 
 [node name="Rat" parent="." unique_id=792475936 instance=ExtResource("7_km7ww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89239097, -5.381848)
+
+[node name="Spectator" parent="." unique_id=111689194 instance=ExtResource("10_iawdg")]

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dl2u4ir7gln8f"]
+
+[ext_resource type="PackedScene" uid="uid://bc4ycdt1xopb" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_split_4.tscn" id="1_yo1le"]
+[ext_resource type="PackedScene" uid="uid://bbh4icwobuar6" path="res://scripts/spectator/spectator.tscn" id="2_065f0"]
+[ext_resource type="Shader" uid="uid://myhwbwd8jy4u" path="res://scripts/shaders/psx_shader.gdshader" id="3_l8ibs"]
+[ext_resource type="PackedScene" uid="uid://b8eagdd4dlar0" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_straight.tscn" id="4_ufxwv"]
+[ext_resource type="PackedScene" uid="uid://cmcekypkar2bh" path="res://scenes/creatures/mr_cheese.tscn" id="4_ufy31"]
+
+[sub_resource type="Environment" id="Environment_065f0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ufy31"]
+shader = ExtResource("3_l8ibs")
+shader_parameter/dither_amount = 0.5
+shader_parameter/hue_tint = Color(1, 1, 1, 1)
+
+[node name="Test" type="Node" unique_id=2140635926]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=109752225]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1111414828]
+handle_input_locally = false
+size = Vector2i(320, 240)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=235520430]
+
+[node name="Sewer_Tunnel_03_Split_4" parent="SubViewportContainer/SubViewport/Node3D" unique_id=1052708770 instance=ExtResource("1_yo1le")]
+
+[node name="Spectator" parent="SubViewportContainer/SubViewport/Node3D" unique_id=111689194 instance=ExtResource("2_065f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3507986, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Node3D" unique_id=2084842785]
+environment = SubResource("Environment_065f0")
+
+[node name="MrCheese" parent="SubViewportContainer/SubViewport/Node3D" unique_id=224283511 instance=ExtResource("4_ufy31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24163854, 2.9955246)
+
+[node name="Sewer_Tunnel_03_Straight" parent="SubViewportContainer/SubViewport/Node3D" unique_id=1078205534 instance=ExtResource("4_ufxwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.977127)
+
+[node name="Sewer_Tunnel_03_Straight2" parent="SubViewportContainer/SubViewport/Node3D" unique_id=2114553493 instance=ExtResource("4_ufxwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.956773)
+
+[node name="Sewer_Tunnel_03_Straight3" parent="SubViewportContainer/SubViewport/Node3D" unique_id=465392377 instance=ExtResource("4_ufxwv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.973267)
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1585503714]
+material = SubResource("ShaderMaterial_ufy31")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

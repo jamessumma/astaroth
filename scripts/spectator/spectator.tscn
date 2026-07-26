@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bbh4icwobuar6"]
+
+[ext_resource type="Script" uid="uid://c7ktya2jviqs" path="res://scripts/spectator/spectator.gd" id="1_8u6fn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qm31y"]
+
+[node name="Spectator" type="CharacterBody3D" unique_id=111689194]
+script = ExtResource("1_8u6fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=813063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_qm31y")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1837598382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.655401, 0)
