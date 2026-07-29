@@ -7,6 +7,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1atc6"]
 albedo_texture = ExtResource("2_tbtmj")
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tp8vr"]
 albedo_texture = ExtResource("3_xeqhr")

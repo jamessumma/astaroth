@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ct67roeqm3xu5"]
+
+[ext_resource type="PackedScene" uid="uid://bqnnh5xx2isi5" path="res://scenes/dungeons/sewer.tscn" id="2_aw6ku"]
+[ext_resource type="Shader" uid="uid://myhwbwd8jy4u" path="res://scripts/shaders/psx_shader.gdshader" id="5_1vyod"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8um3"]
+shader = ExtResource("5_1vyod")
+shader_parameter/dither_amount = 0.5
+shader_parameter/hue_tint = Color(1, 1, 1, 1)
+
+[node name="SewerTest" type="Node" unique_id=1259160877]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1620442251]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=250094612]
+handle_input_locally = false
+size = Vector2i(640, 480)
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=852165568]
+material = SubResource("ShaderMaterial_t8um3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sewer" parent="SubViewportContainer/SubViewport" unique_id=1559838427 instance=ExtResource("2_aw6ku")]

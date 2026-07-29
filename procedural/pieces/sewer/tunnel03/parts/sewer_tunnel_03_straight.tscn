@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8eagdd4dlar0"]
 
 [ext_resource type="PackedScene" uid="uid://chfqjn3dycjcs" path="res://assets/PSX Sewer Pack/Models/Tunnel_03/Sewer_Tunnel_03_Straight.FBX" id="1_7q8wj"]
-[ext_resource type="Texture2D" uid="uid://1lofbhncricn" path="res://assets/PSX Sewer Pack/Textures/white_brick_256.PNG" id="2_nm3ij"]
+[ext_resource type="Texture2D" uid="uid://bhtkqdbods4j5" path="res://assets/PSX Sewer Pack/Textures/pixoonify_white_brick_256.png" id="2_nm3ij"]
 [ext_resource type="Texture2D" uid="uid://d4b1wshnw4qx1" path="res://assets/PSX Sewer Pack/Textures/brick_pavement.jpg" id="3_rq34c"]
 [ext_resource type="PackedScene" uid="uid://bqjs40nshv7ao" path="res://procedural/pieces/sewer/tunnel03/water/sewer_tunnel_03_straight_water.tscn" id="4_nm3ij"]
 
