@@ -1,11 +1,10 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bj8kn0sjv7en"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b23rlcm18amnb"]
 
-[ext_resource type="Texture2D" uid="uid://206mbfip2gys" path="res://assets/enemies/MrCheeseOld/Texture pxl.png" id="1_e2xke"]
+[ext_resource type="Texture2D" uid="uid://bgor3dwcqqkif" path="res://assets/enemies/MrCheeseModel/MrCheeseModel_Texture pxl.png" id="1_gwhhi"]
 
 [resource]
 resource_name = "Material.001"
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_e2xke")
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("1_gwhhi")
+metadata/_gltf_primary_texture_coord = 0

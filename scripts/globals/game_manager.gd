@@ -24,9 +24,10 @@ func set_master_volume(value: float):
 	apply_settings()
 	
 func apply_settings():
-	var sfx_bus = AudioServer.get_bus_index("SFX")
-	var music_bus = AudioServer.get_bus_index("Music")
-	var master_bus = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(sfx_volume / 100.0))
-	AudioServer.set_bus_volume_db(music_bus, linear_to_db(music_volume / 100.0))
-	AudioServer.set_bus_volume_db(master_bus, linear_to_db(master_volume / 100.0))
+	if AudioServer:
+		var sfx_bus = AudioServer.get_bus_index("SFX")
+		var music_bus = AudioServer.get_bus_index("Music")
+		var master_bus = AudioServer.get_bus_index("Master")
+		AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(sfx_volume / 100.0))
+		AudioServer.set_bus_volume_db(music_bus, linear_to_db(music_volume / 100.0))
+		AudioServer.set_bus_volume_db(master_bus, linear_to_db(master_volume / 100.0))

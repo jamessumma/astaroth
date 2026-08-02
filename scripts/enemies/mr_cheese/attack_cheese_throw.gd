@@ -3,7 +3,7 @@ class_name AttackCheeseThrow
 extends Attack
 
 func _init():
-  attack_name = "Throw Object/mixamo_com"
+  attack_name = "Baseball Pitching"
   attack_duration = 0.75
   min_range = 2.0
   max_range = 10.0

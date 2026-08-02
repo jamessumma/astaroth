@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://dopwtmy7277e5"]
 
-[ext_resource type="PackedScene" uid="uid://cq03t4kd7wfic" path="res://scenes/creatures/MrCheese/mr_cheese_model.tscn" id="1_i4l0b"]
-[ext_resource type="Script" uid="uid://cot7d6nhrqb8k" path="res://scripts/enemies/mr_cheese/mr_cheese.gd" id="1_ryila"]
+[ext_resource type="Script" uid="uid://cot7d6nhrqb8k" path="res://scripts/enemies/mr_cheese/mr_cheese.gd" id="1_m447f"]
+[ext_resource type="PackedScene" uid="uid://cq03t4kd7wfic" path="res://scenes/creatures/MrCheese/mr_cheese_model.tscn" id="2_2wlqb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yamlm"]
 radius = 0.3
 
 [node name="MrCheese" type="CharacterBody3D" unique_id=703852279]
-script = ExtResource("1_ryila")
+script = ExtResource("1_m447f")
 
-[node name="MrCheeseModel" parent="." unique_id=145741782 instance=ExtResource("1_i4l0b")]
+[node name="MrCheeseModel" parent="." unique_id=224079858 instance=ExtResource("2_2wlqb")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1283252626]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

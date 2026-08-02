@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dk2i0o4u3vjqh"]
 
-[ext_resource type="PackedScene" uid="uid://dopwtmy7277e5" path="res://scenes/creatures/MrCheese/MrCheese.tscn" id="1_a8pr3"]
+[ext_resource type="PackedScene" uid="uid://dopwtmy7277e5" path="res://scenes/creatures/MrCheese/mr_cheese.tscn" id="1_a8pr3"]
 [ext_resource type="Texture2D" uid="uid://dckv0ll15fq7p" path="res://assets/floor/grid_floor.png" id="1_rgld7"]
 [ext_resource type="PackedScene" uid="uid://7g2qelxkodbp" path="res://scripts/player/player.tscn" id="2_a8pr3"]
 

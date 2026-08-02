@@ -6,9 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b8eagdd4dlar0" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_straight.tscn" id="3_uanoq"]
 [ext_resource type="PackedScene" uid="uid://whdismeswutj" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_corner_01.tscn" id="5_2dvi2"]
 [ext_resource type="PackedScene" uid="uid://bc4ycdt1xopb" path="res://procedural/pieces/sewer/tunnel03/parts/sewer_tunnel_03_split_4.tscn" id="6_2dvi2"]
-[ext_resource type="PackedScene" uid="uid://cgvqml7o8l41r" path="res://scenes/creatures/rat.tscn" id="7_km7ww"]
 [ext_resource type="CompressedTexture3D" uid="uid://cbhw88it6b0f3" path="res://scenes/dungeons/sewer.GPUParticlesCollisionSDF3D_data.exr" id="7_y8r5j"]
-[ext_resource type="PackedScene" uid="uid://dopwtmy7277e5" path="res://scenes/creatures/MrCheese/MrCheese.tscn" id="9_ticmk"]
+[ext_resource type="PackedScene" uid="uid://dopwtmy7277e5" path="res://scenes/creatures/MrCheese/mr_cheese.tscn" id="9_ticmk"]
 
 [sub_resource type="Environment" id="Environment_bvf7l"]
 background_color = Color(0.76240367, 0.76240367, 0.76240367, 1)
@@ -117,7 +116,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35020947, 0, 2.667918)
 visible = false
 mesh = SubResource("PlaneMesh_km7ww")
 
-[node name="Rat" parent="." unique_id=792475936 instance=ExtResource("7_km7ww")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89239097, -5.381848)
-
 [node name="MrCheese" parent="." unique_id=703852279 instance=ExtResource("9_ticmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38721895, -3.8038557)
