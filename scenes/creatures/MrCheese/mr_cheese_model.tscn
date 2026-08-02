@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cq03t4kd7wfic"]
+
+[ext_resource type="PackedScene" uid="uid://cskd6v6pdsbna" path="res://assets/enemies/MrCheeseModel/MrCheeseModel.glb" id="1_y5g1e"]
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_yamlm"]
+
+[node name="MrCheeseModel" unique_id=1161029767 instance=ExtResource("1_y5g1e")]
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1963482284]
+root_motion_track = NodePath("cheese2/Skeleton3D:mixamorig_Root")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=1741455152]
+tree_root = SubResource("AnimationRootNode_yamlm")
+anim_player = NodePath("../AnimationPlayer")

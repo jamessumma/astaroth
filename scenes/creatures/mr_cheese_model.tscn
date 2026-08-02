@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://dak2aq3jo0o4h"]
+[gd_scene format=3 uid="uid://bssfyql3gjk7i"]
 
 [ext_resource type="PackedScene" uid="uid://d34sigrbomklb" path="res://assets/enemies/MrCheese/MrCheese.fbx" id="1_825en"]
 [ext_resource type="AnimationLibrary" uid="uid://bnjiqw0kc6pn4" path="res://assets/enemies/MrCheese/Flying Kick.fbx" id="2_76iis"]
+[ext_resource type="Script" uid="uid://cot7d6nhrqb8k" path="res://scripts/enemies/mr_cheese/mr_cheese.gd" id="2_hlb8g"]
 [ext_resource type="AnimationLibrary" uid="uid://bgvmow4xj5hlo" path="res://assets/enemies/MrCheese/Dying.fbx" id="3_745gj"]
 [ext_resource type="AnimationLibrary" uid="uid://b3acy8e7rl5oc" path="res://assets/enemies/MrCheese/Goalkeeper Drop Kick.fbx" id="5_xpxnv"]
 [ext_resource type="AnimationLibrary" uid="uid://ccrpmrvivl0mc" path="res://assets/enemies/MrCheese/Jump.fbx" id="6_xuyjb"]
@@ -15,8 +16,9 @@
 [ext_resource type="AnimationLibrary" uid="uid://wnlb8balp8h" path="res://assets/enemies/MrCheese/Animations/Throw Object.fbx" id="13_puj44"]
 
 [node name="MrCheese" unique_id=2028083268 instance=ExtResource("1_825en")]
+script = ExtResource("2_hlb8g")
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1850167659) index="0" unique_id=154943134]
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1802477890) index="0" unique_id=1357183252]
 bones/0/position = Vector3(8.14267e-05, 0.8312132, -0.010258334)
 bones/0/rotation = Quaternion(-0.0021489286, -0.00636126, -0.0086026285, 0.9999405)
 bones/1/rotation = Quaternion(0.12712339, 0.0014392834, 0.002740145, 0.9918821)
@@ -53,8 +55,9 @@ bones/43/rotation = Quaternion(-0.48085347, -0.07001983, 0.034947526, 0.87330174
 bones/44/rotation = Quaternion(0.616191, -0.14627552, 0.16295929, 0.7565425)
 bones/45/rotation = Quaternion(0.33314672, 0.06726754, 0.069418766, 0.9379069)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=360321151]
+[node name="AnimationPlayer" parent="." index="1" unique_id=187323179]
 root_node = NodePath("../Armature")
+root_motion_local = true
 libraries/Dying = ExtResource("3_745gj")
 "libraries/Flying Kick" = ExtResource("2_76iis")
 "libraries/Goalkeeper Drop Kick" = ExtResource("5_xpxnv")

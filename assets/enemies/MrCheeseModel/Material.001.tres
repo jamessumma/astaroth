@@ -1,6 +1,6 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://depd3o3nw2kxy"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bj8kn0sjv7en"]
 
-[ext_resource type="Texture2D" uid="uid://206mbfip2gys" path="res://assets/enemies/MrCheese/Texture pxl.png" id="1_e2xke"]
+[ext_resource type="Texture2D" uid="uid://206mbfip2gys" path="res://assets/enemies/MrCheeseOld/Texture pxl.png" id="1_e2xke"]
 
 [resource]
 resource_name = "Material.001"

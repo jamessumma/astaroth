@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://206mbfip2gys"
-path.s3tc="res://.godot/imported/Texture pxl.png-b5fe53fbf5cb57f103a96cbb5df29d78.s3tc.ctex"
+uid="uid://cx5yjvrm6itl7"
+path.s3tc="res://.godot/imported/MrCheeseModel_Texture pxl.png-9f200bef039fe93ad0deccaa7f2578ca.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "d3023e6540c9832943c8b5536719d07a"
+}
 
 [deps]
 
-source_file="res://assets/enemies/MrCheese/Texture pxl.png"
-dest_files=["res://.godot/imported/Texture pxl.png-b5fe53fbf5cb57f103a96cbb5df29d78.s3tc.ctex"]
+source_file="res://assets/enemies/MrCheeseModel/MrCheeseModel_Texture pxl.png"
+dest_files=["res://.godot/imported/MrCheeseModel_Texture pxl.png-9f200bef039fe93ad0deccaa7f2578ca.s3tc.ctex"]
 
 [params]
 

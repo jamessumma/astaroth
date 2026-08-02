@@ -5,7 +5,7 @@ class_name MrCheese
 var attack_timer_max: float = 2
 var attack_timer_cur: float = 0
 
-@onready var animation_player: AnimationPlayer = $MrCheese/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $MrCheeseModel/AnimationPlayer
 
 func _ready() -> void:
 	self.combat_range = 10.0
@@ -25,11 +25,11 @@ func _physics_process(delta: float) -> void:
 
 
 func enter_idle():
-	animation_player.play("Punching Bag/mixamo_com", 0.6)
+	animation_player.play("mutant breathing idle", 0.6)
 
 
 func enter_chase():
-	animation_player.play("Mutant Run-2/mixamo_com", 0.6)
+	animation_player.play("mutant run", 0.6)
 
 		
 func handle_attack(delta: float):
@@ -48,14 +48,14 @@ func enter_exec_attack():
 	attack_timer_cur = attack_timer_max
 
 func enter_dead():
-	animation_player.play("Dying/mixamo_com", 0.6)
+	animation_player.play("mutant dying", 0.6)
 
 func enter_reposition():
 	print("enter reposition")
-	animation_player.play("Mutant Run-2/mixamo_com", 0.6)
+	animation_player.play("mutant run", 0.6)
 
 func _on_animation_finished(anim_name):
-	if anim_name == "Dying/mixamo_com":
+	if anim_name == "mutant dying":
 		queue_free()
 	if next_attack:
 		if anim_name == next_attack.attack_name:

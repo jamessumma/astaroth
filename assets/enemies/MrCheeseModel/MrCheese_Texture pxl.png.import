@@ -2,16 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5iiuilxnic4y"
-path="res://.godot/imported/Rat Monster_0.png-c7810da12232d9d6d509d25d1d588898.ctex"
+uid="uid://oge07vw23vgq"
+path="res://.godot/imported/MrCheese_Texture pxl.png-259d051b039d2e968f9394a31365849d.ctex"
 metadata={
 "vram_texture": false
+}
+generator_parameters={
+"md5": "d3023e6540c9832943c8b5536719d07a"
 }
 
 [deps]
 
-source_file="res://assets/enemies/MrCheese/Rat Monster_0.png"
-dest_files=["res://.godot/imported/Rat Monster_0.png-c7810da12232d9d6d509d25d1d588898.ctex"]
+source_file="res://assets/enemies/MrCheeseModel/MrCheese_Texture pxl.png"
+dest_files=["res://.godot/imported/MrCheese_Texture pxl.png-259d051b039d2e968f9394a31365849d.ctex"]
 
 [params]
 
@@ -23,7 +26,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
