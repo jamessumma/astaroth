@@ -25,6 +25,9 @@ var attacks: Array[Attack] = []
 var next_attack: Attack = null
 var attack_timer: float = 0.0
 
+# enemy behavior
+var grounded_enemy = true
+
 var lerp_weight: float = 5.0
 var cur_facing_direction_vector: Vector3 = Vector3(0,0,0)
 var cur_direction_vector_pull: Vector3 = Vector3(0,0,0)
@@ -57,7 +60,10 @@ func enemy_setup():
 func handle_idle():
 	update_player_distance()
 	if distance_to_player < vision_range:
-		self.state_machine.trigger_event(Events.type.DETECT_PLAYER)
+		if self.grounded_enemy && is_on_floor():
+			self.state_machine.trigger_event(Events.type.DETECT_PLAYER)
+		if !self.grounded_enemy:
+			self.state_machine.trigger_event(Events.type.DETECT_PLAYER)
 
 func handle_chase():
 	update_player_distance()

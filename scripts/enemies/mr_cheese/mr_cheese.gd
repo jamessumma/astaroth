@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	var rm := animation_player.get_root_motion_position()
 	if animation_player.current_animation == "mutant run":
 		rm = Vector3.ZERO
-	else:
+	elif using_root_motion:
 		var v := (global_transform.basis * rm) / delta
 		velocity.x = v.x
 		velocity.z = v.z
