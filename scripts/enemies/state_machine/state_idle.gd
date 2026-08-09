@@ -9,7 +9,7 @@ func enter():
 func exit():
 	print("exiting idle")
 
-func update(delta):
+func update(_delta):
 	enemy.handle_idle()
 
 func handle_event(event: Events.type) -> State:

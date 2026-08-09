@@ -21,8 +21,8 @@ func change_state(state: State):
 	cur_state = state
 	cur_state.enter()
 
-func update(delta: float):
-	cur_state.update(delta)
+func update(_delta: float):
+	cur_state.update(_delta)
 	flush()
 
 # purpose of flush is to make sure the exit function is the last thing to happen

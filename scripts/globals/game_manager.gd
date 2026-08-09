@@ -4,11 +4,16 @@ extends Node
 var player = null
 
 # settings
+var gun_volume: float = 100.0
 var sfx_volume: float = 100.0
 var music_volume: float = 100.0
 var master_volume: float = 100.0
 
 func _ready():
+	apply_settings()
+
+func set_gun_volume(value: float):
+	sfx_volume = clamp(value, 0.0, 100.0)
 	apply_settings()
 
 func set_sfx_volume(value: float):
@@ -25,9 +30,11 @@ func set_master_volume(value: float):
 	
 func apply_settings():
 	if AudioServer:
+		var gun_bus= AudioServer.get_bus_index("Gun Volume")
 		var sfx_bus = AudioServer.get_bus_index("SFX")
 		var music_bus = AudioServer.get_bus_index("Music")
 		var master_bus = AudioServer.get_bus_index("Master")
+		AudioServer.set_bus_volume_db(gun_bus, linear_to_db(gun_volume / 100.0))
 		AudioServer.set_bus_volume_db(sfx_bus, linear_to_db(sfx_volume / 100.0))
 		AudioServer.set_bus_volume_db(music_bus, linear_to_db(music_volume / 100.0))
 		AudioServer.set_bus_volume_db(master_bus, linear_to_db(master_volume / 100.0))

@@ -112,6 +112,8 @@ func handle_gravity(delta):
 
 func look_at_slerp(delta):
 	var flat_dir = Vector3(cur_facing_direction_vector.x, 0, cur_facing_direction_vector.z).normalized()
+	if flat_dir.length_squared() < 0.0001:
+		return
 	var target_transform = transform.looking_at(global_position - flat_dir, Vector3.UP)
 	var target_basis = target_transform.basis
 	transform.basis = transform.basis.slerp(target_basis, turn_speed * delta)
@@ -216,7 +218,7 @@ func attack_in_range(attack: Attack) -> bool:
 		print(distance_to_player)
 	return ((attack.min_range <= self.distance_to_player) and (attack.max_range >= self.distance_to_player))
 
-func update_state_attack(delta: float):
+func update_state_attack(_delta: float):
 	velocity.x *= self.next_attack.x_vel_mult
 	velocity.z *= self.next_attack.z_vel_mult
 	velocity.y *= self.next_attack.y_vel_mult

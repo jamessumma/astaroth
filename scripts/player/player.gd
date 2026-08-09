@@ -103,7 +103,7 @@ func _input(event):
 		
 
 # on every rendered frame (expensive)
-func _process(delta):
+func _process(_delta):
 	viewport_camera.global_transform = camera.global_transform
 	update_ui()
 	if dead:

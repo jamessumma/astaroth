@@ -9,7 +9,7 @@ func enter():
 func exit():
   print("exiting choose attack")
 
-func update(delta):
+func update(_delta):
   pass
 
 func handle_event(event: Events.type) -> State:
