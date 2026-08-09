@@ -11,3 +11,4 @@ func _init():
   cur_weight = 1.0
   base_damage = 1.0
   knockback = true
+  speed_mod = 1.5

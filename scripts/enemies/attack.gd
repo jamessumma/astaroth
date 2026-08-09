@@ -10,3 +10,4 @@ extends RefCounted
 @export var cur_weight: float = 1.0
 @export var base_damage: float = 1.0
 @export var knockback: bool = false
+@export var speed_mod: float = 1.0

@@ -3,3 +3,45 @@
 [ext_resource type="PackedScene" uid="uid://cx8pupoohlprm" path="res://assets/enemies/MrCheeseModel/MrCheeseModel.glb" id="1_y5g1e"]
 
 [node name="MrCheeseModel" unique_id=805209559 instance=ExtResource("1_y5g1e")]
+
+[node name="Skeleton3D" parent="cheese2" parent_id_path=PackedInt32Array(625756758) index="0" unique_id=683734295]
+bones/0/position = Vector3(0.019433022, -6.667733e-10, -0.0055933)
+bones/1/position = Vector3(0, 0.9203136, 0.016591847)
+bones/1/rotation = Quaternion(-0.009916093, -0.66099274, -0.023068035, 0.7499721)
+bones/2/rotation = Quaternion(0.002535442, 0.000980123, -0.0006297478, 0.9999962)
+bones/3/rotation = Quaternion(0.040036544, -0.00061504956, 0.013847102, 0.99910206)
+bones/4/rotation = Quaternion(0.039842937, -0.0005453349, 0.014238327, 0.9991044)
+bones/5/rotation = Quaternion(-0.041777294, 0.078329355, -0.039862454, 0.9952538)
+bones/6/rotation = Quaternion(0.0019265227, 0.32453772, -0.022118373, 0.94561213)
+bones/8/rotation = Quaternion(-0.53331476, -0.4510167, 0.5839182, -0.41376194)
+bones/9/rotation = Quaternion(0.47932765, 0.3046754, 0.41957894, 0.7080759)
+bones/10/rotation = Quaternion(-0.032221075, -0.31879008, 0.31723496, 0.8925788)
+bones/11/rotation = Quaternion(-0.008275822, 0.26328403, -0.059017524, 0.96287596)
+bones/12/rotation = Quaternion(0.022482535, -0.028488554, 0.29581144, 0.95455676)
+bones/13/rotation = Quaternion(0.16912001, 0.03098609, -0.123409696, 0.9773477)
+bones/14/rotation = Quaternion(-0.077445894, -0.0111369565, -0.056818135, 0.995314)
+bones/16/rotation = Quaternion(0.047801502, -0.0009002385, 0.008853576, 0.99881727)
+bones/17/rotation = Quaternion(0.12431106, 0.0017097535, 0.022481443, 0.9919871)
+bones/18/rotation = Quaternion(-0.1780261, -0.00044266362, 0.011270101, 0.98396116)
+bones/20/rotation = Quaternion(0.6044089, -0.3978155, 0.55721414, 0.40736362)
+bones/21/rotation = Quaternion(0.55153555, -0.103464454, -0.0417613, 0.8266557)
+bones/22/rotation = Quaternion(0.030472575, 0.27613625, -0.45307374, 0.84707993)
+bones/23/rotation = Quaternion(0.026749296, -0.5891075, 0.19823027, 0.7829059)
+bones/24/rotation = Quaternion(0.09673674, -0.32176813, -0.2799726, 0.89929014)
+bones/25/rotation = Quaternion(0.24993981, -0.06446579, 0.21845862, 0.9410898)
+bones/26/rotation = Quaternion(-0.046024714, 0.01802077, 0.089388676, 0.9947697)
+bones/28/rotation = Quaternion(0.33171123, 0.009883777, -0.1927944, 0.92341775)
+bones/29/rotation = Quaternion(0.49694437, -0.0015111028, -0.19312598, 0.846018)
+bones/30/rotation = Quaternion(0.0053858, -0.0054738997, -0.098720945, 0.9950856)
+bones/32/rotation = Quaternion(0.13096902, 0.14132868, 0.9724174, -0.13144505)
+bones/33/rotation = Quaternion(-0.31921408, 0.03676361, 0.0033211235, 0.94696355)
+bones/34/rotation = Quaternion(0.5932538, 0.12546843, -0.14123383, 0.7825348)
+bones/35/rotation = Quaternion(0.28876764, -0.10697969, 0.032488424, 0.95084864)
+bones/37/rotation = Quaternion(-0.20023154, 0.09557926, 0.9675222, 0.12113102)
+bones/38/rotation = Quaternion(-0.2708024, -0.08850689, -0.034942053, 0.9579205)
+bones/39/rotation = Quaternion(0.6072415, -0.09313938, 0.1767292, 0.76899254)
+bones/40/rotation = Quaternion(0.27089942, 0.08045075, -0.02272485, 0.95897067)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=481364236]
+root_motion_track = NodePath("cheese2/Skeleton3D:mixamorig_Root")
+callback_mode_process = 0
