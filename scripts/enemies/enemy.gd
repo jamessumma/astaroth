@@ -10,6 +10,7 @@ var cur_health: int = max_health
 @onready var body = $CollisionShape3D
 var state_machine: StateMachine
 
+var using_root_motion: bool = false
 
 # movement vars
 var gravity = 10.0
@@ -95,6 +96,8 @@ func update_player_distance():
 	distance_to_player = body.global_position.distance_to(GameManager.player.global_position)
 
 func handle_gravity(delta):
+	if using_root_motion:
+		return
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
@@ -137,6 +140,8 @@ func set_pull_vector_stop():
 
 # move process gets called every call to physics proces
 func move_process(delta):
+	if using_root_motion:
+		return
 	# every physics process, update the movement vector to pull towards the pull vector
 	# so the idea is, by default, pull towards zero
 	# then, certain states will call functions that will modify the pull vector
@@ -205,6 +210,10 @@ func attack_in_range(attack: Attack) -> bool:
 		print(distance_to_player)
 	return ((attack.min_range <= self.distance_to_player) and (attack.max_range >= self.distance_to_player))
 
+func update_state_attack(delta: float):
+	velocity.x *= self.next_attack.x_vel_mult
+	velocity.z *= self.next_attack.z_vel_mult
+	velocity.y *= self.next_attack.y_vel_mult
 # below are the functions the inheriting class will want to edit
 
 func enter_idle():

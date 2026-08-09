@@ -23,7 +23,11 @@ func _physics_process(delta: float) -> void:
 	if animation_player.current_animation == "mutant run":
 		rm = Vector3.ZERO
 	else:
-		velocity = (global_transform.basis * rm) / delta
+		var v := (global_transform.basis * rm) / delta
+		velocity.x = v.x
+		velocity.z = v.z
+		velocity.y = v.y
+		print("rm.y: " + str(rm.y))
 
 	enemy_process(delta)
 
@@ -37,6 +41,7 @@ func enter_chase():
 	
 
 func enter_exec_attack():
+	self.using_root_motion = true
 	print(self.next_attack.attack_name)
 	animation_player.play(self.next_attack.attack_name, 0.6, self.next_attack.speed_mod)
 	print("post attack")
@@ -55,3 +60,4 @@ func _on_animation_finished(anim_name):
 	if next_attack:
 		if anim_name == next_attack.attack_name:
 			self.state_machine.trigger_event(Events.type.ATTACK_FINISHED)
+			using_root_motion = false
