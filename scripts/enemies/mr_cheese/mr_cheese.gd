@@ -34,15 +34,6 @@ func enter_idle():
 
 func enter_chase():
 	animation_player.play("mutant run", 0.6)
-
-		
-func handle_attack(delta: float):
-	#var flat_dir = Vector3(cur_direction.x, 0, cur_direction.z).normalized()
-	#look_at_slerp(delta)
-	#if !animation_player.is_playing() and attack_timer_cur <= 0:
-	#	animation_player.play("Standing Melee Attack Downward/mixamo_com", 0.3)
-	#	attack_timer_cur = attack_timer_max
-	pass
 	
 
 func enter_exec_attack():
