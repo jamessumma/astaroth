@@ -11,19 +11,19 @@ height = 1.2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_exfr2"]
 radius = 0.15
-height = 1.0
+height = 0.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7o82s"]
 radius = 0.15
-height = 1.0
+height = 0.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wnsdd"]
 radius = 0.15
-height = 1.0
+height = 0.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y5g1e"]
 radius = 0.15
-height = 1.0
+height = 0.5
 
 [node name="MrCheeseModel" unique_id=805209559 instance=ExtResource("1_y5g1e")]
 
@@ -93,7 +93,7 @@ bone_idx = 9
 [node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/LArm" index="0" unique_id=1184836664]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cheese2/Skeleton3D/LArm/Area3D" index="0" unique_id=1862569457]
-transform = Transform3D(1, -4.307367e-09, 2.9802322e-08, -9.895302e-09, 1.0000001, 2.0954758e-09, -5.9604645e-08, -4.773028e-09, 1.0000004, -0.04907225, 0.34793103, -0.019053996)
+transform = Transform3D(1.0000001, -8.8475645e-09, 3.0559022e-08, -8.381903e-09, 1.0000002, -2.9802322e-08, -4.4994522e-08, 1.4901161e-08, 1.0000004, -0.049839377, 0.18051738, 0.006395936)
 shape = SubResource("CapsuleShape3D_exfr2")
 
 [node name="RArm" type="BoneAttachment3D" parent="cheese2/Skeleton3D" index="5" unique_id=673485681]
@@ -104,7 +104,7 @@ bone_idx = 21
 [node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/RArm" index="0" unique_id=1736528964]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cheese2/Skeleton3D/RArm/Area3D" index="0" unique_id=675396159]
-transform = Transform3D(0.99999976, 4.0978193e-08, 0, 3.7252903e-09, 1, -8.195639e-08, 0, -8.940697e-08, 1, 0.10132587, 0.35908842, -0.034059227)
+transform = Transform3D(0.99999964, 1.4901161e-08, -1.3969839e-08, -1.4901161e-08, 1, -4.9592927e-08, -1.3969839e-08, -1.2200326e-07, 1, 0.045880944, 0.13604164, -0.041247427)
 shape = SubResource("CapsuleShape3D_7o82s")
 
 [node name="LLeg" type="BoneAttachment3D" parent="cheese2/Skeleton3D" index="6" unique_id=1591747303]
@@ -115,7 +115,7 @@ bone_idx = 32
 [node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/LLeg" index="0" unique_id=1535248384]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cheese2/Skeleton3D/LLeg/Area3D" index="0" unique_id=960613469]
-transform = Transform3D(1, 1.0768417e-09, 1.8626451e-09, -1.3387762e-09, 0.9999999, -7.450581e-09, 1.8626451e-09, 3.7252903e-09, 1, 0.011759877, 0.5337898, 0.02778608)
+transform = Transform3D(1, 1.6763806e-08, -4.4703484e-08, -9.313226e-09, 1, 2.9802322e-08, -1.8626451e-09, -1.4901161e-07, 1, -0.00522089, 0.2864365, 0.011003792)
 shape = SubResource("CapsuleShape3D_wnsdd")
 
 [node name="RLeg" type="BoneAttachment3D" parent="cheese2/Skeleton3D" index="7" unique_id=1737889193]
@@ -126,7 +126,7 @@ bone_idx = 37
 [node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/RLeg" index="0" unique_id=965792794]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cheese2/Skeleton3D/RLeg/Area3D" index="0" unique_id=1760174553]
-transform = Transform3D(0.99999994, -4.9039954e-09, 4.656613e-10, -2.4738256e-09, 1.0000001, 3.7252903e-09, 0, 3.7252903e-09, 0.99999994, -0.065523654, 0.55320716, 0.02541845)
+transform = Transform3D(0.99999994, -2.7939677e-09, -1.4901161e-08, -1.7695129e-08, 1.0000001, -3.7252903e-09, 1.4901161e-08, 0, 0.99999994, 0.0027982295, 0.23240471, 0.053203143)
 shape = SubResource("CapsuleShape3D_y5g1e")
 
 [node name="AnimationPlayer" parent="." index="1" unique_id=259025898]
