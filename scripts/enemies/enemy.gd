@@ -214,8 +214,6 @@ func attack_value(attack: Attack) -> float:
 	return res
 
 func attack_in_range(attack: Attack) -> bool:
-	if distance_to_player > 1.0:
-		print(distance_to_player)
 	return ((attack.min_range <= self.distance_to_player) and (attack.max_range >= self.distance_to_player))
 
 func update_state_attack(_delta: float):

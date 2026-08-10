@@ -27,7 +27,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = v.x
 		velocity.z = v.z
 		velocity.y = v.y
-		print("rm.y: " + str(rm.y))
 
 	enemy_process(delta)
 
