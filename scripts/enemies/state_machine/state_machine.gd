@@ -6,8 +6,8 @@ var cur_state: State
 var enemy: Enemy
 var pending: State = null
 
-func _init(enemy: Enemy):
-	self.enemy = enemy
+func _init(enemy_init: Enemy):
+	self.enemy = enemy_init
 	self.cur_state = StateIdle.new(enemy)
 	cur_state.enter()
 
