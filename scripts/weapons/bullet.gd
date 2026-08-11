@@ -40,7 +40,7 @@ func handle_impact():
 		# or you can call a custom method there to trigger the signal
 		collider.hit(damage)
 		particles = blood_splatter
-	elif collider.is_in_group("CriticalHitBox"):
+	elif collider and collider.is_in_group("CriticalHitBox"):
 		collider.crit(damage)
 		particles = blood_splatter
 	# get point of the collision
