@@ -54,9 +54,9 @@ func handle_impact():
 	particles.global_position = hit_point
 	
 	# make explosion face away from the surface
-	if hit_normal != Vector3.UP and hit_normal != Vector3.DOWN:
-		particles.look_at(hit_point + hit_normal, Vector3.UP)
-
+	var up := Vector3.UP if absf(hit_normal.dot(Vector3.UP)) < 0.999 else Vector3.RIGHT
+	particles.look_at(hit_point + hit_normal, up)
+		
 	particles.emitting = true
 	mesh.visible = false
 	set_physics_process(false)
