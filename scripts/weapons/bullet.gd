@@ -35,12 +35,14 @@ func handle_impact():
 	var collider = ray.get_collider()
 	var particles = sparks
 	
-	if collider and collider.has_method("hit"):
+	if collider and collider.is_in_group("StandardHitBox"):
 		# Assuming your body_part.gd script has a hit() function, 
 		# or you can call a custom method there to trigger the signal
 		collider.hit(damage)
 		particles = blood_splatter
-	
+	elif collider.is_in_group("CriticalHitBox"):
+		collider.crit(damage)
+		particles = blood_splatter
 	# get point of the collision
 	var hit_point = ray.get_collision_point()
 	var hit_normal = ray.get_collision_normal()

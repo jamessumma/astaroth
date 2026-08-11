@@ -37,6 +37,9 @@ albedo_color = Color(1, 1, 0.02745098, 0.43529412)
 
 [node name="Sewer" type="Node3D" unique_id=1559838427]
 
+[node name="MrCheese2" parent="." unique_id=703852279 instance=ExtResource("9_ticmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.949835)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1279216676]
 environment = SubResource("Environment_bvf7l")
 
@@ -116,5 +119,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35020947, 0, 2.667918)
 visible = false
 mesh = SubResource("PlaneMesh_km7ww")
 
-[node name="MrCheese" parent="." unique_id=703852279 instance=ExtResource("9_ticmk")]
+[node name="MrCheese" parent="." unique_id=1269089006 instance=ExtResource("9_ticmk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38721895, -3.8038557)

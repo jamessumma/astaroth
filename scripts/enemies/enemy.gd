@@ -7,7 +7,7 @@ var cur_health: int = max_health
 
 
 @onready var navigation_agent = $NavigationAgent3D
-@onready var body = $CollisionShape3D
+@onready var body = $WorldColliderShape
 var state_machine: StateMachine
 
 var using_root_motion: bool = false
@@ -56,6 +56,11 @@ func enemy_setup():
 	self.cur_direction_vector_pull = Vector3(0.0, 0.0, 0.0)
 	navigation_agent.path_desired_distance = path_desired_distance
 	navigation_agent.target_desired_distance = target_desired_distance
+	for part in find_children("*", "Area3D", true):
+		if part.is_in_group("StandardHitBox"):
+			part.body_part_hit.connect(_on_standard_hit)
+		elif part.is_in_group("CriticalHitBox"):
+			part.body_part_hit.connect(_on_critical_hit)
 
 func handle_idle():
 	update_player_distance()
@@ -118,12 +123,11 @@ func look_at_slerp(delta):
 	var target_basis = target_transform.basis
 	transform.basis = transform.basis.slerp(target_basis, turn_speed * delta)
 
-func hit(damage: float):
-	# add some code for armor or something here
-	print("hit detected")
-	print(damage)
-	print(cur_health)
-	take_damage(damage)
+func _on_standard_hit(dam: float) -> void:
+	take_damage(dam)
+	
+func _on_critical_hit(dam: float) -> void:
+	take_damage(dam * 1.5)
 
 func take_damage(amount: float) -> void:
 	cur_health = clamp(cur_health - amount, 0, max_health)

@@ -62,7 +62,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_s34yl")
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1042808450]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 target_position = Vector3(0, 0, 1)
-collision_mask = 3
+collision_mask = 5
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1074753965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5626915)

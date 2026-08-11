@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cq03t4kd7wfic"]
 
 [ext_resource type="PackedScene" uid="uid://cx8pupoohlprm" path="res://assets/enemies/MrCheeseModel/MrCheeseModel.glb" id="1_y5g1e"]
+[ext_resource type="Script" uid="uid://dm1rmv8572wsw" path="res://scripts/enemies/body_part.gd" id="2_bvisj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_yamlm"]
 radius = 0.3
@@ -69,7 +70,10 @@ transform = Transform3D(0.9999942, -0.00052435696, 0.0033924952, 0.0008957423, 0
 bone_name = "mixamorig_Head"
 bone_idx = 6
 
-[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/Head" index="0" unique_id=1347619964]
+[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/Head" index="0" unique_id=1347619964 groups=["CriticalHitBox"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_bvisj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cheese2/Skeleton3D/Head/Area3D" index="0" unique_id=2123539462]
 shape = SubResource("SphereShape3D_yamlm")
@@ -79,7 +83,10 @@ transform = Transform3D(0.9970129, -0.053459413, -0.055745285, 0.011461662, 0.81
 bone_name = "mixamorig_Spine1"
 bone_idx = 3
 
-[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/Body" index="0" unique_id=791158568]
+[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/Body" index="0" unique_id=791158568 groups=["StandardHitBox"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_bvisj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cheese2/Skeleton3D/Body/Area3D" index="0" unique_id=1124510295]
 transform = Transform3D(1, 0, 0, 0, 1.0000005, 0, 0, 0, 1.0000005, 0, -0.02700615, 0.0022088476)
@@ -90,7 +97,10 @@ transform = Transform3D(-0.18662743, -0.14681503, -0.97139895, 0.9824202, -0.032
 bone_name = "mixamorig_LeftArm"
 bone_idx = 9
 
-[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/LArm" index="0" unique_id=1184836664]
+[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/LArm" index="0" unique_id=1184836664 groups=["StandardHitBox"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_bvisj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cheese2/Skeleton3D/LArm/Area3D" index="0" unique_id=1862569457]
 transform = Transform3D(1.0000001, -8.8475645e-09, 3.0559022e-08, -8.381903e-09, 1.0000002, -2.9802322e-08, -4.4994522e-08, 1.4901161e-08, 1.0000004, -0.049839377, 0.18051738, 0.006395936)
@@ -101,7 +111,10 @@ transform = Transform3D(-0.068308756, -0.2365067, 0.9692259, -0.23184553, -0.941
 bone_name = "mixamorig_RightArm"
 bone_idx = 21
 
-[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/RArm" index="0" unique_id=1736528964]
+[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/RArm" index="0" unique_id=1736528964 groups=["StandardHitBox"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_bvisj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cheese2/Skeleton3D/RArm/Area3D" index="0" unique_id=675396159]
 transform = Transform3D(0.99999964, 1.4901161e-08, -1.3969839e-08, -1.4901161e-08, 1, -4.9592927e-08, -1.3969839e-08, -1.2200326e-07, 1, 0.045880944, 0.13604164, -0.041247427)
@@ -112,7 +125,10 @@ transform = Transform3D(-0.98475057, 0.07815209, -0.15548024, -0.17121246, -0.59
 bone_name = "mixamorig_LeftUpLeg"
 bone_idx = 32
 
-[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/LLeg" index="0" unique_id=1535248384]
+[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/LLeg" index="0" unique_id=1535248384 groups=["StandardHitBox"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_bvisj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cheese2/Skeleton3D/LLeg/Area3D" index="0" unique_id=960613469]
 transform = Transform3D(1, 1.6763806e-08, -4.4703484e-08, -9.313226e-09, 1, 2.9802322e-08, -1.8626451e-09, -1.4901161e-07, 1, -0.00522089, 0.2864365, 0.011003792)
@@ -123,7 +139,10 @@ transform = Transform3D(-0.95631933, -0.220314, -0.19218224, 0.20756114, -0.9745
 bone_name = "mixamorig_RightUpLeg"
 bone_idx = 37
 
-[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/RLeg" index="0" unique_id=965792794]
+[node name="Area3D" type="Area3D" parent="cheese2/Skeleton3D/RLeg" index="0" unique_id=965792794 groups=["StandardHitBox"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_bvisj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cheese2/Skeleton3D/RLeg/Area3D" index="0" unique_id=1760174553]
 transform = Transform3D(0.99999994, -2.7939677e-09, -1.4901161e-08, -1.7695129e-08, 1.0000001, -3.7252903e-09, 1.4901161e-08, 0, 0.99999994, 0.0027982295, 0.23240471, 0.053203143)

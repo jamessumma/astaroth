@@ -11,5 +11,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func crit(damage: float):
+	emit_signal("critical_hit", damage)
+
 func hit(damage: float):
 	emit_signal("body_part_hit", damage)

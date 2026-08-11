@@ -19,6 +19,10 @@ run/main_scene="uid://cldjgrgnirnrd"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://c12uo2jf1igdy"
+
 [autoload]
 
 GameManager="*uid://54wihngwuqxu"
@@ -31,6 +35,13 @@ window/size/mode=2
 window/size/window_width_override=1280
 window/size/window_height_override=960
 window/stretch/mode="viewport"
+
+[global_group]
+
+CriticalHitBox=""
+StandardHitBox=""
+ArmoredHitBox=""
+WeakHitBox=""
 
 [importer_defaults]
 
