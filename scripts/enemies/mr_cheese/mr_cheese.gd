@@ -48,6 +48,8 @@ func enter_exec_attack():
 
 func enter_dead():
 	animation_player.play("mutant dying", 0.6)
+	if last_hit_part:
+		last_hit_part.spawn_death_splatter()
 
 func enter_reposition():
 	print("enter reposition")

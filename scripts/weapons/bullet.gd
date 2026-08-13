@@ -14,8 +14,6 @@ var has_impacted: bool = false
 func _ready() -> void:
 	ray.collide_with_areas = true
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position += transform.basis * Vector3(0, 0, SPEED) * delta
@@ -34,18 +32,21 @@ func handle_impact():
 		
 	var collider = ray.get_collider()
 	var particles = sparks
+	# get point of the collision
+	var hit_point = ray.get_collision_point()
+	var hit_normal = ray.get_collision_normal()
+
+	if hit_normal.length_squared() < 0.0001:
+		hit_normal = -transform.basis.z
 	
 	if collider and collider.is_in_group("StandardHitBox"):
 		# Assuming your body_part.gd script has a hit() function, 
 		# or you can call a custom method there to trigger the signal
-		collider.hit(damage)
+		collider.hit(damage, hit_point, hit_normal)
 		particles = blood_splatter
 	elif collider and collider.is_in_group("CriticalHitBox"):
-		collider.crit(damage)
+		collider.crit(damage, hit_point, hit_normal)
 		particles = blood_splatter
-	# get point of the collision
-	var hit_point = ray.get_collision_point()
-	var hit_normal = ray.get_collision_normal()
 	
 	# detach the particles from the bullet's transform
 	particles.set_as_top_level(true)

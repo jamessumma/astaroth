@@ -25,6 +25,8 @@ var attacks: Array[Attack] = []
 var next_attack: Attack = null
 var attack_timer: float = 0.0
 
+var last_hit_part: BodyPart = null
+
 # enemy behavior
 var grounded_enemy = true
 
@@ -123,10 +125,12 @@ func look_at_slerp(delta):
 	var target_basis = target_transform.basis
 	transform.basis = transform.basis.slerp(target_basis, turn_speed * delta)
 
-func _on_standard_hit(dam: float) -> void:
+func _on_standard_hit(dam: float, part: BodyPart) -> void:
+	self.last_hit_part = part
 	take_damage(dam)
 	
-func _on_critical_hit(dam: float) -> void:
+func _on_critical_hit(dam: float, part: BodyPart) -> void:
+	self.last_hit_part = part
 	take_damage(dam * 1.5)
 
 func take_damage(amount: float) -> void:
