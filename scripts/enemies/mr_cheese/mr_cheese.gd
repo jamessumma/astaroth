@@ -9,7 +9,7 @@ var attack_timer_cur: float = 0
 	
 func _ready() -> void:
 	self.combat_range = 10.0
-	max_health = 1
+	max_health = 10
 	cur_health = max_health
 	enemy_setup()
 
