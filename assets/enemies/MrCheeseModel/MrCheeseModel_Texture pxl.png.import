@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4ub72cw3hoen"
-path="res://.godot/imported/mrcheese_0.png-15a2ed551651174b3748c8a8563ad56e.ctex"
+uid="uid://bgor3dwcqqkif"
+path.s3tc="res://.godot/imported/MrCheeseModel_Texture pxl.png-9f200bef039fe93ad0deccaa7f2578ca.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "df8c85c0fc43a17327ad5f1b0e1d6b4e"
+"md5": "d3023e6540c9832943c8b5536719d07a"
 }
 
 [deps]
 
-source_file="res://assets/enemies/Rat Monster/mrcheese_0.png"
-dest_files=["res://.godot/imported/mrcheese_0.png-15a2ed551651174b3748c8a8563ad56e.ctex"]
+source_file="res://assets/enemies/MrCheeseModel/MrCheeseModel_Texture pxl.png"
+dest_files=["res://.godot/imported/MrCheeseModel_Texture pxl.png-9f200bef039fe93ad0deccaa7f2578ca.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

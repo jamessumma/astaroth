@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dopwtmy7277e5"]
+
+[ext_resource type="Script" uid="uid://cot7d6nhrqb8k" path="res://scripts/enemies/mr_cheese/mr_cheese.gd" id="1_m447f"]
+[ext_resource type="PackedScene" uid="uid://cq03t4kd7wfic" path="res://scenes/creatures/MrCheese/mr_cheese_model.tscn" id="2_2wlqb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yamlm"]
+radius = 0.3
+
+[node name="MrCheese" type="CharacterBody3D" unique_id=703852279]
+collision_layer = 2
+collision_mask = 11
+script = ExtResource("1_m447f")
+
+[node name="MrCheeseModel" parent="." unique_id=224079858 instance=ExtResource("2_2wlqb")]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=166914349]
+
+[node name="WorldColliderShape" type="CollisionShape3D" parent="." unique_id=1283252626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_yamlm")
+
+[editable path="MrCheeseModel"]

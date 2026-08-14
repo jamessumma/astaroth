@@ -89,7 +89,6 @@ func _input(event):
 		# do something here
 		if get_magnitude(velocity.x, velocity.y, velocity.z) >= slide_threshold:
 			player_movement_state = player_movement.SLIDING
-			print("sliding now")
 		player_movement_state = player_movement.CROUCHING
 	if Input.is_action_just_released("crouch"):
 		player_movement_state = player_movement.AWAIT_STAND
@@ -103,7 +102,7 @@ func _input(event):
 		
 
 # on every rendered frame (expensive)
-func _process(delta):
+func _process(_delta):
 	viewport_camera.global_transform = camera.global_transform
 	update_ui()
 	if dead:

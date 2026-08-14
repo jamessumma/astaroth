@@ -1,23 +1,25 @@
 [remap]
 
-importer="animation_library"
+importer="scene"
 importer_version=1
-type="AnimationLibrary"
-uid="uid://cl1n3ibwg3sj0"
-path="res://.godot/imported/Mutant Run-2.fbx-a2127b002b1d2aa7c789f66c771f3895.res"
+type="PackedScene"
+uid="uid://cx8pupoohlprm"
+path="res://.godot/imported/MrCheeseModel.glb-c4f112d8acc2a4a63bd73ac14f2596fa.scn"
 
 [deps]
 
-source_file="res://assets/enemies/MrCheese/Animations/Mutant Run-2.fbx"
-dest_files=["res://.godot/imported/Mutant Run-2.fbx-a2127b002b1d2aa7c789f66c771f3895.res"]
+source_file="res://assets/enemies/MrCheeseModel/MrCheeseModel.glb"
+dest_files=["res://.godot/imported/MrCheeseModel.glb-c4f112d8acc2a4a63bd73ac14f2596fa.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=1.2
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -30,7 +32,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -39,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "animations": {
-"mixamo_com": {
+"mutant run": {
 "save_to_file/enabled": false,
 "save_to_file/fallback_path": "",
 "save_to_file/keep_custom_tracks": "",
@@ -2095,9 +2097,15 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 }
+},
+"materials": {
+"Material.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/enemies/MrCheeseModel/Material.001.tres",
+"use_external/path": "uid://b23rlcm18amnb"
 }
 }
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1

@@ -4,8 +4,8 @@ class_name State
 
 var enemy: Enemy
 
-func _init(enemy):
-  self.enemy = enemy
+func _init(enemy_param):
+  self.enemy = enemy_param
 
 func enter():
   pass
@@ -13,8 +13,8 @@ func enter():
 func exit():
   pass
 
-func update(delta: float):
+func update(_delta: float):
   pass
 
-func handle_event(event: Events.type):
+func handle_event(_event: Events.type):
   pass

@@ -9,7 +9,8 @@ func enter():
 func exit():
   print("exiting exec attack")
 
-func update(delta):
+func update(_delta):
+  enemy.update_state_attack(_delta)
   pass
 
 func handle_event(event: Events.type) -> State:

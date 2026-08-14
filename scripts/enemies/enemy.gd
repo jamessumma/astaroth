@@ -7,9 +7,10 @@ var cur_health: int = max_health
 
 
 @onready var navigation_agent = $NavigationAgent3D
-@onready var body = $CollisionShape3D
+@onready var body = $WorldColliderShape
 var state_machine: StateMachine
 
+var using_root_motion: bool = false
 
 # movement vars
 var gravity = 10.0
@@ -23,6 +24,11 @@ var target_desired_distance: float = 0.5
 var attacks: Array[Attack] = []
 var next_attack: Attack = null
 var attack_timer: float = 0.0
+
+var last_hit_part: BodyPart = null
+
+# enemy behavior
+var grounded_enemy = true
 
 var lerp_weight: float = 5.0
 var cur_facing_direction_vector: Vector3 = Vector3(0,0,0)
@@ -52,11 +58,19 @@ func enemy_setup():
 	self.cur_direction_vector_pull = Vector3(0.0, 0.0, 0.0)
 	navigation_agent.path_desired_distance = path_desired_distance
 	navigation_agent.target_desired_distance = target_desired_distance
+	for part in find_children("*", "Area3D", true):
+		if part.is_in_group("StandardHitBox"):
+			part.body_part_hit.connect(_on_standard_hit)
+		elif part.is_in_group("CriticalHitBox"):
+			part.body_part_hit.connect(_on_critical_hit)
 
 func handle_idle():
 	update_player_distance()
 	if distance_to_player < vision_range:
-		self.state_machine.trigger_event(Events.type.DETECT_PLAYER)
+		if self.grounded_enemy && is_on_floor():
+			self.state_machine.trigger_event(Events.type.DETECT_PLAYER)
+		if !self.grounded_enemy:
+			self.state_machine.trigger_event(Events.type.DETECT_PLAYER)
 
 func handle_chase():
 	update_player_distance()
@@ -95,6 +109,8 @@ func update_player_distance():
 	distance_to_player = body.global_position.distance_to(GameManager.player.global_position)
 
 func handle_gravity(delta):
+	if using_root_motion:
+		return
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
@@ -103,16 +119,19 @@ func handle_gravity(delta):
 
 func look_at_slerp(delta):
 	var flat_dir = Vector3(cur_facing_direction_vector.x, 0, cur_facing_direction_vector.z).normalized()
+	if flat_dir.length_squared() < 0.0001:
+		return
 	var target_transform = transform.looking_at(global_position - flat_dir, Vector3.UP)
 	var target_basis = target_transform.basis
 	transform.basis = transform.basis.slerp(target_basis, turn_speed * delta)
 
-func hit(damage: float):
-	# add some code for armor or something here
-	print("hit detected")
-	print(damage)
-	print(cur_health)
-	take_damage(damage)
+func _on_standard_hit(dam: float, part: BodyPart) -> void:
+	self.last_hit_part = part
+	take_damage(dam)
+	
+func _on_critical_hit(dam: float, part: BodyPart) -> void:
+	self.last_hit_part = part
+	take_damage(dam * 1.5)
 
 func take_damage(amount: float) -> void:
 	cur_health = clamp(cur_health - amount, 0, max_health)
@@ -137,6 +156,8 @@ func set_pull_vector_stop():
 
 # move process gets called every call to physics proces
 func move_process(delta):
+	if using_root_motion:
+		return
 	# every physics process, update the movement vector to pull towards the pull vector
 	# so the idea is, by default, pull towards zero
 	# then, certain states will call functions that will modify the pull vector
@@ -201,10 +222,12 @@ func attack_value(attack: Attack) -> float:
 	return res
 
 func attack_in_range(attack: Attack) -> bool:
-	if distance_to_player > 1.0:
-		print(distance_to_player)
 	return ((attack.min_range <= self.distance_to_player) and (attack.max_range >= self.distance_to_player))
 
+func update_state_attack(_delta: float):
+	velocity.x *= self.next_attack.x_vel_mult
+	velocity.z *= self.next_attack.z_vel_mult
+	velocity.y *= self.next_attack.y_vel_mult
 # below are the functions the inheriting class will want to edit
 
 func enter_idle():

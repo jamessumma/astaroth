@@ -14,10 +14,10 @@ func exit():
 	enemy.set_pull_vector_stop()
 
 
-func update(delta):
+func update(_delta):
 	enemy.handle_chase()
 	enemy.set_pull_to_player()
-	enemy.look_at_slerp(delta)
+	enemy.look_at_slerp(_delta)
 
 func handle_event(event: Events.type) -> State:
 	match event:
