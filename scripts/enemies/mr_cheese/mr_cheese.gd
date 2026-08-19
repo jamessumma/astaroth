@@ -9,11 +9,11 @@ var attack_timer_cur: float = 0
 	
 func _ready() -> void:
 	self.combat_range = 10.0
-	max_health = 10
+	max_health = 5
 	cur_health = max_health
 	enemy_setup()
 
-	self.attacks = [AttackCheesePunch.new(), AttackCheeseThrow.new(), AttackCheeseFlyingKick.new(), AttackCheeseJump.new()]
+	self.attacks = [AttackCheesePunch.new(), AttackCheeseFlyingKick.new(), AttackCheeseJump.new()]
 	animation_player.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:

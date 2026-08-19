@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5pix3aevh5r8"
-path="res://.godot/imported/shotgun_single_merged_object_shotgun_wood01.png-b8865869c425b3db98a6d7f839010d00.ctex"
+path.s3tc="res://.godot/imported/shotgun_single_merged_object_shotgun_wood01.png-b8865869c425b3db98a6d7f839010d00.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "1353732fbbc92f2e58206cc1a8eca961"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/weapons/pump_shotgun/shotgun_single_merged_object_shotgun_wood01.png"
-dest_files=["res://.godot/imported/shotgun_single_merged_object_shotgun_wood01.png-b8865869c425b3db98a6d7f839010d00.ctex"]
+dest_files=["res://.godot/imported/shotgun_single_merged_object_shotgun_wood01.png-b8865869c425b3db98a6d7f839010d00.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
